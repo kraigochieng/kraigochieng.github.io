@@ -23,3 +23,9 @@ useHead({
 	],
 });
 </script>
+
+<style>
+* {
+	font-family: 'Inter';
+}
+</style>

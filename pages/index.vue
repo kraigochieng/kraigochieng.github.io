@@ -8,9 +8,10 @@
 	>
 		LinkedIn
 	</a>
+	<a href="https://coff.ee/kraigochieng">Buy me a Coffee</a>
 	<h2>Projects</h2>
 	<ul>
-		<li>MediLinda. Wed bevelopment with Machine Learning</li>
+		<li>MediLinda. Web Development with Machine Learning</li>
 	</ul>
 	<h2>Skills</h2>
 	<ul>
