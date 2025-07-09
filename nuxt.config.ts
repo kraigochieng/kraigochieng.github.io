@@ -8,4 +8,7 @@ export default defineNuxtConfig({
 			Inter: true,
 		},
 	},
+	devServer: {
+		host: "0.0.0.0",
+	},
 });
