@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="page-margin">
 		<NuxtPage />
 	</div>
 </template>
@@ -25,7 +25,13 @@ useHead({
 </script>
 
 <style>
+@reference "tailwindcss";
+
 * {
-	font-family: 'Inter';
+	font-family: "Inter";
+}
+
+.page-margin {
+	@apply mx-4 md:mx-16 lg:mx-64;
 }
 </style>
