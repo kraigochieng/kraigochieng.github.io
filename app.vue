@@ -1,6 +1,8 @@
 <template>
-	<div class="page-margin">
-		<NuxtPage />
+	<div class="page-padding">
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
 	</div>
 </template>
 
@@ -31,7 +33,16 @@ useHead({
 	font-family: "Inter";
 }
 
-.page-margin {
-	@apply mx-4 md:mx-16 lg:mx-64;
+:root {
+	--bg-dark: #171717;
+	--text-dark: #dedfe0;
+}
+
+.dark-mode body {
+	@apply bg-[var(--bg-dark)] text-[var(--text-dark)];
+}
+
+.page-padding {
+	@apply px-4 md:px-16 lg:px-64;
 }
 </style>
