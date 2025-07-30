@@ -30,7 +30,7 @@ useHead({
 @reference "tailwindcss";
 
 * {
-	font-family: "Inter";
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
