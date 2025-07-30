@@ -1,11 +1,6 @@
 <template>
-	<select v-model="$colorMode.preference">
-		<option value="system">System</option>
-		<option value="light">Light</option>
-		<option value="dark">Dark</option>
-	</select>
 	<h1>Kraig Ochieng</h1>
-	<h2>Data Scientist | Web Developer</h2>
+	<h2>{{ $t("data_scientist") }} | Web Developer</h2>
 	<a href="https://github.com/kraigochieng" target="_blank">Github</a>
 	<a
 		href="https://www.linkedin.com/in/kraig-ochieng-911121215/"
@@ -14,7 +9,7 @@
 		LinkedIn
 	</a>
 	<a href="https://coff.ee/kraigochieng">Buy me a Coffee</a>
-	<h2>Projects</h2>
+	<h2>{{ $t("projects") }}</h2>
 	<ul>
 		<li>
 			<NuxtLink to="/projects/medilinda">
@@ -23,20 +18,17 @@
 		</li>
 	</ul>
 
-	<h2>Experience</h2>
+	<h2>{{ $t("work_experience") }}</h2>
 	<ul>
 		<li>Software Developer | Intellisoft Consulting</li>
+		<ul>
+			<li>Experience working with FHIR and FSH</li>
+		</ul>
 		<li>AI Developer | Chanzo Technologies</li>
-	</ul>
-	<h2>Experience with healthcare</h2>
-	<ul>
-		<li>Experience working with FHIR and FSH</li>
 	</ul>
 </template>
 
 <script setup lang="ts">
-import { NuxtLink } from "#components";
-
 useHead({ title: "Kraig Ochieng | Data scientist and Web Developer" });
 
 // <h2>Skills</h2>
