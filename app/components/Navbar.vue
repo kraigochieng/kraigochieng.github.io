@@ -1,5 +1,10 @@
 <template>
-	 <UNavigationMenu :items="items" class="w-full justify-center" />
+	<UNavigationMenu
+		:items="items"
+		class="justify-center"
+		color="neutral"
+		variant="link"
+	/>
 </template>
 
 <script lang="ts" setup>
