@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink to="/">Back Home</NuxtLink>
+    add projects here
   </div>
 </template>
 
