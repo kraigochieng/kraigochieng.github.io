@@ -5,6 +5,7 @@
 
 @theme {
 	--color-dark: #111111;
+	--font-sans: 'Inter', sans-serif;
 }
 
 @layer base {
@@ -37,11 +38,5 @@
 		@apply text-blue-600 hover:underline;
 	}
 
-	ol li {
-		list-style: decimal;
-	}
 
-	ul li {
-		list-style: disc;
-	}
 }
