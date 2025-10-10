@@ -29,6 +29,7 @@
 </template>
 
 <script setup lang="ts">
+
 useHead({ title: "Kraig Ochieng | Data scientist and Web Developer" });
 
 // <h2>Skills</h2>

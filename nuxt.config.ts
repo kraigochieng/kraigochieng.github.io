@@ -1,13 +1,16 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: "2025-05-15",
 	devtools: { enabled: false },
+	css: ["~/assets/css/main.css"],
 	modules: [
-		"@nuxtjs/tailwindcss",
 		"@nuxtjs/google-fonts",
 		"@nuxtjs/color-mode",
 		"@nuxt/image",
 		"@nuxtjs/i18n",
+		"@nuxt/ui",
 	],
 	// Modules
 	googleFonts: {
@@ -22,7 +25,13 @@ export default defineNuxtConfig({
 	},
 	i18n: {
 		defaultLocale: "en",
-		locales: [{ code: "en", name: "English", file: "en.json" }, { code: "sw", name: "Swahili", file: "sw.json" }],
+		locales: [
+			{ code: "en", name: "English", file: "en.json" },
+			{ code: "sw", name: "Swahili", file: "sw.json" },
+		],
+	},
+	vite: {
+		plugins: [tailwindcss()],
 	},
 	// Dev Server
 	devServer: {
