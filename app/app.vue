@@ -1,11 +1,11 @@
 <template>
-	<div class="page-padding">
-		<UApp>
+	<UApp>
+		<div class="page-padding">
 			<NuxtLayout>
 				<NuxtPage />
 			</NuxtLayout>
-		</UApp>
-	</div>
+		</div>
+	</UApp>
 </template>
 
 <script setup lang="ts">
@@ -32,7 +32,7 @@ useHead({
 @reference "tailwindcss";
 
 * {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Inter, Helvetica, sans-serif;
 }
 
 :root {
