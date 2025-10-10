@@ -12,7 +12,7 @@
 		</p>
 
 		<h2>Architecture</h2>
-		<NuxtImg src="/medilinda/architecture.png" />
+		<img src="/medilinda/architecture.png" />
 		<p>- describe architecture diagram herehere -</p>
 		<h2>Technologies Used</h2>
 		<ul>
