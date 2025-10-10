@@ -6,28 +6,25 @@ export default defineNuxtConfig({
 	devtools: { enabled: false },
 	css: ["~/assets/css/main.css"],
 	modules: [
-		"@nuxtjs/google-fonts",
-		"@nuxtjs/color-mode",
 		"@nuxt/image",
 		"@nuxtjs/i18n",
 		"@nuxt/ui",
 	],
 	// Modules
-	googleFonts: {
-		families: {
-			Inter: true,
-			"Fira Code": true,
-		},
-	},
 	colorMode: {
 		preference: "system",
 		fallback: "light",
+	},
+	fonts: {
+		families: [
+			{name: "Inter", provider: "google"}
+		]
 	},
 	i18n: {
 		defaultLocale: "en",
 		locales: [
 			{ code: "en", name: "English", file: "en.json" },
-			{ code: "sw", name: "Swahili", file: "sw.json" },
+			// { code: "sw", name: "Swahili", file: "sw.json" },
 		],
 	},
 	vite: {
