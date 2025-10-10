@@ -23,9 +23,9 @@
 </template>
 
 <script lang="ts" setup>
-definePageMeta({
-	layout: "projects",
-});
+// definePageMeta({
+// 	layout: "projects",
+// });
 </script>
 
 <style></style>
