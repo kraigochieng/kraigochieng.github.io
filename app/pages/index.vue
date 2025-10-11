@@ -4,7 +4,7 @@
 	>
 		<h1 class="text-5xl font-bold mb-2">Kraig Ochieng</h1>
 		<h2 class="text-xl text-muted-foreground">
-			{{ $t("data_scientist") }} | Web Developer
+			{{ $t("data_scientist") }} / {{ $t("web_developer") }}
 		</h2>
 		<div class="flex justify-center items-center gap-4 mt-6">
 			<UTooltip
@@ -17,9 +17,13 @@
 					:href="link.href"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="p-2 rounded-full hover:bg-muted transition"
+					class="p-4 rounded-sm hover:bg-muted transition"
 				>
-					<UIcon :name="link.icon" class="w-5 h-5 text-foreground" />
+					<UIcon
+						:name="link.icon"
+						size="32"
+						class="text-foreground"
+					/>
 				</a>
 			</UTooltip>
 		</div>

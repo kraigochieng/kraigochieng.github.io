@@ -16,6 +16,7 @@
 <style scoped>
 @reference "assets/css/main.css";
 
+
 .glass-bg {
 	@apply backdrop-filter backdrop-blur-xs;
 }
