@@ -8,6 +8,7 @@
 -   [ ] use badges for project type, skills, tools
 -   [ ] how to have a website preview
 -   [ ] ensure mobile responsive
+-   [ ] reduce content amount in projects. figure it out
 
 # In Progress
 
