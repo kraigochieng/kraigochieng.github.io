@@ -85,11 +85,11 @@ const project = {
 			</template>
 
 			<div class="space-y-4">
-				<UImage
+				<!-- <img
 					:src="project.architectureImage"
 					alt="Diamond Price Predictor Architecture"
 					class="rounded-lg border border-gray-200 dark:border-gray-700"
-				/>
+				/> -->
 
 				<div class="grid sm:grid-cols-2 gap-4 mt-6">
 					<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
