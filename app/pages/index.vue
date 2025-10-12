@@ -6,6 +6,7 @@
 		<h2 class="text-xl text-muted-foreground">
 			{{ $t("data_scientist") }} / {{ $t("web_developer") }}
 		</h2>
+		<p>backend (data) focused dev with minimal web interfaces</p>
 		<div class="flex justify-center items-center gap-4 mt-6">
 			<UTooltip
 				v-for="link in links"
@@ -29,16 +30,7 @@
 		</div>
 	</section>
 
-	<h2>{{ $t("projects") }}</h2>
-	<ul>
-		<li>
-			<NuxtLink to="/projects/medilinda">
-				MediLinda. Web Development with Machine Learning
-			</NuxtLink>
-		</li>
-	</ul>
-
-	<h2>{{ $t("work_experience") }}</h2>
+	<!-- <h2>{{ $t("work_experience") }}</h2>
 	<ul>
 		<li>Software Developer | Intellisoft Consulting</li>
 		<ul>
@@ -72,7 +64,7 @@
 	<ul>
 		<li>KenyaRE</li>
 		<li>Nairobi DSRH</li>
-	</ul>
+	</ul> -->
 </template>
 
 <script setup lang="ts">
