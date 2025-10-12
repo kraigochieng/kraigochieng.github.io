@@ -1,11 +1,11 @@
 <template>
-<UButton
-				:icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
-				color="neutral"
-				variant="ghost"
-				:aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
-				@click="isDark = !isDark"
-			/>
+	<UButton
+		:icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
+		color="neutral"
+		variant="ghost"
+		:aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
+		@click="isDark = !isDark"
+	/>
 </template>
 
 <script lang="ts" setup>
@@ -20,6 +20,4 @@ const isDark = computed({
 });
 </script>
 
-<style>
-
-</style>
+<style></style>
