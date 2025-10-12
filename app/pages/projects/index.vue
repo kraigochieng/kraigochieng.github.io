@@ -82,7 +82,6 @@ const projects = [
 						<UBadge
 							v-for="tool in project.tools"
 							:key="tool"
-							color="neutral"
 							variant="solid"
 						>
 							{{ tool }}
