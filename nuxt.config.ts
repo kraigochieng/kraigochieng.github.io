@@ -29,7 +29,11 @@ export default defineNuxtConfig({
 			// { code: "sw", name: "Swahili", file: "sw.json" },
 		],
 	},
-	icon: { serverBundle: "remote" },
+	icon: {
+		clientBundle: {
+			scan: true,
+		},
+	},
 	vite: {
 		plugins: [tailwindcss()],
 	},
