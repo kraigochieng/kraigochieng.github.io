@@ -49,13 +49,11 @@ useHead({
 }
 
 .page-enter-active,
-.page-leave-active,
-.fade-appear-active {
+.page-leave-active {
 	transition: all 0.2s;
 }
 .page-enter-from,
-.page-leave-to,
-.fade-appear-from {
+.page-leave-to {
 	opacity: 0;
 	filter: blur(1rem);
 }
