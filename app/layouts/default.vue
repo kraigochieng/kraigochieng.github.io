@@ -1,10 +1,10 @@
 <template>
-	<div class="flex justify-between items-center sticky-nav glass-bg">
-		<Logo />
+	<div class="grid grid-cols-3 items-center sticky-nav glass-bg">
+		<Logo class="justify-self-start" />
 		<Navbar />
-		<div class="flex space-x-2">
+		<div class="justify-self-end flex space-x-2">
 			<Locale />
-			<Theme />
+			<UColorModeButton />
 		</div>
 	</div>
 
@@ -15,7 +15,6 @@
 
 <style scoped>
 @reference "assets/css/main.css";
-
 
 .glass-bg {
 	@apply backdrop-filter backdrop-blur-xs;
