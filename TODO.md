@@ -10,6 +10,10 @@
 -   [ ] ensure mobile responsive
 -   [ ] reduce content amount in projects. figure it out
 -   [ ] decide on link colour. add it through tailwind assets main css
+-   [ ] add blogs section, use markdown for this
+-   [ ] add tests to code
+-   [ ] add process of testing to docker build
+-   [ ] add gradient descent visualiser to project
 
 # In Progress
 
