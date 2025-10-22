@@ -1,10 +1,10 @@
 <template>
 	<div
-		class=" outline-class h-[var(--nav-height)] mobile larger-than-mobile items-center sticky-nav glass-bg"
+		class="outline-class h-[var(--nav-height)] grid grid-cols-2 md:grid-cols-3 items-center sticky-nav glass-bg"
 	>
 		<Logo class="outline-class md:justify-self-start" />
-		<Navbar class="outline-class hidden md:block" />
-		<div class="outline-class md:justify-self-end flex space-x-2">
+		<Navbar class="hidden outline-class md:block" />
+		<div class="outline-class md:justify-self-end flex space-x-2 justify-end">
 			<UDropdownMenu :items="dropdownItems" class="md:hidden">
 				<UButton
 					icon="i-lucide-menu"
@@ -21,7 +21,9 @@
 </template>
 
 <script setup lang="ts">
-const dropdownItems = ref([
+import type { DropdownMenuItem } from "@nuxt/ui";
+
+const dropdownItems = ref<DropdownMenuItem[]>([
 	[
 		{ label: "Home", icon: "i-lucide-home", to: "/" },
 		{ label: "Projects", icon: "i-lucide-code", to: "/projects" },
@@ -49,15 +51,7 @@ const dropdownItems = ref([
 	@apply sticky top-0 z-50;
 }
 
-.mobile {
-	@apply flex justify-between;
-}
-
-.larger-than-mobile {
-	@apply md:grid md:grid-cols-3;
-}
-
 .outline-class {
-	@apply outline outline-red-500
+	@apply outline outline-red-500;
 }
 </style>
