@@ -4,21 +4,23 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
 	compatibilityDate: "2025-05-15",
 	devtools: { enabled: false },
+	// Code
+	app: {
+		pageTransition: { name: "page", mode: "out-in", appear: true },
+		// layoutTransition: {
+		// 	name: "slide",
+		// 	mode: "out-in", // default
+		// },
+	},
 	css: ["~/assets/css/main.css"],
-	modules: [
-		"@nuxt/image",
-		"@nuxtjs/i18n",
-		"@nuxt/ui",
-	],
+	modules: ["@nuxt/image", "@nuxtjs/i18n", "@nuxt/ui"],
 	// Modules
 	colorMode: {
 		preference: "system",
 		fallback: "light",
 	},
 	fonts: {
-		families: [
-			{name: "Inter", provider: "google"}
-		]
+		families: [{ name: "Inter", provider: "google" }],
 	},
 	i18n: {
 		defaultLocale: "en",
