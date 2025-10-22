@@ -5,6 +5,8 @@
 		<Logo class="" />
 		<Navbar class="hidden md:block" />
 		<div class="flex space-x-2 justify-end">
+			<Locale />
+			<UColorModeButton />
 			<UDropdownMenu :items="dropdownItems" class="md:hidden">
 				<UButton
 					icon="i-lucide-menu"
@@ -12,8 +14,6 @@
 					variant="outline"
 				/>
 			</UDropdownMenu>
-			<Locale />
-			<UColorModeButton />
 		</div>
 	</div>
 
