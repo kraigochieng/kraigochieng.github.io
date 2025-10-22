@@ -8,25 +8,15 @@
 		</h2>
 		<p>backend (data) focused dev with minimal web interfaces</p>
 		<div class="flex justify-center items-center gap-4 mt-6">
-			<UTooltip
+			<UButton
 				v-for="link in links"
 				:key="link.label"
-				:text="link.label"
-				:popper="{ placement: 'top' }"
-			>
-				<a
-					:href="link.href"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="p-4 rounded-sm hover:bg-muted transition"
-				>
-					<UIcon
-						:name="link.icon"
-						size="32"
-						class="text-foreground"
-					/>
-				</a>
-			</UTooltip>
+				:icon="link.icon"
+				:label="link.label"
+				:to="link.href"
+				target="_blank"
+				variant="ghost"
+			/>
 		</div>
 	</section>
 
