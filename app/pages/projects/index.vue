@@ -36,9 +36,9 @@ const projects = [
 
 <template>
 	<UContainer class="py-12 space-y-8">
-		<h2 class="text-3xl font-bold mb-4">Projects</h2>
+		<h2>Projects</h2>
 
-		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+		<div class="lg:grid lg:grid-cols-2 gap-6">
 			<UCard
 				v-for="project in projects"
 				:key="project.slug"
