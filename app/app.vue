@@ -45,7 +45,7 @@ useHead({
 }
 
 .page-padding {
-	@apply px-4 md:px-16 lg:px-64;
+	@apply px-8 md:px-16 lg:px-64;
 }
 
 .page-enter-active,
