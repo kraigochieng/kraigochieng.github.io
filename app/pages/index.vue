@@ -8,7 +8,7 @@
 				{{ $t("data_scientist") }} / {{ $t("web_developer") }}
 			</h2>
 			<p>backend (data) focused dev with minimal web interfaces</p>
-			<div class="flex justify-center items-center gap-4 mt-6">
+			<div class="flex flex-wrap justify-center items-center gap-4 mt-6">
 				<UButton
 					v-for="link in links"
 					:key="link.label"
