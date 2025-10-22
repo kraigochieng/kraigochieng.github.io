@@ -1,10 +1,10 @@
 <template>
 	<div
-		class="outline-class h-[var(--nav-height)] grid grid-cols-2 md:grid-cols-3 items-center sticky-nav glass-bg"
+		class="h-[var(--nav-height)] responsive-columns sticky-nav glass-bg items-center"
 	>
-		<Logo class="outline-class md:justify-self-start" />
-		<Navbar class="hidden outline-class md:block" />
-		<div class="outline-class md:justify-self-end flex space-x-2 justify-end">
+		<Logo class="" />
+		<Navbar class="hidden md:block" />
+		<div class="flex space-x-2 justify-end">
 			<UDropdownMenu :items="dropdownItems" class="md:hidden">
 				<UButton
 					icon="i-lucide-menu"
@@ -45,6 +45,10 @@ const dropdownItems = ref<DropdownMenuItem[]>([
 
 .glass-bg {
 	@apply backdrop-filter backdrop-blur-xs;
+}
+
+.responsive-columns {
+	@apply grid grid-cols-2 md:grid-cols-3;
 }
 
 .sticky-nav {
