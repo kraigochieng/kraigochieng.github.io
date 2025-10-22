@@ -1,10 +1,12 @@
 <template>
-	<UNavigationMenu
-		:items="items"
-		class="justify-center"
-		color="neutral"
-		variant="link"
-	/>
+	<div>
+		<UNavigationMenu
+			:items="items"
+			class="justify-center"
+			color="neutral"
+			variant="link"
+		/>
+	</div>
 </template>
 
 <script lang="ts" setup>
