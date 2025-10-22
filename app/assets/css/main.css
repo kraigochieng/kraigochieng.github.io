@@ -3,6 +3,10 @@
 
 @layer base, theme, components, utilities;
 
+:root {
+  --nav-height: 4rem;
+}
+
 @theme {
 	--color-dark: #111111;
 	--font-sans: 'Inter', sans-serif;
