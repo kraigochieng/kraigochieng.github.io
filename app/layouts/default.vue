@@ -1,5 +1,5 @@
 <template>
-	<div class="grid grid-cols-3 items-center sticky-nav glass-bg">
+	<div class="h-[var(--nav-height)] grid grid-cols-3 items-center sticky-nav glass-bg">
 		<Logo class="justify-self-start" />
 		<Navbar />
 		<div class="justify-self-end flex space-x-2">
