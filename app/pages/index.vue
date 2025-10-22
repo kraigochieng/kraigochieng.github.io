@@ -1,26 +1,27 @@
 <template>
-	<section
-		class="flex flex-col items-center justify-center min-h-screen text-center bg-background text-foreground"
-	>
-		<h1 class="text-5xl font-bold mb-2">Kraig Ochieng</h1>
-		<h2 class="text-xl text-muted-foreground">
-			{{ $t("data_scientist") }} / {{ $t("web_developer") }}
-		</h2>
-		<p>backend (data) focused dev with minimal web interfaces</p>
-		<div class="flex justify-center items-center gap-4 mt-6">
-			<UButton
-				v-for="link in links"
-				:key="link.label"
-				:icon="link.icon"
-				:label="link.label"
-				:to="link.href"
-				target="_blank"
-				variant="ghost"
-			/>
-		</div>
-	</section>
+	<div>
+		<section
+			class="flex flex-col items-center justify-center h-[calc(100vh-var(--nav-height))] text-center bg-background text-foreground"
+		>
+			<h1 class="text-5xl font-bold mb-2">Kraig Ochieng</h1>
+			<h2 class="text-xl text-muted-foreground">
+				{{ $t("data_scientist") }} / {{ $t("web_developer") }}
+			</h2>
+			<p>backend (data) focused dev with minimal web interfaces</p>
+			<div class="flex justify-center items-center gap-4 mt-6">
+				<UButton
+					v-for="link in links"
+					:key="link.label"
+					:icon="link.icon"
+					:label="link.label"
+					:to="link.href"
+					target="_blank"
+					variant="ghost"
+				/>
+			</div>
+		</section>
 
-	<!-- <h2>{{ $t("work_experience") }}</h2>
+		<!-- <h2>{{ $t("work_experience") }}</h2>
 	<ul>
 		<li>Software Developer | Intellisoft Consulting</li>
 		<ul>
@@ -55,6 +56,7 @@
 		<li>KenyaRE</li>
 		<li>Nairobi DSRH</li>
 	</ul> -->
+	</div>
 </template>
 
 <script setup lang="ts">
