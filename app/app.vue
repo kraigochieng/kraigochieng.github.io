@@ -47,4 +47,16 @@ useHead({
 .page-padding {
 	@apply px-4 md:px-16 lg:px-64;
 }
+
+.page-enter-active,
+.page-leave-active,
+.fade-appear-active {
+	transition: all 0.2s;
+}
+.page-enter-from,
+.page-leave-to,
+.fade-appear-from {
+	opacity: 0;
+	filter: blur(1rem);
+}
 </style>
