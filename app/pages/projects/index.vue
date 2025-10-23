@@ -9,6 +9,14 @@ const projects = [
 		tools: ["Nuxt", "FastAPI", "Python", "MLflow", "PostgreSQL", "Docker"],
 	},
 	{
+		name: "Gradient Descent Visualiser",
+		slug: "gradient-descent-visualiser",
+		description:
+			"Interactive web app for visualizing linear regression with gradient descent. Nuxt frontend and FastAPI backend. Generate data, run training, and see results live.",
+		skills: ["Machine Learning", "Visualization", "Web Development"],
+		tools: ["Nuxt", "FastAPI", "Python", "D3.js", "Tailwind CSS"],
+	},
+	{
 		name: "Diamond Price Predictor",
 		slug: "diamond-price-predictor",
 		description:
@@ -38,11 +46,11 @@ const projects = [
 	<UContainer class="py-12 space-y-8">
 		<h2>Projects</h2>
 
-		<div class="lg:grid lg:grid-cols-2 gap-6">
+		<div class="lg:grid lg:grid-cols-2">
 			<UCard
 				v-for="project in projects"
 				:key="project.slug"
-				class="hover:shadow-md transition-all duration-200"
+				class="py-4 hover:shadow-md transition-all duration-200"
 			>
 				<template #header>
 					<div class="flex items-center justify-between">
