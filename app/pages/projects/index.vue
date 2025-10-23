@@ -7,6 +7,7 @@ const projects = [
 			"AI-powered pharmacovigilance system combining FastAPI, Nuxt, and MLflow to detect TB drug side effects and send SMS alerts across Kenya.",
 		skills: ["AI", "Machine Learning", "Healthcare", "Explainable AI"],
 		tools: ["Nuxt", "FastAPI", "Python", "MLflow", "PostgreSQL", "Docker"],
+		link: "https://medilinda.vercel.app",
 	},
 	{
 		name: "Gradient Descent Visualiser",
@@ -15,6 +16,7 @@ const projects = [
 			"Interactive web app for visualizing linear regression with gradient descent. Nuxt frontend and FastAPI backend. Generate data, run training, and see results live.",
 		skills: ["Machine Learning", "Visualization", "Web Development"],
 		tools: ["Nuxt", "FastAPI", "Python", "D3.js", "Tailwind CSS"],
+		link: "https://gradient-descent-visualiser.vercel.app",
 	},
 	{
 		name: "Diamond Price Predictor",
@@ -30,6 +32,7 @@ const projects = [
 			"Docker",
 			"Databricks",
 		],
+		link: "https://diamond-price-predictor-coral.vercel.app",
 	},
 	{
 		name: "Image to ASCII Art Converter",
@@ -38,6 +41,7 @@ const projects = [
 			"Python CLI app that transforms images into ASCII art with adjustable width, grayscale, and color rendering modes.",
 		skills: ["Creative Coding", "Image Processing", "CLI Tools"],
 		tools: ["Python", "Pillow", "NumPy"],
+		link: "https://image-to-ascii-2.onrender.com",
 	},
 ];
 </script>
@@ -50,7 +54,7 @@ const projects = [
 			<UCard
 				v-for="project in projects"
 				:key="project.slug"
-				class=" hover:shadow-md transition-all duration-200"
+				class="hover:shadow-md transition-all duration-200"
 			>
 				<template #header>
 					<div class="flex items-center justify-between">
@@ -65,6 +69,36 @@ const projects = [
 						/>
 					</div>
 				</template>
+
+				<!-- Static or live preview for all projects using their link property -->
+				<div
+					v-if="project.link"
+					class="mb-4 rounded overflow-hidden border border-gray-200 dark:border-gray-700"
+				>
+					<div style="overflow: hidden; width: 100%; height: 220px">
+						<ULink :to="project.link" target="_blank">
+							<iframe
+								:src="project.link"
+								width="100%"
+								height="440"
+								style="
+									border: 0;
+									pointer-events: none;
+									width: 200%;
+									height: 440px;
+									display: block;
+									transform: scale(0.5);
+									transform-origin: top left;
+									overflow: hidden;
+								"
+								scrolling="no"
+								:title="project.name + ' Preview'"
+								loading="lazy"
+							>
+							</iframe>
+						</ULink>
+					</div>
+				</div>
 
 				<p
 					class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4"
