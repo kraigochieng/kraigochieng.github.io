@@ -46,11 +46,11 @@ const projects = [
 	<UContainer class="py-12 space-y-8">
 		<h2>Projects</h2>
 
-		<div class="lg:grid lg:grid-cols-2">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 			<UCard
 				v-for="project in projects"
 				:key="project.slug"
-				class="py-4 hover:shadow-md transition-all duration-200"
+				class=" hover:shadow-md transition-all duration-200"
 			>
 				<template #header>
 					<div class="flex items-center justify-between">
