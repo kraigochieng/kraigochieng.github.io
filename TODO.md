@@ -1,19 +1,16 @@
 # To Do
 
 -   [ ] add scroll to top button
--   [ ] update medilinda section
 -   [ ] figure outhow to display projects sections
 -   [ ] figure out how to show tools/skills/languages
 -   [ ] figure out how to show hackathons
--   [ ] use badges for project type, skills, tools
 -   [ ] how to have a website preview
 -   [ ] ensure mobile responsive
 -   [ ] reduce content amount in projects. figure it out
 -   [ ] decide on link colour. add it through tailwind assets main css
--   [ ] add blogs section, use markdown for this
+
 -   [ ] add tests to code
 -   [ ] add process of testing to docker build
--   [ ] add gradient descent visualiser to project
 
 # In Progress
 
@@ -26,3 +23,7 @@
 # Done
 
 -   [x] add diamond price predictor to my projects
+-   [x] add blogs section, use markdown for this
+-   [x] add gradient descent visualiser to project
+-   [x] use badges for project type, skills, tools
+-   [x] update medilinda section
