@@ -28,6 +28,7 @@ const dropdownItems = ref<DropdownMenuItem[]>([
 		{ label: "Home", icon: "i-lucide-home", to: "/" },
 		{ label: "Projects", icon: "i-lucide-code", to: "/projects" },
 		{ label: "Blogs", icon: "i-lucide-book-open", to: "/blogs" },
+		{ label: "Certifications", icon: "i-lucide-award", to: "/certifications" },
 	],
 	[
 		{
