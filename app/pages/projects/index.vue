@@ -37,16 +37,16 @@ const projects = [
 		link: "https://diamond-price-predictor-coral.vercel.app",
 		github: "https://github.com/kraigochieng/diamond-price-predictor",
 	},
-	{
-		name: "Image to ASCII Art Converter",
-		slug: "image-to-ascii",
-		description:
-			"Creative digital tool for designers and developers to instantly convert photos into retro-style ASCII art, supporting grayscale and color outputs for branding, terminals, and fun applications.",
-		skills: ["Creative Coding", "Image Processing", "CLI Tools"],
-		tools: ["Python", "Pillow", "NumPy"],
-		link: "https://image-to-ascii-2.onrender.com",
-		github: "https://github.com/kraigochieng/image_to_ascii_2",
-	},
+	// {
+	// 	name: "Image to ASCII Art Converter",
+	// 	slug: "image-to-ascii",
+	// 	description:
+	// 		"Creative digital tool for designers and developers to instantly convert photos into retro-style ASCII art, supporting grayscale and color outputs for branding, terminals, and fun applications.",
+	// 	skills: ["Creative Coding", "Image Processing", "CLI Tools"],
+	// 	tools: ["Python", "Pillow", "NumPy"],
+	// 	link: "https://image-to-ascii-2.onrender.com",
+	// 	github: "https://github.com/kraigochieng/image_to_ascii_2",
+	// },
 ];
 </script>
 
