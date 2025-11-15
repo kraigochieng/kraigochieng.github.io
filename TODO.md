@@ -18,7 +18,8 @@
 -   [ ] add sections for
     -   [ ] certifications
     -   [ ] hackathons
-    -   [ ] links to kaggle, zindi
+    -   [ ] links to kaggle, zindi (might not be needed, unless something good is really done)
+-   [x] make the portfolio links go directly to github, i do not need to explain the project again. have the github link and then the live application link just there. this is to easen the portfolio stuff
 
 # Done
 
