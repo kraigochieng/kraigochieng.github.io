@@ -11,14 +11,14 @@ const projects = [
 		github: "https://github.com/kraigochieng/medilinda",
 	},
 	{
-		name: "Gradient Descent Visualiser",
-		slug: "gradient-descent-visualiser",
+		name: "Jumbo E-Commerce Operations Dashboard",
+		slug: "medilinda",
 		description:
-			"Interactive learning tool that helps students, educators, and data teams understand how machine learning models optimize predictions through live, visual training simulations.",
-		skills: ["Machine Learning", "Visualization", "Web Development"],
-		tools: ["Nuxt", "FastAPI", "Python", "D3.js", "Tailwind CSS"],
-		link: "https://gradient-descent-visualiser.vercel.app",
-		github: "https://github.com/kraigochieng/gradient-descent-visualiser",
+			"Optimizing global e-commerce operations through deep-dive analysis of revenue, returns, and shipping efficiency. ",
+		skills: ["Dashboards", "Sales Analysis"],
+		tools: ["Python", "PostgreSQL", "Streamlit"],
+		link: "https://ecommerce-sales-analysis.streamlit.app/",
+		github: "https://github.com/kraigochieng/ecommerce-sales-analysis",
 	},
 	{
 		name: "Diamond Price Predictor",
@@ -36,6 +36,16 @@ const projects = [
 		],
 		link: "https://diamond-price-predictor-coral.vercel.app",
 		github: "https://github.com/kraigochieng/diamond-price-predictor",
+	},
+	{
+		name: "Gradient Descent Visualiser",
+		slug: "gradient-descent-visualiser",
+		description:
+			"Interactive learning tool that helps students, educators, and data teams understand how machine learning models optimize predictions through live, visual training simulations.",
+		skills: ["Machine Learning", "Visualization", "Web Development"],
+		tools: ["Nuxt", "FastAPI", "Python", "D3.js", "Tailwind CSS"],
+		link: "https://gradient-descent-visualiser.vercel.app",
+		github: "https://github.com/kraigochieng/gradient-descent-visualiser",
 	},
 	// {
 	// 	name: "Image to ASCII Art Converter",
