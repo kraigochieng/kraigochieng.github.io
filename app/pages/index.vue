@@ -78,7 +78,7 @@ const links = [
 	},
 ];
 
-useHead({ title: "Kraig Ochieng | Data scientist and Web Developer" });
+useHead({ title: "Kraig Ochieng | Data scientist and Data Analyst" });
 </script>
 
 <style scoped>
