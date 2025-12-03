@@ -5,9 +5,9 @@
 		>
 			<h1 class="text-5xl font-bold mb-2">Kraig Ochieng</h1>
 			<h2 class="text-xl text-muted-foreground">
-				{{ $t("data_scientist") }} / {{ $t("web_developer") }}
+				{{ $t("data_scientist") }} / {{ $t("data_analyst") }}
 			</h2>
-			<p>backend (data) focused dev with minimal web interfaces</p>
+			<p>Data driven recommendations using <UKbd>.py</UKbd>, <UKbd>.sql</UKbd> and <UKbd>.ts</UKbd> </p>
 			<div class="flex flex-wrap justify-center items-center gap-4 mt-6">
 				<UButton
 					v-for="link in links"
