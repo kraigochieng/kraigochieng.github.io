@@ -37,16 +37,16 @@ const projects = [
 		link: "https://diamond-price-predictor-coral.vercel.app",
 		github: "https://github.com/kraigochieng/diamond-price-predictor",
 	},
-	{
-		name: "Gradient Descent Visualiser",
-		slug: "gradient-descent-visualiser",
-		description:
-			"Interactive learning tool that helps students, educators, and data teams understand how machine learning models optimize predictions through live, visual training simulations.",
-		skills: ["Machine Learning", "Visualization", "Web Development"],
-		tools: ["Nuxt", "FastAPI", "Python", "D3.js", "Tailwind CSS"],
-		link: "https://gradient-descent-visualiser.vercel.app",
-		github: "https://github.com/kraigochieng/gradient-descent-visualiser",
-	},
+	// {
+	// 	name: "Gradient Descent Visualiser",
+	// 	slug: "gradient-descent-visualiser",
+	// 	description:
+	// 		"Interactive learning tool that helps students, educators, and data teams understand how machine learning models optimize predictions through live, visual training simulations.",
+	// 	skills: ["Machine Learning", "Visualization", "Web Development"],
+	// 	tools: ["Nuxt", "FastAPI", "Python", "D3.js", "Tailwind CSS"],
+	// 	link: "https://gradient-descent-visualiser.vercel.app",
+	// 	github: "https://github.com/kraigochieng/gradient-descent-visualiser",
+	// },
 	// {
 	// 	name: "Image to ASCII Art Converter",
 	// 	slug: "image-to-ascii",
