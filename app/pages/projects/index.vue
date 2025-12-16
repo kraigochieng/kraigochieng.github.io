@@ -99,7 +99,7 @@ const projects = [
 								icon="i-lucide-globe"
 								:label="`Live`"
 								variant="ghost"
-								:to="project.github"
+								:to="project.link"
 								target="_blank"
 								class="flex-1"
 							/>
