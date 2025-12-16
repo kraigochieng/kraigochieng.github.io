@@ -1,4 +1,15 @@
 <script setup lang="ts">
+useHead({
+	title: "Projects – Kraig Ochieng",
+	meta: [
+		{
+			name: "description",
+			content:
+				"Data Science, Data Analysis and Data  Engineering projects by Kraig Ochieng",
+		},
+	],
+});
+
 const projects = [
 	{
 		name: "MediLinda",
