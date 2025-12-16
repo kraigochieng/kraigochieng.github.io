@@ -5,7 +5,7 @@ useHead({
 		{
 			name: "description",
 			content:
-				"AI, Machine Learning, and Data Engineering certifications from Huawei, Google, and more.",
+				"AI, Machine Learning, and Data Engineering certifications from Huawei.",
 		},
 	],
 });
