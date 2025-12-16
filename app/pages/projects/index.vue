@@ -57,6 +57,21 @@ const projects = [
 	// 	link: "https://image-to-ascii-2.onrender.com",
 	// 	github: "https://github.com/kraigochieng/image_to_ascii_2",
 	// },
+	{
+		name: "YC Pitch Doctor",
+		slug: "yc-pitch-predictor",
+		description:
+			"Enabling startup founders to craft and finetune pitches by drawing real insights from top 75+ YC companies via an agent.",
+		skills: [
+			"AI Agents",
+			"Workflow Automation",
+			"Vector Databases",
+			"Prompt Engineering",
+		],
+		tools: ["n8n", "Pinecone"],
+		link: "https://kraigochieng.app.n8n.cloud/webhook/33c28bc2-c6bb-4c18-b53f-00bb2aaac41b/chat",
+		github: null,
+	},
 ];
 </script>
 
@@ -77,7 +92,8 @@ const projects = [
 						</h3>
 						<div class="flex">
 							<UButton
-								:key="project.github"
+								v-if="project.link"
+								:key="project.link"
 								color="primary"
 								size="lg"
 								icon="i-lucide-globe"
@@ -89,13 +105,14 @@ const projects = [
 							/>
 
 							<UButton
+								v-if="project.github"
 								:key="project.github"
 								color="primary"
 								size="lg"
 								icon="i-simple-icons-github"
 								variant="ghost"
 								:label="`Github`"
-								:to="project.github"
+								:to="project.link"
 								target="_blank"
 								class="flex-1"
 							/>
