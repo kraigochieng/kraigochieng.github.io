@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-	title: "Certifications – [Your Name]",
+	title: "Certifications – Kraig Ochieng",
 	meta: [
 		{
 			name: "description",
