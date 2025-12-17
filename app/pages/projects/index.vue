@@ -15,7 +15,7 @@ const projects = [
 		name: "MediLinda",
 		slug: "medilinda",
 		description:
-			"Real-time pharmacovigilance platform enabling Kenyan healthcare providers to detect TB drug side effects early, improve patient safety, and trigger instant SMS alerts to medical teams nationwide.",
+			"Pharmacovigilance platform enabling Kenyan healthcare providers to detect TB drug side effects early, improve patient safety, and trigger instant SMS alerts to medical teams nationwide.",
 		skills: ["AI", "Machine Learning", "Healthcare", "Explainable AI"],
 		tools: ["Nuxt", "FastAPI", "Python", "MLflow", "PostgreSQL", "Docker"],
 		link: "https://medilinda.vercel.app",
@@ -35,7 +35,7 @@ const projects = [
 		name: "Diamond Price Predictor",
 		slug: "diamond-price-predictor",
 		description:
-			"Enterprise-grade pricing intelligence tool for jewelers and traders, delivering accurate, real-time diamond valuation with transparent model versioning and audit-ready predictions.",
+			"Pricing intelligence tool for diamond jewelers and traders, delivering diamond valuation with transparent model versioning and audit-ready predictions.",
 		skills: ["AI", "Web Development", "MLOps", "Machine Learning"],
 		tools: [
 			"Nuxt 4",
