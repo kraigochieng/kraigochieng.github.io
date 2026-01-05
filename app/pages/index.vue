@@ -7,7 +7,11 @@
 			<h2 class="text-xl text-muted-foreground">
 				{{ $t("data_scientist") }} / {{ $t("data_analyst") }}
 			</h2>
-			<p>Data driven recommendations using <UKbd>.py</UKbd>, <UKbd>.sql</UKbd> and <UKbd>.ts</UKbd> </p>
+			<!-- <p>Data driven recommendations using <UKbd>.py</UKbd>, <UKbd>.sql</UKbd> and <UKbd>.ts</UKbd> </p> -->
+			<p>
+				Data driven recommendations for Finance, Healthcare and
+				Education
+			</p>
 			<div class="flex flex-wrap justify-center items-center gap-4 mt-6">
 				<UButton
 					v-for="link in links"
