@@ -30,7 +30,7 @@
 						v-if="project.github"
 						color="neutral"
 						size="xs"
-						icon="i-simple-icons-github"
+						icon="i-lucide-github"
 						variant="ghost"
 						:to="project.github"
 						target="_blank"
