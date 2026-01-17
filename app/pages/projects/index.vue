@@ -78,11 +78,11 @@ const projects = [
 	// 	github: "https://github.com/kraigochieng/image_to_ascii_2",
 	// },
 	{
-		name: "YC Pitch Doctor",
+		name: "YC Elevator Pitch Doctor",
 		slug: "yc-pitch-predictor",
 		domain: ["Startups", "Venture Capital"],
 		description:
-			"Enabling startup founders to craft and finetune pitches by drawing real insights from top 75+ YC companies via an agent.",
+			"Enabling startup founders to craft elevator pitches based on top 75+ YC companies via an agent.",
 		skills: [
 			"AI Agents",
 			"Workflow Automation",
