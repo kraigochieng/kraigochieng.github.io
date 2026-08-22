@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { projects, slugsWithDetailPage } from "@/data/projects";
-import { experiences } from "@/data/experience";
 import { certifications } from "@/data/certifications";
-import { profile, whatsappUrl, telUrl, mailtoUrl } from "@/data/profile";
+import { experiences } from "@/data/experience";
+import { mailtoUrl, profile, telUrl, whatsappUrl } from "@/data/profile";
+import { projects, slugsWithDetailPage } from "@/data/projects";
 
 interface FilterItem {
 	label: string;
@@ -55,7 +55,7 @@ const toSelectItems = (list: string[]): FilterItem[] => {
 };
 
 const parseQueryParam = (
-	param: string | string[] | undefined | null
+	param: string | string[] | undefined | null,
 ): string[] => {
 	if (Array.isArray(param)) return param as string[];
 	if (typeof param === "string") return [param];
@@ -67,22 +67,22 @@ const sortOptions = computed(() => [
 	{ label: t("sort_descending"), value: "desc" },
 ]);
 const selectedSort = ref<"asc" | "desc">(
-	route.query.project_sort === "desc" ? "desc" : "asc"
+	route.query.project_sort === "desc" ? "desc" : "asc",
 );
 const selectedDomains = ref<FilterItem[]>(
 	toSelectItems(
-		parseQueryParam(route.query.project_domain as string | string[])
-	)
+		parseQueryParam(route.query.project_domain as string | string[]),
+	),
 );
 const selectedSkills = ref<FilterItem[]>(
 	toSelectItems(
-		parseQueryParam(route.query.project_skills as string | string[])
-	)
+		parseQueryParam(route.query.project_skills as string | string[]),
+	),
 );
 const selectedTools = ref<FilterItem[]>(
 	toSelectItems(
-		parseQueryParam(route.query.project_tools as string | string[])
-	)
+		parseQueryParam(route.query.project_tools as string | string[]),
+	),
 );
 
 watch(
@@ -95,16 +95,14 @@ watch(
 		router.replace({
 			query: {
 				...route.query,
-				project_domain: domainParams.length
-					? domainParams
-					: undefined,
+				project_domain: domainParams.length ? domainParams : undefined,
 				project_skills: skillParams.length ? skillParams : undefined,
 				project_tools: toolParams.length ? toolParams : undefined,
 				project_sort: selectedSort.value,
 			},
 		});
 	},
-	{ deep: true }
+	{ deep: true },
 );
 
 const uniqueDomains = computed(() => {
@@ -153,7 +151,6 @@ const clearFilters = () => {
 	selectedTools.value = [];
 	selectedSort.value = "asc";
 };
-
 </script>
 
 <template>
@@ -201,7 +198,9 @@ const clearFilters = () => {
 				/>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4"
+			>
 				<USelectMenu
 					v-model="selectedSort"
 					:items="sortOptions"
