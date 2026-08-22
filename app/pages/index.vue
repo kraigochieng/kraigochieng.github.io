@@ -8,6 +8,9 @@ const localePath = useLocalePath();
 const route = useRoute();
 const router = useRouter();
 
+// Single source of truth for the phone number, digits only (no "+", no spaces).
+const phoneNumber = "254792701195";
+
 const links = computed(() => [
 	{
 		label: "GitHub",
@@ -18,6 +21,21 @@ const links = computed(() => [
 		label: "LinkedIn",
 		href: "https://www.linkedin.com/in/kraig-ochieng-911121215/",
 		icon: "i-lucide-linkedin",
+	},
+	{
+		label: "WhatsApp",
+		href: `https://wa.me/${phoneNumber}`,
+		icon: "i-simple-icons-whatsapp",
+	},
+	{
+		label: t("phone_label"),
+		href: `tel:+${phoneNumber}`,
+		icon: "i-lucide-phone",
+	},
+	{
+		label: t("email_label"),
+		href: "mailto:kraigochieng@gmail.com",
+		icon: "i-lucide-mail",
 	},
 	{
 		label: t("buy_me_coffee"),
@@ -256,11 +274,14 @@ const certifications = [
 			</div>
 		</div>
 
-		<section id="projects" class="anchor-section py-12">
+		<section id="projects" class="anchor-section py-6">
 			<div
-				class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6"
+				class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4"
 			>
-				<h2 class="mb-0">{{ t("projects") }} ({{ filteredProjects.length }})</h2>
+				<h2 class="mb-0 flex items-center gap-2">
+					<UIcon name="i-lucide-code" class="size-6" />
+					{{ t("projects") }} ({{ filteredProjects.length }})
+				</h2>
 
 				<UButton
 					v-if="
@@ -277,7 +298,7 @@ const certifications = [
 				/>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
 				<USelectMenu
 					v-model="selectedSort"
 					:items="sortOptions"
@@ -309,7 +330,7 @@ const certifications = [
 
 			<div
 				v-if="filteredProjects.length > 0"
-				class="grid grid-cols-1 lg:grid-cols-2 gap-8"
+				class="grid grid-cols-1 lg:grid-cols-2 gap-4"
 			>
 				<ProjectCard
 					v-for="project in filteredProjects"
@@ -335,7 +356,10 @@ const certifications = [
 		</section>
 
 		<section id="certifications" class="anchor-section py-12">
-			<h2>{{ t("certifications_heading") }}</h2>
+			<h2 class="flex items-center gap-2">
+				<UIcon name="i-lucide-award" class="size-6" />
+				{{ t("certifications_heading") }}
+			</h2>
 
 			<ul class="cert-list">
 				<li v-for="cert in certifications" :key="cert.name">
