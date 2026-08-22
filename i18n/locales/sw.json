@@ -10,7 +10,7 @@
 	"nav_certifications": "Vyeti",
 	"language_label": "Lugha",
 	"dark_mode": "Hali ya Giza",
-	"portfolio_tooltip": "Tovuti ya Kraig Ochieng",
+	"portfolio_tooltip": "Tovuti ya {name}",
 	"theme_switch_to_light": "Badili hadi hali nyepesi",
 	"theme_switch_to_dark": "Badili hadi hali ya giza",
 
