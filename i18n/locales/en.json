@@ -15,6 +15,8 @@
     "theme_switch_to_dark": "Switch to dark mode",
 
     "buy_me_coffee": "Buy me a Coffee",
+    "email_label": "Email",
+    "phone_label": "Call",
 
     "clear_filters": "Clear Filters",
     "sort_by": "Sort By",
@@ -25,6 +27,7 @@
     "tools_placeholder": "Tools",
 
     "live_demo_aria": "Live Demo",
+    "live_preview_unavailable": "Live Preview Cannot Be Shown",
     "github_repo_aria": "GitHub Repository",
     "no_projects_match": "No projects match your current filters.",
     "reset_filters": "Reset all filters",

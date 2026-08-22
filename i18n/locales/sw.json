@@ -14,6 +14,8 @@
 	"theme_switch_to_dark": "Badili hadi hali ya giza",
 
 	"buy_me_coffee": "Ninunulie Kahawa",
+	"email_label": "Barua pepe",
+	"phone_label": "Piga Simu",
 
 	"clear_filters": "Futa Vichujio",
 	"sort_by": "Panga Kwa",
@@ -24,6 +26,7 @@
 	"tools_placeholder": "Zana",
 
 	"live_demo_aria": "Onyesho la Moja kwa Moja",
+	"live_preview_unavailable": "Onyesho la Moja kwa Moja Halipatikani",
 	"github_repo_aria": "Hazina ya GitHub",
 	"no_projects_match": "Hakuna miradi inayolingana na vichujio vyako vya sasa.",
 	"reset_filters": "Weka upya vichujio vyote",
