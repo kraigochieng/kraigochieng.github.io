@@ -4,9 +4,11 @@
 	>
 		<Logo class="" />
 		<Navbar class="hidden md:block" />
-		<div class="flex space-x-2 justify-end">
-			<Locale />
-			<UColorModeButton size="xl" />
+		<div class="flex items-center justify-end gap-2">
+			<div class="hidden md:flex items-center gap-2">
+				<Locale />
+				<UColorModeButton size="xl" />
+			</div>
 			<UDropdownMenu :items="dropdownItems" size="xl" class="md:hidden">
 				<UButton
 					icon="i-lucide-menu"
@@ -24,8 +26,16 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from "@nuxt/ui";
 
-const { t } = useI18n();
+const { t, setLocale } = useI18n();
 const localePath = useLocalePath();
+const colorMode = useColorMode();
+
+const isDark = computed({
+	get: () => colorMode.value === "dark",
+	set: (value: boolean) => {
+		colorMode.preference = value ? "dark" : "light";
+	},
+});
 
 const dropdownItems = computed<DropdownMenuItem[]>(() => [
 	[
@@ -43,10 +53,22 @@ const dropdownItems = computed<DropdownMenuItem[]>(() => [
 	],
 	[
 		{
-			label: "GitHub",
-			icon: "i-lucide-github",
-			to: "https://github.com/kraigochieng",
-			target: "_blank",
+			label: t("language_label"),
+			icon: "i-lucide-languages",
+			children: [
+				{ label: t("English"), onSelect: () => setLocale("en") },
+				{ label: t("Swahili"), onSelect: () => setLocale("sw") },
+			],
+		},
+		{
+			label: t("dark_mode"),
+			icon: isDark.value ? "i-lucide-moon" : "i-lucide-sun",
+			type: "checkbox",
+			checked: isDark.value,
+			onSelect: (e: Event) => e.preventDefault(),
+			onUpdateChecked: (checked: boolean) => {
+				isDark.value = checked;
+			},
 		},
 	],
 ]);
