@@ -26,7 +26,7 @@ export default defineNuxtConfig({
 		defaultLocale: "en",
 		locales: [
 			{ code: "en", name: "English", file: "en.json" },
-			// { code: "sw", name: "Swahili", file: "sw.json" },
+			{ code: "sw", name: "Swahili", file: "sw.json" },
 		],
 	},
 	icon: {
