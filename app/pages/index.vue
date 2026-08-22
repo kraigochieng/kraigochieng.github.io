@@ -279,37 +279,13 @@ const clearFilters = () => {
 				{{ t("certifications_heading") }}
 			</h2>
 
-			<ul class="cert-list">
-				<li v-for="cert in certifications" :key="cert.name">
-					<strong>{{ cert.name }}</strong> — {{ cert.issuer }}
-					<template v-if="cert.expires">
-						({{ cert.issued }}–{{ cert.expires }})
-					</template>
-					<template v-else>
-						({{ t("cert_issued") }} {{ cert.issued }})
-					</template>
-					<template v-if="cert.credentialId">
-						<br />
-						ID: {{ cert.credentialId }}
-					</template>
-					<br />
-					<a :href="cert.link" target="_blank"
-						>{{ t("view_credential") }}</a
-					>
-				</li>
-			</ul>
+			<div class="space-y-6">
+				<CertificationCard
+					v-for="cert in certifications"
+					:key="cert.name"
+					:certification="cert"
+				/>
+			</div>
 		</section>
 	</div>
 </template>
-
-<style scoped>
-@reference "assets/css/main.css";
-
-.cert-list li {
-	@apply list-none mb-6 pb-6 border-b border-black dark:border-[#c0c0c0];
-}
-
-.cert-list li:last-child {
-	@apply border-b-0;
-}
-</style>
