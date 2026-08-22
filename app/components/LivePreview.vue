@@ -1,7 +1,7 @@
 <template>
 	<div
 		v-if="props.url"
-		class="mb-4 rounded overflow-hidden border border-gray-200 dark:border-gray-700"
+		class="mb-4 rounded overflow-hidden border-2 border-black dark:border-[#c0c0c0]"
 	>
 		<div style="overflow: hidden; width: 100%; height: 220px">
 			<ULink :to="props.url" target="_blank">
