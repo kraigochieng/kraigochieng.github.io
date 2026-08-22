@@ -47,22 +47,22 @@
 			v-if="project.link"
 			:url="project.link"
 			:title="`${project.name} – live demo`"
-			class="mb-4"
+			class="mb-3"
 		/>
 
 		<p
-			class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 flex-grow"
+			class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 flex-grow"
 		>
 			{{ project.description }}
 		</p>
 
-		<div class="space-y-4 mt-auto">
+		<div class="space-y-3 mt-auto">
 			<div v-if="project.skills.length">
 				<span
-					class="text-xs uppercase font-bold text-gray-400 mb-2 block"
+					class="text-xs uppercase font-bold text-gray-400 mb-1 block"
 					>{{ t("skills_placeholder") }}</span
 				>
-				<div class="flex flex-wrap gap-2">
+				<div class="flex flex-wrap gap-1.5">
 					<UBadge
 						v-for="skill in project.skills"
 						:key="skill"
@@ -77,10 +77,10 @@
 
 			<div v-if="project.tools.length">
 				<span
-					class="text-xs uppercase font-bold text-gray-400 mb-2 block"
+					class="text-xs uppercase font-bold text-gray-400 mb-1 block"
 					>{{ t("tools_placeholder") }}</span
 				>
-				<div class="flex flex-wrap gap-2">
+				<div class="flex flex-wrap gap-1.5">
 					<UBadge
 						v-for="tool in project.tools"
 						:key="tool"
