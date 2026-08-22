@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { projects, slugsWithDetailPage } from "@/data/projects";
+import { experiences } from "@/data/experience";
+import { certifications } from "@/data/certifications";
+import { profile, whatsappUrl, telUrl, mailtoUrl } from "@/data/profile";
+
 interface FilterItem {
 	label: string;
 }
@@ -8,137 +13,42 @@ const localePath = useLocalePath();
 const route = useRoute();
 const router = useRouter();
 
-// Single source of truth for the phone number, digits only (no "+", no spaces).
-const phoneNumber = "254792701195";
-
 const links = computed(() => [
 	{
 		label: "GitHub",
-		href: "https://github.com/kraigochieng",
+		href: profile.githubUrl,
 		icon: "i-lucide-github",
 	},
 	{
 		label: "LinkedIn",
-		href: "https://www.linkedin.com/in/kraig-ochieng-911121215/",
+		href: profile.linkedinUrl,
 		icon: "i-lucide-linkedin",
 	},
 	{
 		label: "WhatsApp",
-		href: `https://wa.me/${phoneNumber}`,
+		href: whatsappUrl,
 		icon: "i-simple-icons-whatsapp",
 	},
 	{
 		label: t("phone_label"),
-		href: `tel:+${phoneNumber}`,
+		href: telUrl,
 		icon: "i-lucide-phone",
 	},
 	{
 		label: t("email_label"),
-		href: "mailto:kraigochieng@gmail.com",
+		href: mailtoUrl,
 		icon: "i-lucide-mail",
 	},
 	{
 		label: t("buy_me_coffee"),
-		href: "https://coff.ee/kraigochieng",
+		href: profile.buyMeACoffeeUrl,
 		icon: "i-lucide-coffee",
 	},
 ]);
 
-useHead({ title: computed(() => `Kraig Ochieng | ${t("job_title")}`) });
-
-// PROJECTS
-// Slugs that have a dedicated /projects/<slug> writeup page.
-const slugsWithDetailPage = [
-	"medilinda",
-	"diamond-price-predictor",
-	"gradient-descent-visualiser",
-	"image-to-ascii",
-];
-
-const projects = [
-	{
-		name: "MediLinda",
-		slug: "medilinda",
-		domain: ["Healthcare"],
-		description:
-			"Pharmacovigilance platform enabling Kenyan healthcare providers to detect TB drug side effects early, improve patient safety, and trigger instant SMS alerts to medical teams nationwide.",
-		skills: ["AI", "Machine Learning", "Explainable AI"],
-		tools: ["Nuxt", "FastAPI", "Python", "MLflow", "PostgreSQL", "Docker"],
-		link: "https://medilinda.vercel.app",
-		github: "https://github.com/kraigochieng/medilinda",
-	},
-	{
-		name: "Jumbo E-Commerce Dashboard",
-		slug: "jumbo-ecommerce",
-		domain: ["E-Commerce", "Logistics"],
-		description:
-			"Optimizing global e-commerce operations through deep-dive analysis of revenue, returns, and shipping efficiency.",
-		skills: ["Dashboards"],
-		tools: ["Python", "PostgreSQL", "Streamlit"],
-		link: "https://ecommerce-sales-analysis.streamlit.app/",
-		github: "https://github.com/kraigochieng/ecommerce-sales-analysis",
-		// Streamlit Community Cloud app has gone to sleep from inactivity.
-		previewBlocked: true,
-	},
-	// {
-	// 	name: "Diamond Price Predictor",
-	// 	slug: "diamond-price-predictor",
-	// 	domain: ["Retail", "Finance"],
-	// 	description:
-	// 		"Pricing intelligence tool for diamond jewelers and traders, delivering diamond valuation with transparent model versioning and audit-ready predictions.",
-	// 	skills: ["AI", "Web Development", "MLOps", "Machine Learning"],
-	// 	tools: [
-	// 		"Nuxt 4",
-	// 		"FastAPI",
-	// 		"MLflow",
-	// 		"scikit-learn",
-	// 		"Docker",
-	// 		"Databricks",
-	// 	],
-	// 	link: "https://diamond-price-predictor-coral.vercel.app",
-	// 	github: "https://github.com/kraigochieng/diamond-price-predictor",
-	// },
-	// {
-	// 	name: "Gradient Descent Visualiser",
-	// 	slug: "gradient-descent-visualiser",
-	// 	domain: ["Education", "Data Science"],
-	// 	description:
-	// 		"Interactive learning tool that helps students, educators, and data teams understand how machine learning models optimize predictions through live, visual training simulations.",
-	// 	skills: ["Machine Learning", "Visualization", "Web Development"],
-	// 	tools: ["Nuxt", "FastAPI", "Python", "D3.js", "Tailwind CSS"],
-	// 	link: "https://gradient-descent-visualiser.vercel.app",
-	// 	github: "https://github.com/kraigochieng/gradient-descent-visualiser",
-	// },
-	// {
-	// 	name: "Image to ASCII Art Converter",
-	// 	slug: "image-to-ascii",
-	// 	domain: ["Creative Coding", "Design Tools"],
-	// 	description:
-	// 		"Creative digital tool for designers and developers to instantly convert photos into retro-style ASCII art, supporting grayscale and color outputs for branding, terminals, and fun applications.",
-	// 	skills: ["Creative Coding", "Image Processing", "CLI Tools"],
-	// 	tools: ["Python", "Pillow", "NumPy"],
-	// 	link: "https://image-to-ascii-2.onrender.com",
-	// 	github: "https://github.com/kraigochieng/image_to_ascii_2",
-	// },
-	{
-		name: "YC Elevator Pitch Doctor",
-		slug: "yc-pitch-predictor",
-		domain: ["Startups", "Venture Capital"],
-		description:
-			"Enabling startup founders to craft elevator pitches based on top 75+ YC companies via an agent.",
-		skills: [
-			"AI Agents",
-			"Workflow Automation",
-			"Vector Databases",
-			"Prompt Engineering",
-		],
-		tools: ["n8n", "Pinecone"],
-		link: "https://kraigochieng.app.n8n.cloud/webhook/33c28bc2-c6bb-4c18-b53f-00bb2aaac41b/chat",
-		github: null,
-		// n8n webhook currently returns 404 - workflow needs reactivating.
-		previewBlocked: true,
-	},
-];
+useHead({
+	title: computed(() => `${profile.name} | ${t("job_title")}`),
+});
 
 const toSelectItems = (list: string[]): FilterItem[] => {
 	return list.map((item) => ({ label: item, value: item }));
@@ -244,131 +154,6 @@ const clearFilters = () => {
 	selectedSort.value = "asc";
 };
 
-// EXPERIENCE
-const experiences = [
-	{
-		role: "Artificial Intelligence Engineer",
-		company: "Robin",
-		employmentType: "Full-time",
-		start: "Jan 2026",
-		end: null,
-		duration: "8 mos",
-		location: "Nairobi, Kenya",
-		workType: "Hybrid",
-		achievements: [
-			"Engineered a custom newsletter pipeline in n8n serving 5+ clients, compressing a multi-person, multi-hour workflow into a 10-minute end-to-end process",
-			"Automated workflow run logging to Google Sheets across 5+ client workflows, giving executives a clear breakdown of how the AI scored and selected articles",
-		],
-		skills: ["Artificial Intelligence (AI)", "Workflow Automation"],
-	},
-	{
-		role: "Data Engineer",
-		company: "IntelliSOFT Consulting Ltd",
-		employmentType: "Contract",
-		start: "Feb 2026",
-		end: "Jun 2026",
-		duration: "5 mos",
-		location: "Nairobi County, Kenya",
-		workType: "Remote",
-		achievements: [
-			"Engineered a data ingestion pipeline using Polars that enabled a contraceptive intelligence platform to import client spreadsheets directly into the web application",
-		],
-		skills: ["Databases", "Python (Programming Language)"],
-	},
-	{
-		role: "AI Developer",
-		company: "Chanzo Technologies",
-		employmentType: "Full-time",
-		start: "Feb 2025",
-		end: "Feb 2026",
-		duration: "1 yr 1 mo",
-		location: "Nairobi County, Kenya",
-		workType: "Hybrid",
-		achievements: [
-			"Automated career recommendations to parents of 500+ students by engineering a Text-to-SQL Agent using LangGraph and FastAPI to deliver.",
-			"Reduced agent errors by 80% and cut query generation time by 60% by redesigning SQL views to flatten complex relational data.",
-			"Achieved 95%+ precision in fraud detection by implementing a real-time system utilizing Benford's Law, Isolation Forest, and text anomaly detection.",
-			"Slashed false positives by 75% by refining rule-based logic for duplicate transactions and unusual timestamp patterns.",
-			"Reduced debugging time to <10 seconds by implementing comprehensive agent tracing via LangSmith",
-		],
-		skills: ["Python (Programming Language)", "Prompt Engineering"],
-	},
-	{
-		role: "Software Developer",
-		company: "AssistiveMath",
-		employmentType: "Part-time",
-		start: "Dec 2024",
-		end: "Dec 2025",
-		duration: "1 yr 1 mo",
-		location: "Nairobi County, Kenya",
-		workType: "Remote",
-		achievements: [
-			"Developed core system features using Nuxt showcased in the pitch that helped the team win Top Assistive Tech Innovation at the 6th Inclusive Africa Conference.",
-		],
-		skills: ["Assistive Technology", "Web Application Development"],
-	},
-	{
-		role: "Software Engineer Intern",
-		company: "IntelliSOFT Consulting Ltd",
-		employmentType: "Internship",
-		start: "Jul 2024",
-		end: "Sep 2024",
-		duration: "3 mos",
-		location: "Nairobi County, Kenya",
-		workType: "On-site",
-		achievements: [
-			"Accelerated 3 project timelines by 20% by developing FHIR Implementation Guides and HL7 artifacts (FSH)",
-			"Improved data interoperability for a 5-developer team by creating standardized OpenMRS data dictionaries.",
-			"Optimised developer onboarding for OpenMRS by 1 month for 1 developer, speeding up development work",
-		],
-		skills: [
-			"Web Development",
-			"Fast Healthcare Interoperability Resources (FHIR)",
-		],
-		links: [
-			{
-				label: "HIV-FHIR-IG",
-				href: "https://github.com/IntelliSOFT-Consulting/HIV-FHIR-IG",
-			},
-			{
-				label: "ChanjoKe-FHIR-IG",
-				href: "https://github.com/IntelliSOFT-Consulting/ChanjoKe-FHIR-IG",
-			},
-			{
-				label: "ChanjoKe-HIE",
-				href: "https://github.com/IntelliSOFT-Consulting/ChanjoKe-HIE",
-			},
-		],
-	},
-	{
-		role: "Software Engineer Intern",
-		company: "IntelliSOFT Consulting Ltd",
-		employmentType: "Internship",
-		start: "Jul 2023",
-		end: "Oct 2023",
-		duration: "4 mos",
-		location: "Nairobi County, Kenya",
-		workType: null,
-		achievements: [
-			"Customised an Odoo module using Python delivering custom services for one of the company clients",
-			"Increased my knowledge in Docker for local development",
-			"Increased my knowledge in Git for team collaboration",
-		],
-		skills: ["Fast Healthcare Interoperability Resources (FHIR)", "OpenMRS"],
-	},
-];
-
-// CERTIFICATIONS
-const certifications = [
-	{
-		name: "HCIA-AI (Huawei Certified ICT Associate – Artificial Intelligence)",
-		issuer: "Huawei",
-		issued: "Nov 2024",
-		expires: "Nov 2027",
-		credentialId: "010102001441809658772554048",
-		link: "https://www.linkedin.com/in/kraig-ochieng-911121215/overlay/1731924227444/single-media-viewer/?type=DOCUMENT&profileId=ACoAADZNCd0BDDg_4QrhhEHVwuFlq5cOR2qAcb0",
-	},
-];
 </script>
 
 <template>
