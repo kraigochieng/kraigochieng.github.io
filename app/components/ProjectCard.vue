@@ -48,6 +48,7 @@
 			:url="project.link"
 			:title="`${project.name} – live demo`"
 			:blocked="project.previewBlocked"
+			:image="project.previewImage"
 			class="mb-3"
 		/>
 

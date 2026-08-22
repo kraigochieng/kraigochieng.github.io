@@ -8,6 +8,9 @@ export interface Project {
 	link: string;
 	github: string | null;
 	previewBlocked?: boolean;
+	// Path to a manually-captured screenshot (e.g. "/projects/medilinda.png"),
+	// preferred over the live Microlink screenshot when set.
+	previewImage?: string;
 }
 
 export interface Experience {

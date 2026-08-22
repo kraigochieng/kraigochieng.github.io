@@ -19,29 +19,20 @@
 				>{{ t("live_demo_aria") }}</a
 			>
 		</div>
-		<div v-else style="overflow: hidden; width: 100%; height: 220px">
-			<ULink :to="props.url" target="_blank">
-				<iframe
-					:src="props.url"
-					width="100%"
-					height="440"
-					style="
-						border: 0;
-						pointer-events: none;
-						width: 200%;
-						height: 440px;
-						display: block;
-						transform: scale(0.5);
-						transform-origin: top left;
-						overflow: hidden;
-					"
-					scrolling="no"
-					:title="props.title ?? 'Live Preview'"
-					loading="lazy"
-				>
-				</iframe>
-			</ULink>
-		</div>
+		<a
+			v-else
+			:href="props.url"
+			target="_blank"
+			class="block"
+			style="height: 220px"
+		>
+			<img
+				:src="props.image || screenshotUrl"
+				:alt="props.title ?? 'Live preview'"
+				loading="lazy"
+				class="w-full h-full object-cover object-top"
+			/>
+		</a>
 	</div>
 </template>
 
@@ -50,18 +41,26 @@
  * Props
  * -------------------------------------------------
  * url      – the site you want to preview (required)
- * title    – alt-text / aria-label for the iframe
- * height   – height of the preview box (default 260px)
- * loading  – "lazy" | "eager" (default lazy)
- * blocked  – skip the iframe and show a fallback message instead
+ * title    – alt text for the screenshot
+ * blocked  – skip the screenshot and show a fallback message instead
+ * image    – a manually-captured screenshot path, preferred over the live
+ *            Microlink screenshot when set (avoids "site is asleep" shots)
  */
 const props = defineProps<{
 	url: string;
 	title?: string;
-	height?: string;
-	loading?: "lazy" | "eager";
 	blocked?: boolean;
+	image?: string;
 }>();
 
 const { t } = useI18n();
+
+// Fallback screenshot service instead of an <iframe>, so we're never at the
+// mercy of a site's X-Frame-Options/CSP framing policy - just a plain image.
+const screenshotUrl = computed(
+	() =>
+		`https://api.microlink.io/?url=${encodeURIComponent(
+			props.url
+		)}&screenshot=true&meta=false&embed=screenshot.url`
+);
 </script>

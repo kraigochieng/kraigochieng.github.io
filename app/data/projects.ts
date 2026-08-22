@@ -19,6 +19,7 @@ export const projects: Project[] = [
 		tools: ["Nuxt", "FastAPI", "Python", "MLflow", "PostgreSQL", "Docker"],
 		link: "https://medilinda.vercel.app",
 		github: "https://github.com/kraigochieng/medilinda",
+		previewImage: "/projects/medilinda.png",
 	},
 	{
 		name: "Jumbo E-Commerce Dashboard",
@@ -30,8 +31,7 @@ export const projects: Project[] = [
 		tools: ["Python", "PostgreSQL", "Streamlit"],
 		link: "https://ecommerce-sales-analysis.streamlit.app/",
 		github: "https://github.com/kraigochieng/ecommerce-sales-analysis",
-		// Streamlit Community Cloud app has gone to sleep from inactivity.
-		previewBlocked: true,
+		previewImage: "/projects/jumbo-ecommerce.png",
 	},
 	// {
 	// 	name: "Diamond Price Predictor",
