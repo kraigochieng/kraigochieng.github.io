@@ -8,7 +8,7 @@
 		</p> -->
 		<p
 			@mouseup="router.push(localePath('/'))"
-			class="italic text-2xl font-semibold cursor-pointer whitespace-nowrap"
+			class="italic font-semibold cursor-pointer truncate max-w-[8rem] text-lg sm:max-w-none sm:text-2xl"
 		>
 			Kraig Ochieng
 		</p>
