@@ -244,6 +244,120 @@ const clearFilters = () => {
 	selectedSort.value = "asc";
 };
 
+// EXPERIENCE
+const experiences = [
+	{
+		role: "Artificial Intelligence Engineer",
+		company: "Robin",
+		employmentType: "Full-time",
+		start: "Jan 2026",
+		end: null,
+		duration: "8 mos",
+		location: "Nairobi, Kenya",
+		workType: "Hybrid",
+		achievements: [
+			"Engineered a custom newsletter pipeline in n8n serving 5+ clients, compressing a multi-person, multi-hour workflow into a 10-minute end-to-end process",
+			"Automated workflow run logging to Google Sheets across 5+ client workflows, giving executives a clear breakdown of how the AI scored and selected articles",
+		],
+		skills: ["Artificial Intelligence (AI)", "Workflow Automation"],
+	},
+	{
+		role: "Data Engineer",
+		company: "IntelliSOFT Consulting Ltd",
+		employmentType: "Contract",
+		start: "Feb 2026",
+		end: "Jun 2026",
+		duration: "5 mos",
+		location: "Nairobi County, Kenya",
+		workType: "Remote",
+		achievements: [
+			"Engineered a data ingestion pipeline using Polars that enabled a contraceptive intelligence platform to import client spreadsheets directly into the web application",
+		],
+		skills: ["Databases", "Python (Programming Language)"],
+	},
+	{
+		role: "AI Developer",
+		company: "Chanzo Technologies",
+		employmentType: "Full-time",
+		start: "Feb 2025",
+		end: "Feb 2026",
+		duration: "1 yr 1 mo",
+		location: "Nairobi County, Kenya",
+		workType: "Hybrid",
+		achievements: [
+			"Automated career recommendations to parents of 500+ students by engineering a Text-to-SQL Agent using LangGraph and FastAPI to deliver.",
+			"Reduced agent errors by 80% and cut query generation time by 60% by redesigning SQL views to flatten complex relational data.",
+			"Achieved 95%+ precision in fraud detection by implementing a real-time system utilizing Benford's Law, Isolation Forest, and text anomaly detection.",
+			"Slashed false positives by 75% by refining rule-based logic for duplicate transactions and unusual timestamp patterns.",
+			"Reduced debugging time to <10 seconds by implementing comprehensive agent tracing via LangSmith",
+		],
+		skills: ["Python (Programming Language)", "Prompt Engineering"],
+	},
+	{
+		role: "Software Developer",
+		company: "AssistiveMath",
+		employmentType: "Part-time",
+		start: "Dec 2024",
+		end: "Dec 2025",
+		duration: "1 yr 1 mo",
+		location: "Nairobi County, Kenya",
+		workType: "Remote",
+		achievements: [
+			"Developed core system features using Nuxt showcased in the pitch that helped the team win Top Assistive Tech Innovation at the 6th Inclusive Africa Conference.",
+		],
+		skills: ["Assistive Technology", "Web Application Development"],
+	},
+	{
+		role: "Software Engineer Intern",
+		company: "IntelliSOFT Consulting Ltd",
+		employmentType: "Internship",
+		start: "Jul 2024",
+		end: "Sep 2024",
+		duration: "3 mos",
+		location: "Nairobi County, Kenya",
+		workType: "On-site",
+		achievements: [
+			"Accelerated 3 project timelines by 20% by developing FHIR Implementation Guides and HL7 artifacts (FSH)",
+			"Improved data interoperability for a 5-developer team by creating standardized OpenMRS data dictionaries.",
+			"Optimised developer onboarding for OpenMRS by 1 month for 1 developer, speeding up development work",
+		],
+		skills: [
+			"Web Development",
+			"Fast Healthcare Interoperability Resources (FHIR)",
+		],
+		links: [
+			{
+				label: "HIV-FHIR-IG",
+				href: "https://github.com/IntelliSOFT-Consulting/HIV-FHIR-IG",
+			},
+			{
+				label: "ChanjoKe-FHIR-IG",
+				href: "https://github.com/IntelliSOFT-Consulting/ChanjoKe-FHIR-IG",
+			},
+			{
+				label: "ChanjoKe-HIE",
+				href: "https://github.com/IntelliSOFT-Consulting/ChanjoKe-HIE",
+			},
+		],
+	},
+	{
+		role: "Software Engineer Intern",
+		company: "IntelliSOFT Consulting Ltd",
+		employmentType: "Internship",
+		start: "Jul 2023",
+		end: "Oct 2023",
+		duration: "4 mos",
+		location: "Nairobi County, Kenya",
+		workType: null,
+		achievements: [
+			"Customised an Odoo module using Python delivering custom services for one of the company clients",
+			"Increased my knowledge in Docker for local development",
+			"Increased my knowledge in Git for team collaboration",
+		],
+		skills: ["Fast Healthcare Interoperability Resources (FHIR)", "OpenMRS"],
+	},
+];
+
 // CERTIFICATIONS
 const certifications = [
 	{
@@ -356,6 +470,78 @@ const certifications = [
 					color="primary"
 					@click="clearFilters"
 				/>
+			</div>
+		</section>
+
+		<section id="experience" class="anchor-section py-6">
+			<h2 class="flex items-center gap-2">
+				<UIcon name="i-lucide-briefcase" class="size-6" />
+				{{ t("work_experience") }}
+			</h2>
+
+			<div class="space-y-6">
+				<UCard
+					v-for="exp in experiences"
+					:key="`${exp.company}-${exp.role}-${exp.start}`"
+					class="border-2 border-black dark:border-[#c0c0c0]"
+				>
+					<template #header>
+						<h3 class="text-lg font-semibold text-primary">
+							{{ exp.role }}
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							{{ exp.company }} · {{ exp.employmentType }}
+						</p>
+						<p
+							class="text-xs text-gray-500 dark:text-gray-400 mt-1"
+						>
+							{{ exp.start }} –
+							{{ exp.end ?? t("present") }} · {{ exp.duration }}
+						</p>
+						<p class="text-xs text-gray-500 dark:text-gray-400">
+							{{ exp.location
+							}}<template v-if="exp.workType">
+								· {{ exp.workType }}</template
+							>
+						</p>
+					</template>
+
+					<ul
+						class="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4"
+					>
+						<li v-for="(point, i) in exp.achievements" :key="i">
+							{{ point }}
+						</li>
+					</ul>
+
+					<div
+						v-if="exp.links?.length"
+						class="flex flex-wrap gap-3 mb-4 text-sm"
+					>
+						<a
+							v-for="link in exp.links"
+							:key="link.href"
+							:href="link.href"
+							target="_blank"
+							>{{ link.label }}</a
+						>
+					</div>
+
+					<div
+						v-if="exp.skills.length"
+						class="flex flex-wrap gap-1.5"
+					>
+						<UBadge
+							v-for="skill in exp.skills"
+							:key="skill"
+							color="neutral"
+							variant="outline"
+							size="lg"
+						>
+							{{ skill }}
+						</UBadge>
+					</div>
+				</UCard>
 			</div>
 		</section>
 
