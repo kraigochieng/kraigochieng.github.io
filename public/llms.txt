@@ -1,0 +1,27 @@
+# Kraig Ochieng
+
+> AI Engineer based in Nairobi, Kenya. Builds AI agents, data pipelines, and full-stack web applications with Python, Nuxt, and FastAPI.
+
+Portfolio: https://kraigochieng.github.io
+Contact: kraigochieng@gmail.com · +254792701195
+GitHub: https://github.com/kraigochieng
+LinkedIn: https://www.linkedin.com/in/kraig-ochieng-911121215/
+
+## Projects
+
+- [MediLinda](https://medilinda.vercel.app): Pharmacovigilance platform enabling Kenyan healthcare providers to detect TB drug side effects early, improve patient safety, and trigger instant SMS alerts to medical teams nationwide. Live: https://medilinda.vercel.app · Code: https://github.com/kraigochieng/medilinda
+- [Jumbo E-Commerce Dashboard](https://ecommerce-sales-analysis.streamlit.app/): Optimizing global e-commerce operations through deep-dive analysis of revenue, returns, and shipping efficiency. Live: https://ecommerce-sales-analysis.streamlit.app/ · Code: https://github.com/kraigochieng/ecommerce-sales-analysis
+- [YC Elevator Pitch Doctor](https://kraigochieng.app.n8n.cloud/webhook/33c28bc2-c6bb-4c18-b53f-00bb2aaac41b/chat): Enabling startup founders to craft elevator pitches based on top 75+ YC companies via an agent. Live: https://kraigochieng.app.n8n.cloud/webhook/33c28bc2-c6bb-4c18-b53f-00bb2aaac41b/chat
+
+## Work Experience
+
+- Artificial Intelligence Engineer at Robin, Nairobi, Kenya (Jan 2026–Present, Full-time): Engineered a custom newsletter pipeline in n8n serving 5+ clients, compressing a multi-person, multi-hour workflow into a 10-minute end-to-end process
+- Data Engineer at IntelliSOFT Consulting Ltd, Nairobi County, Kenya (Feb 2026–Jun 2026, Contract): Engineered a data ingestion pipeline using Polars that enabled a contraceptive intelligence platform to import client spreadsheets directly into the web application
+- AI Developer at Chanzo Technologies, Nairobi County, Kenya (Feb 2025–Feb 2026, Full-time): Automated career recommendations to parents of 500+ students by engineering a Text-to-SQL Agent using LangGraph and FastAPI to deliver.
+- Software Developer at AssistiveMath, Nairobi County, Kenya (Dec 2024–Dec 2025, Part-time): Developed core system features using Nuxt showcased in the pitch that helped the team win Top Assistive Tech Innovation at the 6th Inclusive Africa Conference.
+- Software Engineer Intern at IntelliSOFT Consulting Ltd, Nairobi County, Kenya (Jul 2024–Sep 2024, Internship): Accelerated 3 project timelines by 20% by developing FHIR Implementation Guides and HL7 artifacts (FSH)
+- Software Engineer Intern at IntelliSOFT Consulting Ltd, Nairobi County, Kenya (Jul 2023–Oct 2023, Internship): Customised an Odoo module using Python delivering custom services for one of the company clients
+
+## Certifications
+
+- HCIA-AI (Huawei Certified ICT Associate – Artificial Intelligence), issued Nov 2024, expires Nov 2027.
