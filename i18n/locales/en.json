@@ -8,6 +8,8 @@
 
     "nav_home": "Home",
     "nav_certifications": "Certifications",
+    "language_label": "Language",
+    "dark_mode": "Dark Mode",
     "portfolio_tooltip": "Kraig Ochieng Portfolio",
     "theme_switch_to_light": "Switch to light mode",
     "theme_switch_to_dark": "Switch to dark mode",
