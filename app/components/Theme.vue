@@ -4,12 +4,13 @@
 		color="neutral"
 		variant="ghost"
 		class="text-gray-800 dark:text-gray-200"
-		:aria-label="`Switch to ${isDark ? 'light' : 'dark'} mode`"
+		:aria-label="isDark ? t('theme_switch_to_light') : t('theme_switch_to_dark')"
 		@click="isDark = !isDark"
 	/>
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n();
 const colorMode = useColorMode();
 const isDark = computed({
 	get() {
