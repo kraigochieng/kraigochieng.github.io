@@ -6,12 +6,13 @@
 		<Navbar class="hidden md:block" />
 		<div class="flex space-x-2 justify-end">
 			<Locale />
-			<UColorModeButton />
-			<UDropdownMenu :items="dropdownItems" class="md:hidden">
+			<UColorModeButton size="xl" />
+			<UDropdownMenu :items="dropdownItems" size="xl" class="md:hidden">
 				<UButton
 					icon="i-lucide-menu"
 					color="neutral"
 					variant="outline"
+					size="xl"
 				/>
 			</UDropdownMenu>
 		</div>
@@ -23,15 +24,21 @@
 <script setup lang="ts">
 import type { DropdownMenuItem } from "@nuxt/ui";
 
-const dropdownItems = ref<DropdownMenuItem[]>([
+const { t } = useI18n();
+const localePath = useLocalePath();
+
+const dropdownItems = computed<DropdownMenuItem[]>(() => [
 	[
-		{ label: "Home", icon: "i-lucide-home", to: "/" },
-		{ label: "Projects", icon: "i-lucide-code", to: "/projects" },
-		// { label: "Blogs", icon: "i-lucide-book-open", to: "/blogs" },
+		{ label: t("nav_home"), icon: "i-lucide-home", to: localePath("/") },
 		{
-			label: "Certifications",
+			label: t("projects"),
+			icon: "i-lucide-code",
+			to: `${localePath("/")}#projects`,
+		},
+		{
+			label: t("nav_certifications"),
 			icon: "i-lucide-award",
-			to: "/certifications",
+			to: `${localePath("/")}#certifications`,
 		},
 	],
 	[
