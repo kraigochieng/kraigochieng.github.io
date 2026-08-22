@@ -21,7 +21,7 @@ const project = {
 
 		<!-- Screenshot -->
 		<div
-			class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-sm"
+			class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800"
 		>
 			<UImage
 				src="/docs/images/web-screenshot.png"
