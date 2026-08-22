@@ -7,4 +7,5 @@ export interface Project {
 	tools: string[];
 	link: string;
 	github: string | null;
+	previewBlocked?: boolean;
 }
