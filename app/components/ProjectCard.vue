@@ -47,6 +47,7 @@
 			v-if="project.link"
 			:url="project.link"
 			:title="`${project.name} – live demo`"
+			:blocked="project.previewBlocked"
 			class="mb-3"
 		/>
 
