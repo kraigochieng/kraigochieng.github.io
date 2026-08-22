@@ -1,16 +1,26 @@
 <template>
-	<ULocaleSelect
-		v-model="locale"
-		:locales="[locales.en]"
+	<USelectMenu
+		v-model="selected"
+		:items="items"
+		value-key="value"
 		class="w-32"
-		@update:model-value="val => { if (val) setLocale(val as 'en') }"
 	/>
 </template>
 
 <script lang="ts" setup>
-import * as locales from "@nuxt/ui/locale";
+const { locale, setLocale, t } = useI18n();
 
-const { locale, setLocale } = useI18n();
+const items = computed(() => [
+	{ label: t("English"), value: "en" },
+	{ label: t("Swahili"), value: "sw" },
+]);
+
+const selected = computed({
+	get: () => locale.value,
+	set: (value) => {
+		if (value) setLocale(value as "en" | "sw");
+	},
+});
 </script>
 
 <style></style>
