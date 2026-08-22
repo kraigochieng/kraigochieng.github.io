@@ -23,3 +23,12 @@ export interface Experience {
 	skills: string[];
 	links?: { label: string; href: string }[];
 }
+
+export interface Certification {
+	name: string;
+	issuer: string;
+	issued: string;
+	expires: string | null;
+	credentialId: string | null;
+	link: string;
+}
