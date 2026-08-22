@@ -77,6 +77,8 @@ const projects = [
 		tools: ["Python", "PostgreSQL", "Streamlit"],
 		link: "https://ecommerce-sales-analysis.streamlit.app/",
 		github: "https://github.com/kraigochieng/ecommerce-sales-analysis",
+		// Streamlit Community Cloud app has gone to sleep from inactivity.
+		previewBlocked: true,
 	},
 	// {
 	// 	name: "Diamond Price Predictor",
@@ -133,6 +135,8 @@ const projects = [
 		tools: ["n8n", "Pinecone"],
 		link: "https://kraigochieng.app.n8n.cloud/webhook/33c28bc2-c6bb-4c18-b53f-00bb2aaac41b/chat",
 		github: null,
+		// n8n webhook currently returns 404 - workflow needs reactivating.
+		previewBlocked: true,
 	},
 ];
 
