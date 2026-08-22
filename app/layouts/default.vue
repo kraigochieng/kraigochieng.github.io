@@ -46,6 +46,11 @@ const dropdownItems = computed<DropdownMenuItem[]>(() => [
 			to: `${localePath("/")}#projects`,
 		},
 		{
+			label: t("work_experience"),
+			icon: "i-lucide-briefcase",
+			to: `${localePath("/")}#experience`,
+		},
+		{
 			label: t("nav_certifications"),
 			icon: "i-lucide-award",
 			to: `${localePath("/")}#certifications`,
