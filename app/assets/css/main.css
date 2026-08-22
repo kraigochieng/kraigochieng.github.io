@@ -7,6 +7,10 @@
   --nav-height: 4rem;
 }
 
+.anchor-section {
+	scroll-margin-top: var(--nav-height);
+}
+
 @theme {
 	--color-dark: #111111;
 	--font-sans: 'Inter', sans-serif;
@@ -41,6 +45,4 @@
 	a {
 		@apply text-blue-600 hover:underline;
 	}
-
-
 }
