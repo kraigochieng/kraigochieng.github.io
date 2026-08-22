@@ -25,6 +25,10 @@ const items = computed<NavigationMenuItem[]>(() => [
 		to: `${localePath("/")}#projects`,
 	},
 	{
+		label: t("work_experience"),
+		to: `${localePath("/")}#experience`,
+	},
+	{
 		label: t("nav_certifications"),
 		to: `${localePath("/")}#certifications`,
 	},
