@@ -1,12 +1,15 @@
 <template>
 	<UCard
-		class="hover:shadow-lg transition-all duration-300 flex flex-col h-full ring-1 ring-gray-200 dark:ring-gray-800"
+		class="flex flex-col h-full border-2 border-black dark:border-[#c0c0c0]"
 	>
 		<template #header>
 			<div class="flex items-start justify-between gap-4">
 				<div>
 					<h3 class="text-xl font-semibold text-primary">
-						{{ project.name }}
+						<NuxtLink v-if="detailPath" :to="detailPath">
+							{{ project.name }}
+						</NuxtLink>
+						<template v-else>{{ project.name }}</template>
 					</h3>
 					<p
 						class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1"
@@ -19,22 +22,22 @@
 					<UButton
 						v-if="project.link"
 						color="primary"
-						size="xs"
+						size="lg"
 						icon="i-lucide-globe"
 						variant="ghost"
 						:to="project.link"
 						target="_blank"
-						aria-label="Live Demo"
+						:aria-label="t('live_demo_aria')"
 					/>
 					<UButton
 						v-if="project.github"
 						color="neutral"
-						size="xs"
+						size="lg"
 						icon="i-lucide-github"
 						variant="ghost"
 						:to="project.github"
 						target="_blank"
-						aria-label="GitHub Repository"
+						:aria-label="t('github_repo_aria')"
 					/>
 				</div>
 			</div>
@@ -44,7 +47,7 @@
 			v-if="project.link"
 			:url="project.link"
 			:title="`${project.name} – live demo`"
-			class="mb-4 rounded-md overflow-hidden border border-gray-100 dark:border-gray-800"
+			class="mb-4"
 		/>
 
 		<p
@@ -56,8 +59,8 @@
 		<div class="space-y-4 mt-auto">
 			<div v-if="project.skills.length">
 				<span
-					class="text-[10px] uppercase font-bold text-gray-400 mb-2 block"
-					>Skills</span
+					class="text-xs uppercase font-bold text-gray-400 mb-2 block"
+					>{{ t("skills_placeholder") }}</span
 				>
 				<div class="flex flex-wrap gap-2">
 					<UBadge
@@ -65,7 +68,7 @@
 						:key="skill"
 						color="primary"
 						variant="subtle"
-						size="sm"
+						size="lg"
 					>
 						{{ skill }}
 					</UBadge>
@@ -74,8 +77,8 @@
 
 			<div v-if="project.tools.length">
 				<span
-					class="text-[10px] uppercase font-bold text-gray-400 mb-2 block"
-					>Tools</span
+					class="text-xs uppercase font-bold text-gray-400 mb-2 block"
+					>{{ t("tools_placeholder") }}</span
 				>
 				<div class="flex flex-wrap gap-2">
 					<UBadge
@@ -83,7 +86,7 @@
 						:key="tool"
 						color="neutral"
 						variant="outline"
-						size="xs"
+						size="lg"
 					>
 						{{ tool }}
 					</UBadge>
@@ -98,7 +101,10 @@ import type { Project } from "@/types";
 
 defineProps<{
 	project: Project;
+	detailPath?: string;
 }>();
+
+const { t } = useI18n();
 </script>
 
 <style></style>
