@@ -480,68 +480,11 @@ const certifications = [
 			</h2>
 
 			<div class="space-y-6">
-				<UCard
+				<ExperienceCard
 					v-for="exp in experiences"
 					:key="`${exp.company}-${exp.role}-${exp.start}`"
-					class="border-2 border-black dark:border-[#c0c0c0]"
-				>
-					<template #header>
-						<h3 class="text-lg font-semibold text-primary">
-							{{ exp.role }}
-						</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-400">
-							{{ exp.company }} · {{ exp.employmentType }}
-						</p>
-						<p
-							class="text-xs text-gray-500 dark:text-gray-400 mt-1"
-						>
-							{{ exp.start }} –
-							{{ exp.end ?? t("present") }} · {{ exp.duration }}
-						</p>
-						<p class="text-xs text-gray-500 dark:text-gray-400">
-							{{ exp.location
-							}}<template v-if="exp.workType">
-								· {{ exp.workType }}</template
-							>
-						</p>
-					</template>
-
-					<ul
-						class="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300 mb-4"
-					>
-						<li v-for="(point, i) in exp.achievements" :key="i">
-							{{ point }}
-						</li>
-					</ul>
-
-					<div
-						v-if="exp.links?.length"
-						class="flex flex-wrap gap-3 mb-4 text-sm"
-					>
-						<a
-							v-for="link in exp.links"
-							:key="link.href"
-							:href="link.href"
-							target="_blank"
-							>{{ link.label }}</a
-						>
-					</div>
-
-					<div
-						v-if="exp.skills.length"
-						class="flex flex-wrap gap-1.5"
-					>
-						<UBadge
-							v-for="skill in exp.skills"
-							:key="skill"
-							color="neutral"
-							variant="outline"
-							size="lg"
-						>
-							{{ skill }}
-						</UBadge>
-					</div>
-				</UCard>
+					:experience="exp"
+				/>
 			</div>
 		</section>
 
