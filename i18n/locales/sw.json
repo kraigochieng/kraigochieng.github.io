@@ -3,6 +3,30 @@
 	"Swahili": "Kiswahili",
 	"projects": "Miradi",
 	"work_experience": "Uzoefu wa Kazi",
-	"data_scientist": "Mwanasayansi wa Data",
-	"data_analyst": "Mwangaliaji wa Data"
+	"job_title": "Mhandisi wa AI",
+
+	"nav_home": "Nyumbani",
+	"nav_certifications": "Vyeti",
+	"portfolio_tooltip": "Tovuti ya Kraig Ochieng",
+	"theme_switch_to_light": "Badili hadi hali nyepesi",
+	"theme_switch_to_dark": "Badili hadi hali ya giza",
+
+	"buy_me_coffee": "Ninunulie Kahawa",
+
+	"clear_filters": "Futa Vichujio",
+	"sort_by": "Panga Kwa",
+	"sort_ascending": "Kupanda",
+	"sort_descending": "Kushuka",
+	"domains_placeholder": "Vikoa",
+	"skills_placeholder": "Ujuzi",
+	"tools_placeholder": "Zana",
+
+	"live_demo_aria": "Onyesho la Moja kwa Moja",
+	"github_repo_aria": "Hazina ya GitHub",
+	"no_projects_match": "Hakuna miradi inayolingana na vichujio vyako vya sasa.",
+	"reset_filters": "Weka upya vichujio vyote",
+
+	"certifications_heading": "Vyeti",
+	"cert_issued": "Ilitolewa",
+	"view_credential": "Tazama Cheti"
 }

@@ -3,7 +3,31 @@
     "Swahili": "Swahili",
     "projects": "Projects",
     "work_experience": "Work Experience",
-    "data_scientist": "Data Scientist",
-    "data_analyst": "Data Analyst",
-    "web_developer": "Web Developer"
+    "job_title": "AI Engineer",
+    "web_developer": "Web Developer",
+
+    "nav_home": "Home",
+    "nav_certifications": "Certifications",
+    "portfolio_tooltip": "Kraig Ochieng Portfolio",
+    "theme_switch_to_light": "Switch to light mode",
+    "theme_switch_to_dark": "Switch to dark mode",
+
+    "buy_me_coffee": "Buy me a Coffee",
+
+    "clear_filters": "Clear Filters",
+    "sort_by": "Sort By",
+    "sort_ascending": "Ascending",
+    "sort_descending": "Descending",
+    "domains_placeholder": "Domains",
+    "skills_placeholder": "Skills",
+    "tools_placeholder": "Tools",
+
+    "live_demo_aria": "Live Demo",
+    "github_repo_aria": "GitHub Repository",
+    "no_projects_match": "No projects match your current filters.",
+    "reset_filters": "Reset all filters",
+
+    "certifications_heading": "Certifications",
+    "cert_issued": "Issued",
+    "view_credential": "View Credential"
 }
