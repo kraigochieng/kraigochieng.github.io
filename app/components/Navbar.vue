@@ -12,22 +12,21 @@
 <script lang="ts" setup>
 import type { NavigationMenuItem } from "@nuxt/ui";
 
-const items = ref<NavigationMenuItem[]>([
+const { t } = useI18n();
+const localePath = useLocalePath();
+
+const items = computed<NavigationMenuItem[]>(() => [
 	{
-		label: "Home",
-		to: "/",
+		label: t("nav_home"),
+		to: localePath("/"),
 	},
 	{
-		label: "Projects",
-		to: "/projects",
+		label: t("projects"),
+		to: `${localePath("/")}#projects`,
 	},
-	// {
-	// 	label: "Blogs",
-	// 	to: "/blogs",
-	// },
 	{
-		label: "Certifications",
-		to: "/certifications",
+		label: t("nav_certifications"),
+		to: `${localePath("/")}#certifications`,
 	},
 ]);
 </script>
