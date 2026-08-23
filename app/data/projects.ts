@@ -85,10 +85,10 @@ export const projects: Project[] = [
 			"Vector Databases",
 			"Prompt Engineering",
 		],
-		tools: ["n8n", "Pinecone"],
-		link: "https://kraigochieng.app.n8n.cloud/webhook/33c28bc2-c6bb-4c18-b53f-00bb2aaac41b/chat",
-		github: null,
+		tools: ["Python", "FastAPI", "Docker", "OpenRouter"],
+		link: "https://yc-elevator-pitch-doctor.onrender.com",
+		github: "https://github.com/kraigochieng/yc-elevator-pitch-doctor",
+		previewImage: "/projects/yc-elevator-pitch-doctor.png",
 		// n8n webhook currently returns 404 - workflow needs reactivating.
-		previewBlocked: true,
 	},
 ];
