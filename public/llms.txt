@@ -11,7 +11,8 @@ LinkedIn: https://www.linkedin.com/in/kraig-ochieng-911121215/
 
 - [MediLinda](https://medilinda.vercel.app): Pharmacovigilance platform enabling Kenyan healthcare providers to detect TB drug side effects early, improve patient safety, and trigger instant SMS alerts to medical teams nationwide. Live: https://medilinda.vercel.app · Code: https://github.com/kraigochieng/medilinda
 - [Jumbo E-Commerce Dashboard](https://ecommerce-sales-analysis.streamlit.app/): Optimizing global e-commerce operations through deep-dive analysis of revenue, returns, and shipping efficiency. Live: https://ecommerce-sales-analysis.streamlit.app/ · Code: https://github.com/kraigochieng/ecommerce-sales-analysis
-- [YC Elevator Pitch Doctor](https://kraigochieng.app.n8n.cloud/webhook/33c28bc2-c6bb-4c18-b53f-00bb2aaac41b/chat): Enabling startup founders to craft elevator pitches based on top 75+ YC companies via an agent. Live: https://kraigochieng.app.n8n.cloud/webhook/33c28bc2-c6bb-4c18-b53f-00bb2aaac41b/chat
+- [YC Elevator Pitch Doctor](https://yc-elevator-pitch-doctor.onrender.com): Enabling startup founders to craft elevator pitches based on top 75+ YC companies via an agent. Live: https://yc-elevator-pitch-doctor.onrender.com · Code: https://github.com/kraigochieng/yc-elevator-pitch-doctor
+- [ElevenLabs Text-To-Speech Chunker](https://elevenlabs-tts-chunker.vercel.app/): A FastAPI wrapper around the ElevenLabs Text-to-Speech API that transparently handles text longer than ElevenLabs' 10,000-character limit per request. Send it text of any length; it chunks, synthesizes each chunk, and returns one merged mp3. Live: https://elevenlabs-tts-chunker.vercel.app/ · Code: https://github.com/kraigochieng/elevenlabs-tts-chunker
 
 ## Work Experience
 
