@@ -91,4 +91,15 @@ export const projects: Project[] = [
 		previewImage: "/projects/yc-elevator-pitch-doctor.png",
 		// n8n webhook currently returns 404 - workflow needs reactivating.
 	},
+	{
+		name: "ElevenLabs Text-To-Speech Chunker",
+		slug: "elevenlabs-tts-chunker",
+		domain: ["Dev Tool"],
+		description:
+			"A FastAPI wrapper around the ElevenLabs Text-to-Speech API that transparently handles text longer than ElevenLabs' 10,000-character limit per request. Send it text of any length; it chunks, synthesizes each chunk, and returns one merged mp3.",
+		skills: ["FFmpeg", "Web Development"],
+		tools: ["Python", "FastAPI", "Docker", "FFmpeg"],
+		link: "https://elevenlabs-tts-chunker.vercel.app/",
+		github: "https://github.com/kraigochieng/elevenlabs-tts-chunker",
+	},
 ];
