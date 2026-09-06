@@ -1,13 +1,5 @@
 import type { Project } from "../types";
 
-// Slugs that have a dedicated /projects/<slug> writeup page.
-export const slugsWithDetailPage = [
-	"medilinda",
-	"diamond-price-predictor",
-	"gradient-descent-visualiser",
-	"image-to-ascii",
-];
-
 export const projects = [
 	{
 		name: "MediLinda",

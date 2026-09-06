@@ -6,10 +6,7 @@
 			<div class="flex items-start justify-between gap-4">
 				<div>
 					<h3 class="text-xl font-semibold text-primary">
-						<NuxtLink v-if="detailPath" :to="detailPath">
-							{{ project.name }}
-						</NuxtLink>
-						<template v-else>{{ project.name }}</template>
+						{{ project.name }}
 					</h3>
 					<p
 						class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1"
@@ -103,7 +100,6 @@ import type { Project } from "@/types";
 
 defineProps<{
 	project: Project;
-	detailPath?: string;
 }>();
 
 const { t } = useI18n();

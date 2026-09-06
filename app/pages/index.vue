@@ -2,14 +2,13 @@
 import { certifications } from "@/data/certifications";
 import { experiences } from "@/data/experience";
 import { mailtoUrl, profile, telUrl, whatsappUrl } from "@/data/profile";
-import { projects, slugsWithDetailPage } from "@/data/projects";
+import { projects } from "@/data/projects";
 
 interface FilterItem {
 	label: string;
 }
 
 const { t } = useI18n();
-const localePath = useLocalePath();
 const route = useRoute();
 const router = useRouter();
 
@@ -238,11 +237,6 @@ const clearFilters = () => {
 					v-for="project in filteredProjects"
 					:key="project.slug"
 					:project="project"
-					:detail-path="
-						slugsWithDetailPage.includes(project.slug)
-							? localePath(`/projects/${project.slug}`)
-							: undefined
-					"
 				/>
 			</div>
 
