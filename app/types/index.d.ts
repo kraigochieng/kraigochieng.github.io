@@ -1,10 +1,12 @@
+import type { Domain, ProjectSlug, Skill, Tool } from "../data/taxonomy";
+
 export interface Project {
 	name: string;
-	slug: string;
-	domain: string[];
+	slug: ProjectSlug;
+	domain: Domain[];
 	description: string;
-	skills: string[];
-	tools: string[];
+	skills: Skill[];
+	tools: Tool[];
 	link: string;
 	github: string | null;
 	previewBlocked?: boolean;

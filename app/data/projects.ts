@@ -8,7 +8,7 @@ export const slugsWithDetailPage = [
 	"image-to-ascii",
 ];
 
-export const projects: Project[] = [
+export const projects = [
 	{
 		name: "MediLinda",
 		slug: "medilinda",
@@ -102,4 +102,4 @@ export const projects: Project[] = [
 		link: "https://elevenlabs-tts-chunker.vercel.app/",
 		github: "https://github.com/kraigochieng/elevenlabs-tts-chunker",
 	},
-];
+] satisfies Project[];
