@@ -7,6 +7,9 @@
     "job_title": "AI Engineer",
     "web_developer": "Web Developer",
 
+    "skip_to_content": "Skip to content",
+    "menu_aria": "Open menu",
+    "main_nav_aria": "Main navigation",
     "nav_home": "Home",
     "nav_certifications": "Certifications",
     "language_label": "Language",
