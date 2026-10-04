@@ -8,13 +8,11 @@
 }
 
 :root {
-	--ui-primary: var(--ui-color-primary-700);
-	--ui-text-dimmed: var(--color-zinc-600);
+	--ui-text-dimmed: var(--color-neutral-600);
 }
 
 .dark {
-	--ui-primary: var(--ui-color-primary-400);
-	--ui-text-dimmed: var(--color-zinc-400);
+	--ui-text-dimmed: var(--color-neutral-400);
 }
 
 .anchor-section {
@@ -53,13 +51,22 @@
 	}
 
 	a {
-		@apply text-blue-600 dark:text-blue-400 hover:underline;
+		@apply text-neutral-900 dark:text-neutral-100;
+	}
+
+	/* Plain content links carry no colour cue, so underline them. */
+	a:not([class]) {
+		@apply underline underline-offset-4 decoration-neutral-400 hover:decoration-current;
 	}
 }
 
 :focus-visible {
-	outline: 2px solid var(--color-blue-600);
+	outline: 2px solid var(--color-neutral-900);
 	outline-offset: 2px;
+}
+
+.dark :focus-visible {
+	outline-color: var(--color-neutral-100);
 }
 
 @media (prefers-reduced-motion: reduce) {

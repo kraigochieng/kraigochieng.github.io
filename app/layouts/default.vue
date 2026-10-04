@@ -101,8 +101,4 @@ const dropdownItems = computed<DropdownMenuItem[]>(() => [
 .skip-link {
 	@apply fixed left-4 top-2 z-[100] -translate-y-20 rounded-md bg-white px-4 py-2 text-black shadow-lg focus:translate-y-0;
 }
-
-.outline-class {
-	@apply outline outline-red-500;
-}
 </style>
