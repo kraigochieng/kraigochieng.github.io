@@ -91,4 +91,15 @@ export const projects = [
 		link: "https://elevenlabs-tts-chunker.vercel.app/",
 		github: "https://github.com/kraigochieng/elevenlabs-tts-chunker",
 	},
+	{
+		name: "Claude Code Config",
+		slug: "claude-code-config",
+		domain: ["Dev Tool"],
+		description:
+			"My Claude Code setup, versioned in git so every machine behaves the same. It enforces conventional commits, an issue-and-branch workflow, and a writing style.",
+		skills: ["AI Agents", "Prompt Engineering"],
+		tools: [],
+		link: null,
+		github: "https://github.com/kraigochieng/kraigochieng.claude-code",
+	},
 ] satisfies Project[];

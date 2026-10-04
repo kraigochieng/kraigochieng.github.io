@@ -7,7 +7,7 @@ export interface Project {
 	description: string;
 	skills: Skill[];
 	tools: Tool[];
-	link: string;
+	link: string | null;
 	github: string | null;
 }
 
