@@ -6,19 +6,18 @@
 		>
 			k
 		</p> -->
-		<p
-			@mouseup="router.push(localePath('/'))"
-			class="italic font-semibold cursor-pointer truncate max-w-[8rem] text-lg sm:max-w-none sm:text-2xl"
+		<NuxtLink
+			:to="localePath('/')"
+			class="block italic font-semibold truncate max-w-[8rem] text-lg sm:max-w-none sm:text-2xl text-inherit"
 		>
 			{{ profile.name }}
-		</p>
+		</NuxtLink>
 	</UTooltip>
 </template>
 
 <script lang="ts" setup>
 import { profile } from "@/data/profile";
 
-const router = useRouter();
 const localePath = useLocalePath();
 const { t } = useI18n();
 </script>
