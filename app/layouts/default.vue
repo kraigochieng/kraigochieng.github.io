@@ -25,7 +25,7 @@
 				:aria-label="t('menu_aria')"
 			/>
 			<template #body>
-				<SidebarContent />
+				<SidebarContent hide-identity />
 			</template>
 		</USlideover>
 		<Logo />

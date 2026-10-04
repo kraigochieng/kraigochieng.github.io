@@ -1,6 +1,6 @@
 <template>
 	<div class="flex h-full flex-col gap-10 p-8">
-		<div>
+		<div v-if="!hideIdentity">
 			<Logo />
 			<p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
 				{{ t("job_title") }}
@@ -52,6 +52,11 @@
 </template>
 
 <script lang="ts" setup>
+// The drawer already shows the name and role in its own header.
+defineProps<{
+	hideIdentity?: boolean;
+}>();
+
 const { t } = useI18n();
 const localePath = useLocalePath();
 const socialLinks = useSocialLinks();
