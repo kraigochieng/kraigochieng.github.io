@@ -228,7 +228,7 @@ const clearFilters = () => {
 				{{ t("work_experience") }}
 			</h2>
 
-			<div class="space-y-6">
+			<div class="divide-y divide-neutral-200 dark:divide-neutral-800">
 				<ExperienceCard
 					v-for="exp in experiences"
 					:key="`${exp.company}-${exp.role}-${exp.start}`"
@@ -243,7 +243,7 @@ const clearFilters = () => {
 				{{ t("certifications_heading") }}
 			</h2>
 
-			<div class="space-y-6">
+			<div class="divide-y divide-neutral-200 dark:divide-neutral-800">
 				<CertificationCard
 					v-for="cert in certifications"
 					:key="cert.name"
