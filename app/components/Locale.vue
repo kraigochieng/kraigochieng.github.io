@@ -3,7 +3,7 @@
 		v-model="selected"
 		:items="items"
 		value-key="value"
-		class="w-32"
+		class="w-full"
 	/>
 </template>
 

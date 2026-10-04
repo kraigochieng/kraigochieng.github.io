@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { certifications } from "@/data/certifications";
 import { experiences } from "@/data/experience";
-import { mailtoUrl, profile, telUrl, whatsappUrl } from "@/data/profile";
+import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 interface FilterItem {
@@ -11,39 +11,6 @@ interface FilterItem {
 const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
-
-const links = computed(() => [
-	{
-		label: "GitHub",
-		href: profile.githubUrl,
-		icon: "i-lucide-github",
-	},
-	{
-		label: "LinkedIn",
-		href: profile.linkedinUrl,
-		icon: "i-lucide-linkedin",
-	},
-	{
-		label: "WhatsApp",
-		href: whatsappUrl,
-		icon: "i-simple-icons-whatsapp",
-	},
-	{
-		label: t("phone_label"),
-		href: telUrl,
-		icon: "i-lucide-phone",
-	},
-	{
-		label: t("email_label"),
-		href: mailtoUrl,
-		icon: "i-lucide-mail",
-	},
-	{
-		label: t("buy_me_coffee"),
-		href: profile.buyMeACoffeeUrl,
-		icon: "i-lucide-coffee",
-	},
-]);
 
 useHead({
 	title: computed(() => `${profile.name} | ${t("job_title")}`),
@@ -179,19 +146,6 @@ const clearFilters = () => {
 			<p class="mt-2 max-w-prose text-neutral-600 dark:text-neutral-400">
 				{{ $t("hero_summary") }}
 			</p>
-			<div class="mt-6 flex flex-wrap items-center gap-2 -ml-2.5">
-				<UButton
-					v-for="link in links"
-					:key="link.label"
-					:icon="link.icon"
-					:to="link.href"
-					:aria-label="link.label"
-					:title="link.label"
-					target="_blank"
-					variant="ghost"
-					size="xl"
-				/>
-			</div>
 		</div>
 
 		<section id="projects" class="anchor-section py-6">

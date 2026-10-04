@@ -1,86 +1,62 @@
 <template>
 	<a href="#main-content" class="skip-link">{{ t("skip_to_content") }}</a>
-	<header
-		class="h-[var(--nav-height)] responsive-columns sticky-nav glass-bg items-center"
+
+	<aside
+		class="fixed inset-y-0 left-0 z-40 hidden w-64 overflow-y-auto border-r border-neutral-200 bg-white md:block dark:border-neutral-800 dark:bg-neutral-900"
 	>
-		<Logo class="" />
-		<Navbar class="hidden md:block" />
-		<div class="flex items-center justify-end gap-2">
-			<div class="hidden md:flex items-center gap-2">
-				<Locale />
-				<UColorModeButton size="xl" />
-			</div>
-			<UDropdownMenu :items="dropdownItems" size="xl" class="md:hidden">
-				<UButton
-					icon="i-lucide-menu"
-					color="neutral"
-					variant="outline"
-					size="xl"
-					:aria-label="t('menu_aria')"
-				/>
-			</UDropdownMenu>
-		</div>
+		<SidebarContent />
+	</aside>
+
+	<header
+		class="glass-bg sticky top-0 z-40 flex h-[var(--nav-height)] items-center justify-between px-6 md:hidden"
+	>
+		<Logo />
+		<USlideover
+			v-model:open="drawerOpen"
+			side="left"
+			:title="profile.name"
+			:description="t('job_title')"
+			:ui="{ content: 'max-w-64' }"
+		>
+			<UButton
+				icon="i-lucide-menu"
+				color="neutral"
+				variant="outline"
+				size="xl"
+				:aria-label="t('menu_aria')"
+			/>
+			<template #body>
+				<SidebarContent />
+			</template>
+		</USlideover>
 	</header>
 
-	<main id="main-content" tabindex="-1" class="outline-none">
-		<slot />
+	<main
+		id="main-content"
+		tabindex="-1"
+		class="outline-none px-6 md:ml-64 md:px-12 lg:px-16"
+	>
+		<div class="mx-auto max-w-4xl">
+			<slot />
+		</div>
 	</main>
 </template>
 
 <script setup lang="ts">
-import type { DropdownMenuItem } from "@nuxt/ui";
+import { profile } from "@/data/profile";
 
-const { t, setLocale } = useI18n();
-const localePath = useLocalePath();
-const colorMode = useColorMode();
+const { t } = useI18n();
+const route = useRoute();
 
-const isDark = computed({
-	get: () => colorMode.value === "dark",
-	set: (value: boolean) => {
-		colorMode.preference = value ? "dark" : "light";
+const drawerOpen = ref(false);
+
+// Close the drawer after navigating (including same-page hash links).
+watch(
+	() => route.fullPath,
+	() => {
+		drawerOpen.value = false;
 	},
-});
-
-const dropdownItems = computed<DropdownMenuItem[]>(() => [
-	[
-		{ label: t("nav_home"), icon: "i-lucide-home", to: localePath("/") },
-		{
-			label: t("projects"),
-			icon: "i-lucide-code",
-			to: `${localePath("/")}#projects`,
-		},
-		{
-			label: t("work_experience"),
-			icon: "i-lucide-briefcase",
-			to: `${localePath("/")}#experience`,
-		},
-		{
-			label: t("nav_certifications"),
-			icon: "i-lucide-award",
-			to: `${localePath("/")}#certifications`,
-		},
-	],
-	[
-		{
-			label: t("language_label"),
-			icon: "i-lucide-languages",
-			children: [
-				{ label: t("English"), onSelect: () => setLocale("en") },
-				{ label: t("Swahili"), onSelect: () => setLocale("sw") },
-			],
-		},
-		{
-			label: t("dark_mode"),
-			icon: isDark.value ? "i-lucide-moon" : "i-lucide-sun",
-			type: "checkbox",
-			checked: isDark.value,
-			onSelect: (e: Event) => e.preventDefault(),
-			onUpdateChecked: (checked: boolean) => {
-				isDark.value = checked;
-			},
-		},
-	],
-]);
+);
 </script>
 
 <style scoped>
@@ -88,14 +64,6 @@ const dropdownItems = computed<DropdownMenuItem[]>(() => [
 
 .glass-bg {
 	@apply backdrop-filter backdrop-blur-xs;
-}
-
-.responsive-columns {
-	@apply grid grid-cols-2 md:grid-cols-3;
-}
-
-.sticky-nav {
-	@apply sticky top-0 z-50;
 }
 
 .skip-link {
