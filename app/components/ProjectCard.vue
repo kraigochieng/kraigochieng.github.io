@@ -1,11 +1,19 @@
 <template>
 	<UCard
-		class="flex flex-col h-full border border-neutral-300 dark:border-neutral-700 transition-colors hover:border-neutral-900 dark:hover:border-neutral-300"
+		class="flex flex-col h-full border transition-colors hover:border-neutral-900 dark:hover:border-neutral-300"
+		:class="
+			featured
+				? 'border-neutral-900 dark:border-neutral-300'
+				: 'border-neutral-300 dark:border-neutral-700'
+		"
 	>
 		<template #header>
 			<div class="flex items-start justify-between gap-4">
 				<div>
-					<h3 class="text-xl font-bold tracking-tight text-primary py-0">
+					<h3
+						class="font-bold tracking-tight text-primary py-0"
+						:class="featured ? 'text-3xl' : 'text-xl'"
+					>
 						{{ project.name }}
 					</h3>
 					<p
@@ -91,6 +99,7 @@ import type { Project } from "@/types";
 
 defineProps<{
 	project: Project;
+	featured?: boolean;
 }>();
 
 const { t } = useI18n();

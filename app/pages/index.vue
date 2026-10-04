@@ -150,6 +150,13 @@ const filteredProjects = computed(() => {
 	});
 });
 
+// The first project is featured across the full row; if the rest would leave
+// an orphan, the last card also spans the full row to keep the grid even.
+const spansFullRow = (index: number) => {
+	const total = filteredProjects.value.length;
+	return index === 0 || (index === total - 1 && (total - 1) % 2 === 1);
+};
+
 const clearFilters = () => {
 	selectedDomains.value = [];
 	selectedSkills.value = [];
@@ -248,9 +255,11 @@ const clearFilters = () => {
 				class="grid grid-cols-1 lg:grid-cols-2 gap-4"
 			>
 				<ProjectCard
-					v-for="project in filteredProjects"
+					v-for="(project, index) in filteredProjects"
 					:key="project.slug"
 					:project="project"
+					:featured="index === 0"
+					:class="{ 'lg:col-span-2': spansFullRow(index) }"
 				/>
 			</div>
 
