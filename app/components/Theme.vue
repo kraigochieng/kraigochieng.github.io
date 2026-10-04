@@ -3,7 +3,7 @@
 		:icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
 		color="neutral"
 		variant="ghost"
-		class="text-gray-800 dark:text-gray-200"
+		class="text-neutral-800 dark:text-neutral-200"
 		:aria-label="isDark ? t('theme_switch_to_light') : t('theme_switch_to_dark')"
 		@click="isDark = !isDark"
 	/>
