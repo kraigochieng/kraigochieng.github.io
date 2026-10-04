@@ -160,11 +160,19 @@ const clearFilters = () => {
 
 <template>
 	<div>
-		<div
-			class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-4"
-		>
-			<h1 class="text-base font-bold py-0">{{ $t("job_title") }}</h1>
-			<div class="flex items-center gap-2">
+		<div class="py-10 md:py-16">
+			<h1 class="text-5xl md:text-6xl font-bold tracking-tight py-0">
+				{{ profile.name }}
+			</h1>
+			<p
+				class="mt-3 text-xl md:text-2xl font-medium text-neutral-700 dark:text-neutral-300"
+			>
+				{{ $t("job_title") }}
+			</p>
+			<p class="mt-2 max-w-prose text-neutral-600 dark:text-neutral-400">
+				{{ $t("hero_summary") }}
+			</p>
+			<div class="mt-6 flex flex-wrap items-center gap-2 -ml-2.5">
 				<UButton
 					v-for="link in links"
 					:key="link.label"
