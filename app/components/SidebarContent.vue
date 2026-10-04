@@ -13,14 +13,13 @@
 					<NuxtLink
 						:to="item.to"
 						:aria-current="item.current ? 'location' : undefined"
-						class="flex items-center gap-3 border-l px-3 py-1.5 text-sm transition-colors hover:text-neutral-950 dark:hover:text-white"
+						class="block border-l px-3 py-1.5 text-sm transition-colors hover:text-neutral-950 dark:hover:text-white"
 						:class="
 							item.current
 								? 'border-neutral-900 font-medium text-neutral-950 dark:border-neutral-100 dark:text-white'
 								: 'border-transparent text-neutral-500 dark:text-neutral-400'
 						"
 					>
-						<UIcon :name="item.icon" class="size-4" />
 						{{ item.label }}
 					</NuxtLink>
 				</li>
@@ -68,28 +67,24 @@ const navItems = computed(() => {
 		{
 			id: "home",
 			label: t("nav_home"),
-			icon: "i-lucide-home",
 			to: home,
 			current: activeSection.value === "",
 		},
 		{
 			id: "projects",
 			label: t("projects"),
-			icon: "i-lucide-code",
 			to: `${home}#projects`,
 			current: activeSection.value === "projects",
 		},
 		{
 			id: "experience",
 			label: t("work_experience"),
-			icon: "i-lucide-briefcase",
 			to: `${home}#experience`,
 			current: activeSection.value === "experience",
 		},
 		{
 			id: "certifications",
 			label: t("nav_certifications"),
-			icon: "i-lucide-award",
 			to: `${home}#certifications`,
 			current: activeSection.value === "certifications",
 		},
