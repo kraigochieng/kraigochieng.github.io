@@ -142,7 +142,7 @@ const clearFilters = () => {
 	<div>
 		<div class="py-14 md:py-24">
 			<h1
-				class="font-display min-h-[3.4em] max-w-3xl text-4xl font-normal leading-[1.1] tracking-tight py-0 md:min-h-[2.3em] md:text-6xl"
+				class="min-h-[3.4em] max-w-3xl text-4xl font-normal leading-[1.1] tracking-tight py-0 md:min-h-[2.3em] md:text-6xl"
 			>
 				<TypedTagline :phrases="taglines" />
 			</h1>

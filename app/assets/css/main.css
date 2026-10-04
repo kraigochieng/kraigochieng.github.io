@@ -29,7 +29,6 @@
 @theme {
 	--color-dark: #111111;
 	--font-sans: 'Inter', sans-serif;
-	--font-display: 'Instrument Serif', Georgia, serif;
 }
 
 @layer base {

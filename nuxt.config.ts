@@ -33,15 +33,7 @@ export default defineNuxtConfig({
 		fallback: "light",
 	},
 	fonts: {
-		families: [
-			{ name: "Inter", provider: "google" },
-			{
-				name: "Instrument Serif",
-				provider: "google",
-				weights: [400],
-				styles: ["normal", "italic"],
-			},
-		],
+		families: [{ name: "Inter", provider: "google" }],
 	},
 	i18n: {
 		defaultLocale: "en",
