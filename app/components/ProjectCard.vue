@@ -46,6 +46,7 @@
 			:title="`${project.name} – live demo`"
 			:blocked="project.previewBlocked"
 			:image="project.previewImage"
+			:priority="priority"
 			class="mb-3"
 		/>
 
@@ -100,6 +101,7 @@ import type { Project } from "@/types";
 
 defineProps<{
 	project: Project;
+	priority?: boolean;
 }>();
 
 const { t } = useI18n();

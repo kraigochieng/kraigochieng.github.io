@@ -26,10 +26,24 @@
 			class="block"
 			style="height: 220px"
 		>
+			<NuxtImg
+				v-if="isLocalImage"
+				:src="props.image"
+				:alt="props.title ?? 'Live preview'"
+				format="webp"
+				width="640"
+				sizes="sm:100vw lg:50vw"
+				:loading="props.priority ? 'eager' : 'lazy'"
+				:fetchpriority="props.priority ? 'high' : 'auto'"
+				class="w-full h-full object-cover object-top"
+			/>
 			<img
+				v-else
 				:src="props.image || screenshotUrl"
 				:alt="props.title ?? 'Live preview'"
-				loading="lazy"
+				:loading="props.priority ? 'eager' : 'lazy'"
+				:fetchpriority="props.priority ? 'high' : 'auto'"
+				decoding="async"
 				class="w-full h-full object-cover object-top"
 			/>
 		</a>
@@ -45,15 +59,20 @@
  * blocked  – skip the screenshot and show a fallback message instead
  * image    – a manually-captured screenshot path, preferred over the live
  *            Microlink screenshot when set (avoids "site is asleep" shots)
+ * priority – load eagerly with high fetch priority (use for the first card,
+ *            which is the likely LCP element)
  */
 const props = defineProps<{
 	url: string;
 	title?: string;
 	blocked?: boolean;
 	image?: string;
+	priority?: boolean;
 }>();
 
 const { t } = useI18n();
+
+const isLocalImage = computed(() => props.image?.startsWith("/"));
 
 // Fallback screenshot service instead of an <iframe>, so we're never at the
 // mercy of a site's X-Frame-Options/CSP framing policy - just a plain image.
