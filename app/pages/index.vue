@@ -12,6 +12,12 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
+const taglines = computed(() => [
+	t("hero_tagline_1"),
+	t("hero_tagline_2"),
+	t("hero_tagline_3"),
+]);
+
 useHead({
 	title: computed(() => `${profile.name} | ${t("job_title")}`),
 });
@@ -134,13 +140,15 @@ const clearFilters = () => {
 
 <template>
 	<div>
-		<div class="py-10 md:py-16">
-			<h1 class="max-w-2xl text-3xl md:text-5xl font-bold tracking-tight py-0">
-				{{ $t("hero_summary") }}
+		<div class="py-14 md:py-24">
+			<h1
+				class="font-display min-h-[3.4em] max-w-3xl text-4xl font-normal leading-[1.1] tracking-tight py-0 md:min-h-[2.3em] md:text-6xl"
+			>
+				<TypedTagline :phrases="taglines" />
 			</h1>
 		</div>
 
-		<section id="projects" class="anchor-section py-6">
+		<section id="projects" class="anchor-section py-10 md:py-14">
 			<div
 				class="section-rule flex flex-col md:flex-row md:items-end justify-between gap-4"
 			>
@@ -201,6 +209,7 @@ const clearFilters = () => {
 				class="grid grid-cols-1 lg:grid-cols-2 gap-4"
 			>
 				<ProjectCard
+					v-reveal
 					v-for="(project, index) in filteredProjects"
 					:key="project.slug"
 					:project="project"
@@ -220,14 +229,15 @@ const clearFilters = () => {
 			</div>
 		</section>
 
-		<section id="experience" class="anchor-section py-6">
+		<section id="experience" class="anchor-section py-10 md:py-14">
 			<h2 class="section-rule flex items-center gap-2">
 				<UIcon name="i-lucide-briefcase" class="size-6" />
 				{{ t("work_experience") }}
 			</h2>
 
-			<div class="space-y-6">
+			<div class="divide-y divide-neutral-200 dark:divide-neutral-800">
 				<ExperienceCard
+					v-reveal
 					v-for="exp in experiences"
 					:key="`${exp.company}-${exp.role}-${exp.start}`"
 					:experience="exp"
@@ -235,14 +245,15 @@ const clearFilters = () => {
 			</div>
 		</section>
 
-		<section id="certifications" class="anchor-section py-12">
+		<section id="certifications" class="anchor-section py-10 pb-24 md:py-14 md:pb-32">
 			<h2 class="section-rule flex items-center gap-2">
 				<UIcon name="i-lucide-award" class="size-6" />
 				{{ t("certifications_heading") }}
 			</h2>
 
-			<div class="space-y-6">
+			<div class="divide-y divide-neutral-200 dark:divide-neutral-800">
 				<CertificationCard
+					v-reveal
 					v-for="cert in certifications"
 					:key="cert.name"
 					:certification="cert"

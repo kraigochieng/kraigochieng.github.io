@@ -33,7 +33,7 @@ useHead({
 <style>
 @reference "tailwindcss";
 
-* {
+body {
 	font-family: Inter, Helvetica, sans-serif;
 }
 

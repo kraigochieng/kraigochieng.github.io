@@ -11,7 +11,7 @@
 			<div class="flex items-start justify-between gap-4">
 				<div>
 					<h3
-						class="font-bold tracking-tight text-primary py-0"
+						class="font-semibold tracking-tight text-primary py-0"
 						:class="featured ? 'text-2xl md:text-3xl' : 'text-xl'"
 					>
 						{{ project.name }}
@@ -49,7 +49,7 @@
 		</template>
 
 		<p
-			class="text-neutral-800 dark:text-neutral-200 leading-relaxed mb-4 flex-grow"
+			class="max-w-prose text-neutral-800 dark:text-neutral-200 leading-relaxed mb-4 flex-grow"
 		>
 			{{ project.description }}
 		</p>

@@ -8,7 +8,7 @@
 		</p> -->
 		<NuxtLink
 			:to="localePath('/')"
-			class="block italic font-semibold text-xl text-inherit"
+			class="font-display block text-2xl italic text-inherit"
 		>
 			{{ profile.name }}
 		</NuxtLink>
