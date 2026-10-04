@@ -8,7 +8,7 @@
 			class="flex flex-col items-center justify-center gap-2 text-center px-4"
 			style="height: 220px"
 		>
-			<UIcon name="i-lucide-eye-off" class="size-6 text-gray-400" />
+			<UIcon name="i-lucide-eye-off" class="size-6 text-gray-500 dark:text-gray-400" />
 			<p class="text-sm text-gray-500 dark:text-gray-400">
 				{{ t("live_preview_unavailable") }}
 			</p>

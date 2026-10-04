@@ -2,6 +2,7 @@
 	<div>
 		<UNavigationMenu
 			:items="items"
+			:aria-label="t('main_nav_aria')"
 			class="justify-center"
 			color="neutral"
 			variant="link"

@@ -58,7 +58,7 @@
 		<div class="space-y-3 mt-auto">
 			<div v-if="project.skills.length">
 				<span
-					class="text-xs uppercase font-bold text-gray-400 mb-1 block"
+					class="text-xs uppercase font-bold text-gray-600 dark:text-gray-400 mb-1 block"
 					>{{ t("skills_placeholder") }}</span
 				>
 				<div class="flex flex-wrap gap-1.5">
@@ -76,7 +76,7 @@
 
 			<div v-if="project.tools.length">
 				<span
-					class="text-xs uppercase font-bold text-gray-400 mb-1 block"
+					class="text-xs uppercase font-bold text-gray-600 dark:text-gray-400 mb-1 block"
 					>{{ t("tools_placeholder") }}</span
 				>
 				<div class="flex flex-wrap gap-1.5">

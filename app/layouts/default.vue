@@ -1,5 +1,6 @@
 <template>
-	<div
+	<a href="#main-content" class="skip-link">{{ t("skip_to_content") }}</a>
+	<header
 		class="h-[var(--nav-height)] responsive-columns sticky-nav glass-bg items-center"
 	>
 		<Logo class="" />
@@ -15,12 +16,15 @@
 					color="neutral"
 					variant="outline"
 					size="xl"
+					:aria-label="t('menu_aria')"
 				/>
 			</UDropdownMenu>
 		</div>
-	</div>
+	</header>
 
-	<slot />
+	<main id="main-content" tabindex="-1" class="outline-none">
+		<slot />
+	</main>
 </template>
 
 <script setup lang="ts">
@@ -92,6 +96,10 @@ const dropdownItems = computed<DropdownMenuItem[]>(() => [
 
 .sticky-nav {
 	@apply sticky top-0 z-50;
+}
+
+.skip-link {
+	@apply fixed left-4 top-2 z-[100] -translate-y-20 rounded-md bg-white px-4 py-2 text-black shadow-lg focus:translate-y-0;
 }
 
 .outline-class {

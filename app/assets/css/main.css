@@ -7,6 +7,16 @@
   --nav-height: 4rem;
 }
 
+:root {
+	--ui-primary: var(--ui-color-primary-700);
+	--ui-text-dimmed: var(--color-zinc-600);
+}
+
+.dark {
+	--ui-primary: var(--ui-color-primary-400);
+	--ui-text-dimmed: var(--color-zinc-400);
+}
+
 .anchor-section {
 	scroll-margin-top: var(--nav-height);
 }
@@ -43,6 +53,22 @@
 	}
 
 	a {
-		@apply text-blue-600 hover:underline;
+		@apply text-blue-600 dark:text-blue-400 hover:underline;
+	}
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-blue-600);
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
 	}
 }
