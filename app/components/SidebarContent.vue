@@ -1,5 +1,5 @@
 <template>
-	<div class="flex h-full flex-col gap-8 p-6">
+	<div class="flex h-full flex-col gap-10 p-8">
 		<div>
 			<Logo />
 			<p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
@@ -8,16 +8,16 @@
 		</div>
 
 		<nav :aria-label="t('main_nav_aria')">
-			<ul class="space-y-1">
+			<ul class="space-y-0.5">
 				<li v-for="item in navItems" :key="item.id">
 					<NuxtLink
 						:to="item.to"
 						:aria-current="item.current ? 'location' : undefined"
-						class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
+						class="flex items-center gap-3 border-l px-3 py-1.5 text-sm transition-colors hover:text-neutral-950 dark:hover:text-white"
 						:class="
 							item.current
-								? 'bg-neutral-100 dark:bg-neutral-800'
-								: 'text-neutral-600 dark:text-neutral-400'
+								? 'border-neutral-900 font-medium text-neutral-950 dark:border-neutral-100 dark:text-white'
+								: 'border-transparent text-neutral-500 dark:text-neutral-400'
 						"
 					>
 						<UIcon :name="item.icon" class="size-4" />
@@ -29,16 +29,16 @@
 
 		<section :aria-label="t('social_links_aria')">
 			<h2
-				class="px-3 pb-2 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+				class="px-3 pb-3 text-xs font-medium uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400"
 			>
 				{{ t("social_links_aria") }}
 			</h2>
-			<ul class="space-y-1">
+			<ul class="space-y-0.5">
 				<li v-for="link in socialLinks" :key="link.label">
 					<NuxtLink
 						:to="link.href"
 						target="_blank"
-						class="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-neutral-600 transition-colors hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+						class="flex items-center gap-3 border-l border-transparent px-3 py-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
 					>
 						<UIcon :name="link.icon" class="size-4" />
 						{{ link.label }}
