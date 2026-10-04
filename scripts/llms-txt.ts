@@ -8,7 +8,7 @@ export function buildLlmsTxt(): string {
 
 	lines.push(`# ${profile.name}`, "");
 	lines.push(
-		"> AI Engineer based in Nairobi, Kenya. Builds AI agents, data pipelines, and full-stack web applications with Python, Nuxt, and FastAPI.",
+		"> Agentic Engineer based in Nairobi, Kenya. Builds AI agents, data pipelines, and full-stack web applications with Python, Nuxt, and FastAPI.",
 		""
 	);
 	lines.push(`Portfolio: ${profile.portfolioUrl}`);

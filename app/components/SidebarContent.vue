@@ -63,12 +63,6 @@ const navItems = computed(() => {
 	const home = localePath("/");
 	return [
 		{
-			id: "home",
-			label: t("nav_home"),
-			to: home,
-			current: activeSection.value === "",
-		},
-		{
 			id: "projects",
 			label: t("projects"),
 			to: `${home}#projects`,
