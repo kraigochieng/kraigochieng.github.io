@@ -15,6 +15,11 @@ export const useSocialLinks = () => {
 			icon: "i-lucide-linkedin",
 		},
 		{
+			label: "X",
+			href: profile.twitterUrl,
+			icon: "i-simple-icons-x",
+		},
+		{
 			label: "WhatsApp",
 			href: whatsappUrl,
 			icon: "i-simple-icons-whatsapp",
