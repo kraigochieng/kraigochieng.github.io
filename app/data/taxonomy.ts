@@ -64,6 +64,7 @@ export const PROJECT_SLUGS = [
 	"image-to-ascii",
 	"yc-pitch-predictor",
 	"elevenlabs-tts-chunker",
+	"claude-code-config",
 ] as const;
 
 export type Domain = (typeof DOMAINS)[number];
