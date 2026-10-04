@@ -5,6 +5,7 @@
 				<NuxtPage />
 			</NuxtLayout>
 		</div>
+		<ScrollToTop />
 	</UApp>
 </template>
 
