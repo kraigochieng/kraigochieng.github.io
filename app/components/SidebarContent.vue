@@ -27,20 +27,17 @@
 		</nav>
 
 		<section :aria-label="t('social_links_aria')">
-			<h2
-				class="px-3 pb-3 font-sans text-xs font-medium uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400"
-			>
-				{{ t("social_links_aria") }}
-			</h2>
-			<ul class="space-y-0.5">
+			<ul class="-ml-3 grid w-fit grid-cols-4 gap-1">
 				<li v-for="link in socialLinks" :key="link.label">
 					<NuxtLink
 						:to="link.href"
 						target="_blank"
-						class="flex items-center gap-3 border-l border-transparent px-3 py-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
+						rel="noopener noreferrer"
+						:aria-label="link.label"
+						:title="link.label"
+						class="flex size-10 items-center justify-center text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
 					>
-						<UIcon :name="link.icon" class="size-4" />
-						{{ link.label }}
+						<UIcon :name="link.icon" class="size-5" />
 					</NuxtLink>
 				</li>
 			</ul>
