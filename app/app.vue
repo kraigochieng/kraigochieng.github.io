@@ -1,10 +1,8 @@
 <template>
 	<UApp>
-		<div class="page-padding">
-			<NuxtLayout>
-				<NuxtPage />
-			</NuxtLayout>
-		</div>
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
 		<ScrollToTop />
 	</UApp>
 </template>
@@ -46,10 +44,6 @@ useHead({
 
 .dark-mode body {
 	@apply bg-[var(--bg-dark)] text-[var(--text-dark)];
-}
-
-.page-padding {
-	@apply px-8 md:px-16 lg:px-32;
 }
 
 .page-enter-active,

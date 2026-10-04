@@ -12,8 +12,6 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
-const links = useSocialLinks();
-
 useHead({
 	title: computed(() => `${profile.name} | ${t("job_title")}`),
 });
@@ -148,19 +146,6 @@ const clearFilters = () => {
 			<p class="mt-2 max-w-prose text-neutral-600 dark:text-neutral-400">
 				{{ $t("hero_summary") }}
 			</p>
-			<div class="mt-6 flex flex-wrap items-center gap-2 -ml-2.5">
-				<UButton
-					v-for="link in links"
-					:key="link.label"
-					:icon="link.icon"
-					:to="link.href"
-					:aria-label="link.label"
-					:title="link.label"
-					target="_blank"
-					variant="ghost"
-					size="xl"
-				/>
-			</div>
 		</div>
 
 		<section id="projects" class="anchor-section py-6">
