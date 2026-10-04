@@ -12,7 +12,7 @@
 				<div>
 					<h3
 						class="font-bold tracking-tight text-primary py-0"
-						:class="featured ? 'text-3xl' : 'text-xl'"
+						:class="featured ? 'text-2xl md:text-3xl' : 'text-xl'"
 					>
 						{{ project.name }}
 					</h3>
