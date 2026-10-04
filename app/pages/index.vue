@@ -12,12 +12,6 @@ const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
 
-const taglines = computed(() => [
-	t("hero_tagline_1"),
-	t("hero_tagline_2"),
-	t("hero_tagline_3"),
-]);
-
 useHead({
 	title: computed(() => `${profile.name} | ${t("job_title")}`),
 });
@@ -141,10 +135,8 @@ const clearFilters = () => {
 <template>
 	<div>
 		<div class="py-14 md:py-24">
-			<h1
-				class="min-h-[3.4em] max-w-3xl text-4xl font-normal leading-[1.1] tracking-tight py-0 md:min-h-[2.3em] md:text-6xl"
-			>
-				<TypedTagline :phrases="taglines" />
+			<h1 class="max-w-3xl text-4xl font-bold tracking-tight py-0 md:text-6xl">
+				{{ $t("hero_tagline") }}
 			</h1>
 		</div>
 
