@@ -8,9 +8,8 @@
 	</aside>
 
 	<header
-		class="glass-bg sticky top-0 z-40 flex h-[var(--nav-height)] items-center justify-between px-6 md:hidden"
+		class="glass-bg sticky top-0 z-40 flex h-[var(--nav-height)] items-center gap-4 px-6 md:hidden"
 	>
-		<Logo />
 		<USlideover
 			v-model:open="drawerOpen"
 			side="left"
@@ -19,7 +18,7 @@
 			:ui="{ content: 'max-w-64' }"
 		>
 			<UButton
-				icon="i-lucide-menu"
+				icon="i-lucide-panel-left"
 				color="neutral"
 				variant="outline"
 				size="xl"
@@ -29,6 +28,7 @@
 				<SidebarContent />
 			</template>
 		</USlideover>
+		<Logo />
 	</header>
 
 	<main
