@@ -9,10 +9,12 @@
 
 :root {
 	--ui-primary: var(--ui-color-primary-700);
+	--ui-text-dimmed: var(--color-zinc-600);
 }
 
 .dark {
 	--ui-primary: var(--ui-color-primary-400);
+	--ui-text-dimmed: var(--color-zinc-400);
 }
 
 .anchor-section {
