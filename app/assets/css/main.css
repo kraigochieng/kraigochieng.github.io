@@ -17,6 +17,11 @@
 	--ui-text-dimmed: var(--color-neutral-400);
 }
 
+/* Thin rule under section headings to mark where each section starts. */
+.section-rule {
+	@apply border-b border-neutral-300 pb-3 mb-6 dark:border-neutral-700;
+}
+
 .anchor-section {
 	scroll-margin-top: var(--nav-height);
 }
@@ -27,11 +32,21 @@
 }
 
 @layer base {
+	body {
+		@apply bg-neutral-50 dark:bg-neutral-950;
+	}
+
+	h1,
+	h2,
+	h3 {
+		@apply text-neutral-950 dark:text-white;
+	}
+
 	h1 {
 		@apply text-4xl font-bold py-6;
 	}
 	h2 {
-		@apply text-3xl font-semibold py-5;
+		@apply text-3xl font-bold tracking-tight py-0;
 	}
 	h3 {
 		@apply text-2xl font-medium py-4;

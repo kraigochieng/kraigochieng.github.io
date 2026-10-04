@@ -150,6 +150,13 @@ const filteredProjects = computed(() => {
 	});
 });
 
+// The first project is featured across the full row; if the rest would leave
+// an orphan, the last card also spans the full row to keep the grid even.
+const spansFullRow = (index: number) => {
+	const total = filteredProjects.value.length;
+	return index === 0 || (index === total - 1 && (total - 1) % 2 === 1);
+};
+
 const clearFilters = () => {
 	selectedDomains.value = [];
 	selectedSkills.value = [];
@@ -160,11 +167,19 @@ const clearFilters = () => {
 
 <template>
 	<div>
-		<div
-			class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-4"
-		>
-			<h1 class="text-base font-bold py-0">{{ $t("job_title") }}</h1>
-			<div class="flex items-center gap-2">
+		<div class="py-10 md:py-16">
+			<h1 class="text-5xl md:text-6xl font-bold tracking-tight py-0">
+				{{ profile.name }}
+			</h1>
+			<p
+				class="mt-3 text-xl md:text-2xl font-medium text-neutral-700 dark:text-neutral-300"
+			>
+				{{ $t("job_title") }}
+			</p>
+			<p class="mt-2 max-w-prose text-neutral-600 dark:text-neutral-400">
+				{{ $t("hero_summary") }}
+			</p>
+			<div class="mt-6 flex flex-wrap items-center gap-2 -ml-2.5">
 				<UButton
 					v-for="link in links"
 					:key="link.label"
@@ -181,9 +196,9 @@ const clearFilters = () => {
 
 		<section id="projects" class="anchor-section py-6">
 			<div
-				class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4"
+				class="section-rule flex flex-col md:flex-row md:items-end justify-between gap-4"
 			>
-				<h2 class="mb-0 flex items-center gap-2">
+				<h2 class="flex items-center gap-2">
 					<UIcon name="i-lucide-code" class="size-6" />
 					{{ t("projects") }} ({{ filteredProjects.length }})
 				</h2>
@@ -240,9 +255,11 @@ const clearFilters = () => {
 				class="grid grid-cols-1 lg:grid-cols-2 gap-4"
 			>
 				<ProjectCard
-					v-for="project in filteredProjects"
+					v-for="(project, index) in filteredProjects"
 					:key="project.slug"
 					:project="project"
+					:featured="index === 0"
+					:class="{ 'lg:col-span-2': spansFullRow(index) }"
 				/>
 			</div>
 
@@ -258,7 +275,7 @@ const clearFilters = () => {
 		</section>
 
 		<section id="experience" class="anchor-section py-6">
-			<h2 class="flex items-center gap-2">
+			<h2 class="section-rule flex items-center gap-2">
 				<UIcon name="i-lucide-briefcase" class="size-6" />
 				{{ t("work_experience") }}
 			</h2>
@@ -273,7 +290,7 @@ const clearFilters = () => {
 		</section>
 
 		<section id="certifications" class="anchor-section py-12">
-			<h2 class="flex items-center gap-2">
+			<h2 class="section-rule flex items-center gap-2">
 				<UIcon name="i-lucide-award" class="size-6" />
 				{{ t("certifications_heading") }}
 			</h2>

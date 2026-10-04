@@ -1,15 +1,23 @@
 <template>
 	<UCard
-		class="flex flex-col h-full border border-neutral-300 dark:border-neutral-700 transition-colors hover:border-neutral-900 dark:hover:border-neutral-300"
+		class="flex flex-col h-full border transition-colors hover:border-neutral-900 dark:hover:border-neutral-300"
+		:class="
+			featured
+				? 'border-neutral-900 dark:border-neutral-300'
+				: 'border-neutral-300 dark:border-neutral-700'
+		"
 	>
 		<template #header>
 			<div class="flex items-start justify-between gap-4">
 				<div>
-					<h3 class="text-xl font-semibold text-primary">
+					<h3
+						class="font-bold tracking-tight text-primary py-0"
+						:class="featured ? 'text-2xl md:text-3xl' : 'text-xl'"
+					>
 						{{ project.name }}
 					</h3>
 					<p
-						class="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mt-1"
+						class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mt-1"
 					>
 						{{ project.domain.join(" • ") }}
 					</p>
@@ -41,7 +49,7 @@
 		</template>
 
 		<p
-			class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4 flex-grow"
+			class="text-neutral-800 dark:text-neutral-200 leading-relaxed mb-4 flex-grow"
 		>
 			{{ project.description }}
 		</p>
@@ -49,7 +57,7 @@
 		<div class="space-y-3 mt-auto">
 			<div v-if="project.skills.length">
 				<span
-					class="text-xs uppercase font-bold text-neutral-600 dark:text-neutral-400 mb-1 block"
+					class="text-xs uppercase font-medium tracking-wider text-neutral-500 dark:text-neutral-400 mb-1 block"
 					>{{ t("skills_placeholder") }}</span
 				>
 				<div class="flex flex-wrap gap-1.5">
@@ -58,7 +66,7 @@
 						:key="skill"
 						color="primary"
 						variant="subtle"
-						size="lg"
+						size="md"
 					>
 						{{ skill }}
 					</UBadge>
@@ -67,7 +75,7 @@
 
 			<div v-if="project.tools.length">
 				<span
-					class="text-xs uppercase font-bold text-neutral-600 dark:text-neutral-400 mb-1 block"
+					class="text-xs uppercase font-medium tracking-wider text-neutral-500 dark:text-neutral-400 mb-1 block"
 					>{{ t("tools_placeholder") }}</span
 				>
 				<div class="flex flex-wrap gap-1.5">
@@ -76,7 +84,7 @@
 						:key="tool"
 						color="neutral"
 						variant="outline"
-						size="lg"
+						size="md"
 					>
 						{{ tool }}
 					</UBadge>
@@ -91,6 +99,7 @@ import type { Project } from "@/types";
 
 defineProps<{
 	project: Project;
+	featured?: boolean;
 }>();
 
 const { t } = useI18n();
