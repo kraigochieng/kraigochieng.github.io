@@ -41,7 +41,7 @@ useHead({
 
 :root {
 	--bg-dark: #171717;
-	--text-dark: #dedfe0;
+	--text-dark: #e5e5e5;
 }
 
 .dark-mode body {

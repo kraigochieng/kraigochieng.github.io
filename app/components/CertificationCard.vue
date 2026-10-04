@@ -1,13 +1,13 @@
 <template>
-	<UCard class="border-2 border-black dark:border-[#c0c0c0]">
+	<UCard class="border border-neutral-300 dark:border-neutral-700 transition-colors hover:border-neutral-900 dark:hover:border-neutral-300">
 		<template #header>
 			<h3 class="text-lg font-semibold text-primary">
 				{{ certification.name }}
 			</h3>
-			<p class="text-sm text-gray-600 dark:text-gray-400">
+			<p class="text-sm text-neutral-600 dark:text-neutral-400">
 				{{ certification.issuer }}
 			</p>
-			<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+			<p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1">
 				<template v-if="certification.expires">
 					{{ certification.issued }} – {{ certification.expires }}
 				</template>
@@ -19,7 +19,7 @@
 
 		<p
 			v-if="certification.credentialId"
-			class="text-sm text-gray-700 dark:text-gray-300 mb-4"
+			class="text-sm text-neutral-700 dark:text-neutral-300 mb-4"
 		>
 			ID: {{ certification.credentialId }}
 		</p>
