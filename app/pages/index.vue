@@ -135,7 +135,9 @@ const clearFilters = () => {
 <template>
 	<div>
 		<div class="py-10 md:py-16">
-			<h1 class="max-w-2xl text-3xl md:text-5xl font-bold tracking-tight py-0">
+			<h1
+				class="font-display max-w-2xl text-4xl font-normal leading-[1.1] tracking-tight py-0 md:text-6xl"
+			>
 				{{ $t("hero_summary") }}
 			</h1>
 		</div>
