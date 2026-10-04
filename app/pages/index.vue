@@ -49,6 +49,12 @@ useHead({
 	title: computed(() => `${profile.name} | ${t("job_title")}`),
 });
 
+useSeoMeta({
+	description: () => t("meta_description"),
+	ogTitle: () => `${profile.name} | ${t("job_title")}`,
+	ogDescription: () => t("meta_description"),
+});
+
 const toSelectItems = (list: string[]): FilterItem[] => {
 	return list.map((item) => ({ label: item, value: item }));
 };
