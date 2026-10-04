@@ -19,7 +19,7 @@
 
 /* Thin rule under section headings to mark where each section starts. */
 .section-rule {
-	@apply border-b border-neutral-300 pb-3 mb-6 dark:border-neutral-700;
+	@apply border-b border-neutral-300 pb-4 mb-8 dark:border-neutral-700;
 }
 
 .anchor-section {
@@ -47,7 +47,7 @@
 		@apply text-4xl font-bold py-6;
 	}
 	h2 {
-		@apply text-3xl font-bold tracking-tight py-0;
+		@apply text-2xl font-semibold tracking-tight py-0 md:text-3xl;
 	}
 	h3 {
 		@apply text-2xl font-medium py-4;
