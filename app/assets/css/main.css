@@ -8,10 +8,12 @@
 }
 
 :root {
+	--ui-primary: var(--color-neutral-900);
 	--ui-text-dimmed: var(--color-neutral-600);
 }
 
 .dark {
+	--ui-primary: var(--color-neutral-100);
 	--ui-text-dimmed: var(--color-neutral-400);
 }
 
