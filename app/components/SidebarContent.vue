@@ -29,7 +29,7 @@
 
 		<section :aria-label="t('social_links_aria')">
 			<h2
-				class="px-3 pb-3 text-xs font-medium uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400"
+				class="px-3 pb-3 font-sans text-xs font-medium uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400"
 			>
 				{{ t("social_links_aria") }}
 			</h2>
