@@ -7,6 +7,14 @@
   --nav-height: 4rem;
 }
 
+:root {
+	--ui-primary: var(--ui-color-primary-700);
+}
+
+.dark {
+	--ui-primary: var(--ui-color-primary-400);
+}
+
 .anchor-section {
 	scroll-margin-top: var(--nav-height);
 }
@@ -43,7 +51,7 @@
 	}
 
 	a {
-		@apply text-blue-600 hover:underline;
+		@apply text-blue-600 dark:text-blue-400 hover:underline;
 	}
 }
 
