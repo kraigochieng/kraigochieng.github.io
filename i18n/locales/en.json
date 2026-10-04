@@ -34,8 +34,7 @@
     "skills_placeholder": "Skills",
     "tools_placeholder": "Tools",
 
-    "live_demo_aria": "Live Demo",
-    "github_repo_aria": "GitHub Repository",
+    "live_demo": "Live demo",
     "no_projects_match": "No projects match your current filters.",
     "reset_filters": "Reset all filters",
 

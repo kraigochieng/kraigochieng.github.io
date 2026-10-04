@@ -1,5 +1,6 @@
 <template>
 	<UCard
+		:ui="{ body: 'flex-1' }"
 		class="flex flex-col h-full border transition-colors hover:border-neutral-900 dark:hover:border-neutral-300"
 		:class="
 			featured
@@ -8,44 +9,17 @@
 		"
 	>
 		<template #header>
-			<div class="flex items-start justify-between gap-4">
-				<div>
-					<h3
-						class="font-semibold tracking-tight text-primary py-0"
-						:class="featured ? 'text-2xl md:text-3xl' : 'text-xl'"
-					>
-						{{ project.name }}
-					</h3>
-					<p
-						class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mt-1"
-					>
-						{{ project.domain.join(" • ") }}
-					</p>
-				</div>
-
-				<div class="flex gap-2">
-					<UButton
-						v-if="project.link"
-						color="primary"
-						size="lg"
-						icon="i-lucide-globe"
-						variant="ghost"
-						:to="project.link"
-						target="_blank"
-						:aria-label="t('live_demo_aria')"
-					/>
-					<UButton
-						v-if="project.github"
-						color="neutral"
-						size="lg"
-						icon="i-lucide-github"
-						variant="ghost"
-						:to="project.github"
-						target="_blank"
-						:aria-label="t('github_repo_aria')"
-					/>
-				</div>
-			</div>
+			<h3
+				class="font-semibold tracking-tight text-primary py-0"
+				:class="featured ? 'text-2xl md:text-3xl' : 'text-xl'"
+			>
+				{{ project.name }}
+			</h3>
+			<p
+				class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mt-1"
+			>
+				{{ project.domain.join(" • ") }}
+			</p>
 		</template>
 
 		<p
@@ -91,6 +65,34 @@
 				</div>
 			</div>
 		</div>
+
+		<template v-if="project.link || project.github" #footer>
+			<div class="flex flex-wrap gap-3">
+				<UButton
+					v-if="project.link"
+					color="primary"
+					size="md"
+					trailing-icon="i-lucide-arrow-up-right"
+					:to="project.link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{{ t("live_demo") }}
+				</UButton>
+				<UButton
+					v-if="project.github"
+					color="neutral"
+					variant="outline"
+					size="md"
+					icon="i-lucide-github"
+					:to="project.github"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					GitHub
+				</UButton>
+			</div>
+		</template>
 	</UCard>
 </template>
 
