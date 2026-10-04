@@ -145,7 +145,6 @@ const clearFilters = () => {
 				class="section-rule flex flex-col md:flex-row md:items-end justify-between gap-4"
 			>
 				<h2 class="flex items-center gap-2">
-					<UIcon name="i-lucide-code" class="size-6" />
 					{{ t("projects") }} ({{ filteredProjects.length }})
 				</h2>
 
@@ -223,7 +222,6 @@ const clearFilters = () => {
 
 		<section id="experience" class="anchor-section py-10 md:py-14">
 			<h2 class="section-rule flex items-center gap-2">
-				<UIcon name="i-lucide-briefcase" class="size-6" />
 				{{ t("work_experience") }}
 			</h2>
 
@@ -239,7 +237,6 @@ const clearFilters = () => {
 
 		<section id="certifications" class="anchor-section py-10 pb-24 md:py-14 md:pb-32">
 			<h2 class="section-rule flex items-center gap-2">
-				<UIcon name="i-lucide-award" class="size-6" />
 				{{ t("certifications_heading") }}
 			</h2>
 

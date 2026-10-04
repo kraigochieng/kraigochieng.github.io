@@ -4,6 +4,7 @@ export const profile = {
 	// Digits only - no "+", no spaces. Used to derive the wa.me/tel URLs below.
 	phoneNumber: "254792701195",
 	githubUrl: "https://github.com/kraigochieng",
+	twitterUrl: "https://x.com/kraigochieng",
 	linkedinUrl: "https://www.linkedin.com/in/kraig-ochieng-911121215/",
 	buyMeACoffeeUrl: "https://coff.ee/kraigochieng",
 	portfolioUrl: "https://kraigochieng.github.io",

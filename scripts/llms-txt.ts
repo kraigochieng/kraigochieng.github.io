@@ -15,6 +15,7 @@ export function buildLlmsTxt(): string {
 	lines.push(`Contact: ${profile.email} · +${profile.phoneNumber}`);
 	lines.push(`GitHub: ${profile.githubUrl}`);
 	lines.push(`LinkedIn: ${profile.linkedinUrl}`);
+	lines.push(`X: ${profile.twitterUrl}`);
 	lines.push("");
 
 	lines.push("## Projects", "");

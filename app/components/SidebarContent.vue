@@ -13,14 +13,13 @@
 					<NuxtLink
 						:to="item.to"
 						:aria-current="item.current ? 'location' : undefined"
-						class="flex items-center gap-3 border-l px-3 py-1.5 text-sm transition-colors hover:text-neutral-950 dark:hover:text-white"
+						class="block border-l px-3 py-1.5 text-sm transition-colors hover:text-neutral-950 dark:hover:text-white"
 						:class="
 							item.current
 								? 'border-neutral-900 font-medium text-neutral-950 dark:border-neutral-100 dark:text-white'
 								: 'border-transparent text-neutral-500 dark:text-neutral-400'
 						"
 					>
-						<UIcon :name="item.icon" class="size-4" />
 						{{ item.label }}
 					</NuxtLink>
 				</li>
@@ -28,20 +27,18 @@
 		</nav>
 
 		<section :aria-label="t('social_links_aria')">
-			<h2
-				class="px-3 pb-3 font-sans text-xs font-medium uppercase tracking-[0.15em] text-neutral-500 dark:text-neutral-400"
-			>
-				{{ t("social_links_aria") }}
-			</h2>
-			<ul class="space-y-0.5">
+			<ul class="-ml-3 grid w-fit grid-cols-4 gap-1">
 				<li v-for="link in socialLinks" :key="link.label">
 					<NuxtLink
 						:to="link.href"
 						target="_blank"
-						class="flex items-center gap-3 border-l border-transparent px-3 py-1.5 text-sm text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
+						rel="noopener noreferrer"
+						:aria-label="link.label"
+						:title="link.label"
+						class="flex size-10 items-center justify-center text-neutral-500 transition-colors dark:text-neutral-400"
+						:class="link.hover"
 					>
-						<UIcon :name="link.icon" class="size-4" />
-						{{ link.label }}
+						<UIcon :name="link.icon" class="size-5" />
 					</NuxtLink>
 				</li>
 			</ul>
@@ -68,28 +65,24 @@ const navItems = computed(() => {
 		{
 			id: "home",
 			label: t("nav_home"),
-			icon: "i-lucide-home",
 			to: home,
 			current: activeSection.value === "",
 		},
 		{
 			id: "projects",
 			label: t("projects"),
-			icon: "i-lucide-code",
 			to: `${home}#projects`,
 			current: activeSection.value === "projects",
 		},
 		{
 			id: "experience",
 			label: t("work_experience"),
-			icon: "i-lucide-briefcase",
 			to: `${home}#experience`,
 			current: activeSection.value === "experience",
 		},
 		{
 			id: "certifications",
 			label: t("nav_certifications"),
-			icon: "i-lucide-award",
 			to: `${home}#certifications`,
 			current: activeSection.value === "certifications",
 		},
