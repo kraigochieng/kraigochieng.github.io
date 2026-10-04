@@ -203,6 +203,7 @@ const clearFilters = () => {
 				class="grid grid-cols-1 lg:grid-cols-2 gap-4"
 			>
 				<ProjectCard
+					v-reveal
 					v-for="(project, index) in filteredProjects"
 					:key="project.slug"
 					:project="project"
@@ -230,6 +231,7 @@ const clearFilters = () => {
 
 			<div class="divide-y divide-neutral-200 dark:divide-neutral-800">
 				<ExperienceCard
+					v-reveal
 					v-for="exp in experiences"
 					:key="`${exp.company}-${exp.role}-${exp.start}`"
 					:experience="exp"
@@ -245,6 +247,7 @@ const clearFilters = () => {
 
 			<div class="divide-y divide-neutral-200 dark:divide-neutral-800">
 				<CertificationCard
+					v-reveal
 					v-for="cert in certifications"
 					:key="cert.name"
 					:certification="cert"
