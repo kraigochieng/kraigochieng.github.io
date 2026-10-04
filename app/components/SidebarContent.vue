@@ -35,7 +35,8 @@
 						rel="noopener noreferrer"
 						:aria-label="link.label"
 						:title="link.label"
-						class="flex size-10 items-center justify-center text-neutral-500 transition-colors hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
+						class="flex size-10 items-center justify-center text-neutral-500 transition-colors dark:text-neutral-400"
+						:class="link.hover"
 					>
 						<UIcon :name="link.icon" class="size-5" />
 					</NuxtLink>
