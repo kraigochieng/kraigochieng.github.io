@@ -11,7 +11,6 @@ export const projects = [
 		tools: ["Nuxt", "FastAPI", "Python", "MLflow", "PostgreSQL", "Docker"],
 		link: "https://medilinda.vercel.app",
 		github: "https://github.com/kraigochieng/medilinda",
-		previewImage: "/projects/medilinda.png",
 	},
 	{
 		name: "Jumbo E-Commerce Dashboard",
@@ -23,7 +22,6 @@ export const projects = [
 		tools: ["Python", "PostgreSQL", "Streamlit"],
 		link: "https://ecommerce-sales-analysis.streamlit.app/",
 		github: "https://github.com/kraigochieng/ecommerce-sales-analysis",
-		previewImage: "/projects/jumbo-ecommerce.png",
 	},
 	// {
 	// 	name: "Diamond Price Predictor",
@@ -80,7 +78,6 @@ export const projects = [
 		tools: ["Python", "FastAPI", "Docker", "OpenRouter"],
 		link: "https://yc-elevator-pitch-doctor.onrender.com",
 		github: "https://github.com/kraigochieng/yc-elevator-pitch-doctor",
-		previewImage: "/projects/yc-elevator-pitch-doctor.png",
 		// n8n webhook currently returns 404 - workflow needs reactivating.
 	},
 	{

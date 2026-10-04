@@ -40,16 +40,6 @@
 			</div>
 		</template>
 
-		<LivePreview
-			v-if="project.link"
-			:url="project.link"
-			:title="`${project.name} – live demo`"
-			:blocked="project.previewBlocked"
-			:image="project.previewImage"
-			:priority="priority"
-			class="mb-3"
-		/>
-
 		<p
 			class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 flex-grow"
 		>
@@ -101,7 +91,6 @@ import type { Project } from "@/types";
 
 defineProps<{
 	project: Project;
-	priority?: boolean;
 }>();
 
 const { t } = useI18n();

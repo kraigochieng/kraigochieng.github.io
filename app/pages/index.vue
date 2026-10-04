@@ -240,10 +240,9 @@ const clearFilters = () => {
 				class="grid grid-cols-1 lg:grid-cols-2 gap-4"
 			>
 				<ProjectCard
-					v-for="(project, index) in filteredProjects"
+					v-for="project in filteredProjects"
 					:key="project.slug"
 					:project="project"
-					:priority="index === 0"
 				/>
 			</div>
 
