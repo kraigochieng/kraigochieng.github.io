@@ -14,6 +14,12 @@ describe("projects data", () => {
 		expect(new Set(orders).size).toBe(orders.length);
 	});
 
+	it("keeps descriptions short enough for a card", () => {
+		for (const p of projects) {
+			expect(p.description.length).toBeLessThanOrEqual(160);
+		}
+	});
+
 	it("has https links where a link is set", () => {
 		for (const p of projects) {
 			for (const url of [p.link, p.github]) {

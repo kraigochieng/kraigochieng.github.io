@@ -8,7 +8,7 @@ export const projects = [
 		order: 1,
 		domain: ["Healthcare"],
 		description:
-			"Pharmacovigilance platform enabling Kenyan healthcare providers to detect TB drug side effects early, improve patient safety, and trigger instant SMS alerts to medical teams nationwide.",
+			"Pharmacovigilance platform that helps Kenyan clinicians catch TB drug side effects early and alerts medical teams by SMS.",
 		skills: ["AI", "Machine Learning", "Explainable AI"],
 		tools: ["Nuxt", "FastAPI", "Python", "MLflow", "PostgreSQL", "Docker"],
 		link: "https://medilinda.vercel.app",
@@ -90,7 +90,7 @@ export const projects = [
 		order: 4,
 		domain: ["Dev Tool"],
 		description:
-			"A FastAPI wrapper around the ElevenLabs Text-to-Speech API that transparently handles text longer than ElevenLabs' 10,000-character limit per request. Send it text of any length; it chunks, synthesizes each chunk, and returns one merged mp3.",
+			"FastAPI wrapper that gets around the ElevenLabs 10,000-character limit: it chunks long text, synthesizes each chunk, and returns one mp3.",
 		skills: ["FFmpeg", "Web Development"],
 		tools: ["Python", "FastAPI", "Docker", "FFmpeg"],
 		link: "https://elevenlabs-tts-chunker.vercel.app/",
@@ -102,7 +102,7 @@ export const projects = [
 		order: 5,
 		domain: ["Dev Tool"],
 		description:
-			"My Claude Code setup, versioned in git so every machine behaves the same. It enforces conventional commits, an issue-and-branch workflow, and a writing style.",
+			"My Claude Code setup, versioned in git. It enforces conventional commits, an issue-and-branch workflow, and a writing style.",
 		skills: ["AI Agents", "Prompt Engineering"],
 		tools: [],
 		link: null,
