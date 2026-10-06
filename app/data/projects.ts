@@ -15,15 +15,15 @@ export const projects = [
 		github: "https://github.com/kraigochieng/medilinda",
 	},
 	{
-		name: "Jumbo E-Commerce Dashboard",
+		name: "Jumbo E-Commerce Data Story",
 		slug: "jumbo-ecommerce",
 		order: 2,
 		domain: ["E-Commerce", "Logistics"],
 		description:
-			"Optimizing global e-commerce operations through deep-dive analysis of revenue, returns, and shipping efficiency.",
-		skills: ["Dashboards"],
-		tools: ["Python", "PostgreSQL", "Streamlit"],
-		link: "https://ecommerce-sales-analysis.streamlit.app/",
+			"Data story on 100k e-commerce orders. Each finding on revenue, returns and delivery comes with the action it should drive.",
+		skills: ["Visualization"],
+		tools: ["Python", "SQLite"],
+		link: "https://kraigochieng.github.io/ecommerce-sales-analysis/",
 		github: "https://github.com/kraigochieng/ecommerce-sales-analysis",
 	},
 	// {
