@@ -122,7 +122,22 @@ const clearFilters = () => {
 			</h1>
 		</div>
 
-		<section id="projects" class="anchor-section pt-8 pb-10 md:pt-10 md:pb-14">
+		<section id="experience" class="anchor-section pt-8 pb-10 md:pt-10 md:pb-14">
+			<h2 class="section-rule flex items-center gap-2">
+				{{ t("work_experience") }}
+			</h2>
+
+			<div>
+				<ExperienceCard
+					v-reveal
+					v-for="exp in experiences"
+					:key="`${exp.company}-${exp.role}-${exp.start}`"
+					:experience="exp"
+				/>
+			</div>
+		</section>
+
+		<section id="projects" class="anchor-section py-10 md:py-14">
 			<div
 				class="section-rule flex flex-col md:flex-row md:items-end justify-between gap-4"
 			>
@@ -198,21 +213,6 @@ const clearFilters = () => {
 					variant="link"
 					color="primary"
 					@click="clearFilters"
-				/>
-			</div>
-		</section>
-
-		<section id="experience" class="anchor-section py-10 md:py-14">
-			<h2 class="section-rule flex items-center gap-2">
-				{{ t("work_experience") }}
-			</h2>
-
-			<div>
-				<ExperienceCard
-					v-reveal
-					v-for="exp in experiences"
-					:key="`${exp.company}-${exp.role}-${exp.start}`"
-					:experience="exp"
 				/>
 			</div>
 		</section>
