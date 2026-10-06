@@ -28,6 +28,16 @@ useSeoMeta({
 	twitterImage: `${profile.portfolioUrl}/og-image.png`,
 });
 
+const drawerOpen = useState("drawerOpen", () => false);
+
+// On a phone the contact icons live in the sidebar drawer, so open it. On a
+// wide screen the sidebar is always visible, so let the link scroll instead.
+const onContactClick = (event: MouseEvent) => {
+	if (window.matchMedia("(min-width: 768px)").matches) return;
+	event.preventDefault();
+	drawerOpen.value = true;
+};
+
 const allSkills = collectSkills(projects, experiences);
 
 const toSelectItems = (list: string[]): FilterItem[] => {
@@ -150,6 +160,20 @@ const clearFilters = () => {
 			<h1 class="max-w-3xl text-4xl font-bold tracking-tight py-0 md:text-6xl">
 				{{ $t("hero_tagline") }}
 			</h1>
+			<p
+				class="mt-4 max-w-xl text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
+			>
+				{{ t("intro_text") }}
+			</p>
+			<UButton
+				class="mt-6"
+				size="xl"
+				color="primary"
+				trailing-icon="i-lucide-arrow-right"
+				to="#contact"
+				:label="t('cta_contact')"
+				@click="onContactClick"
+			/>
 		</div>
 
 		<section id="experience" class="anchor-section pt-8 pb-10 md:pt-10 md:pb-14">
