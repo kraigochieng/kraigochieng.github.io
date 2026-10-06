@@ -3,6 +3,7 @@ import type { Domain, ProjectSlug, Skill, Tool } from "../data/taxonomy";
 export interface Project {
 	name: string;
 	slug: ProjectSlug;
+	order: number;
 	domain: Domain[];
 	description: string;
 	skills: Skill[];
