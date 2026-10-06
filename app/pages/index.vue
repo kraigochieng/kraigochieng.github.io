@@ -225,7 +225,7 @@ const clearFilters = () => {
 				{{ t("work_experience") }}
 			</h2>
 
-			<div class="divide-y divide-neutral-200 dark:divide-neutral-800">
+			<div>
 				<ExperienceCard
 					v-reveal
 					v-for="exp in experiences"
