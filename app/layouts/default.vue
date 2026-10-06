@@ -48,7 +48,8 @@ import { profile } from "@/data/profile";
 const { t } = useI18n();
 const route = useRoute();
 
-const drawerOpen = ref(false);
+// Shared so the home page call to action can open the drawer on mobile.
+const drawerOpen = useState("drawerOpen", () => false);
 
 // Close the drawer after navigating (including same-page hash links).
 watch(
