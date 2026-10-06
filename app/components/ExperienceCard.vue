@@ -1,5 +1,16 @@
 <template>
-	<article class="grid gap-3 py-8 md:grid-cols-[11rem_1fr] md:gap-10">
+	<article
+		class="relative grid gap-3 py-8 pl-7 before:absolute before:left-[5px] before:top-0 before:bottom-0 before:w-px before:bg-neutral-300 first:before:top-[2.6rem] last:before:bottom-auto last:before:h-[2.6rem] dark:before:bg-neutral-700 md:grid-cols-[11rem_1fr] md:gap-10"
+	>
+		<span
+			aria-hidden="true"
+			class="absolute left-0 top-[2.1rem] size-[11px] rounded-full border-2 border-primary"
+			:class="
+				experience.end
+					? 'bg-white dark:bg-neutral-950'
+					: 'bg-primary'
+			"
+		/>
 		<div class="text-xs text-neutral-500 dark:text-neutral-400">
 			<p>
 				{{ experience.start }} –
