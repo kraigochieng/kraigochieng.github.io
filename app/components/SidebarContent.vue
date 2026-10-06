@@ -45,7 +45,6 @@
 		</section>
 
 		<div class="mt-auto flex items-center gap-2">
-			<Locale />
 			<Theme />
 		</div>
 	</div>
