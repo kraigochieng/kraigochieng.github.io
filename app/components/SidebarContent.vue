@@ -61,23 +61,23 @@ const { t } = useI18n();
 const localePath = useLocalePath();
 const socialLinks = useSocialLinks();
 
-const sectionIds = ["projects", "experience", "certifications"];
+const sectionIds = ["experience", "projects", "certifications"];
 const activeSection = useActiveSection(sectionIds);
 
 const navItems = computed(() => {
 	const home = localePath("/");
 	return [
 		{
-			id: "projects",
-			label: t("projects"),
-			to: `${home}#projects`,
-			current: activeSection.value === "projects",
-		},
-		{
 			id: "experience",
 			label: t("work_experience"),
 			to: `${home}#experience`,
 			current: activeSection.value === "experience",
+		},
+		{
+			id: "projects",
+			label: t("projects"),
+			to: `${home}#projects`,
+			current: activeSection.value === "projects",
 		},
 		{
 			id: "certifications",
