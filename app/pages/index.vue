@@ -20,6 +20,12 @@ useSeoMeta({
 	description: () => t("meta_description"),
 	ogTitle: () => `${profile.name} | ${t("job_title")}`,
 	ogDescription: () => t("meta_description"),
+	// Link-preview crawlers need an absolute URL.
+	ogImage: `${profile.portfolioUrl}/og-image.png`,
+	ogImageWidth: 1200,
+	ogImageHeight: 630,
+	twitterCard: "summary_large_image",
+	twitterImage: `${profile.portfolioUrl}/og-image.png`,
 });
 
 const toSelectItems = (list: string[]): FilterItem[] => {
