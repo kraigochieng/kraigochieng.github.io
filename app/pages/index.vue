@@ -115,6 +115,25 @@ const spansFullRow = (index: number) => {
 	return index === 0 || (index === total - 1 && (total - 1) % 2 === 1);
 };
 
+const isDomainSelected = (label: string) =>
+	selectedDomains.value.some((d) => d.label === label);
+
+const toggleDomain = (label: string) => {
+	selectedDomains.value = isDomainSelected(label)
+		? selectedDomains.value.filter((d) => d.label !== label)
+		: [...selectedDomains.value, { label }];
+};
+
+// Sort, skills and tools sit behind a toggle. Start open when a shared URL
+// already sets one of them, so the active filter is never hidden.
+const moreFiltersCount = computed(
+	() =>
+		selectedSkills.value.length +
+		selectedTools.value.length +
+		(selectedSort.value === "order" ? 0 : 1),
+);
+const showMoreFilters = ref(moreFiltersCount.value > 0);
+
 const clearFilters = () => {
 	selectedDomains.value = [];
 	selectedSkills.value = [];
@@ -169,36 +188,63 @@ const clearFilters = () => {
 				/>
 			</div>
 
-			<div
-				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4"
-			>
-				<USelectMenu
-					v-model="selectedSort"
-					:items="sortOptions"
-					value-key="value"
-					:placeholder="t('sort_by')"
-				/>
-				<USelectMenu
-					v-model="selectedDomains"
-					:items="uniqueDomains"
-					multiple
-					searchable
-					:placeholder="t('domains_placeholder')"
-				/>
-				<USelectMenu
-					v-model="selectedSkills"
-					:items="uniqueSkills"
-					multiple
-					searchable
-					:placeholder="t('skills_placeholder')"
-				/>
-				<USelectMenu
-					v-model="selectedTools"
-					:items="uniqueTools"
-					multiple
-					searchable
-					:placeholder="t('tools_placeholder')"
-				/>
+			<div class="mb-4 space-y-3">
+				<div class="flex flex-wrap items-center gap-2">
+					<UButton
+						v-for="domain in uniqueDomains"
+						:key="domain.label"
+						size="sm"
+						color="neutral"
+						:variant="isDomainSelected(domain.label) ? 'solid' : 'outline'"
+						:aria-pressed="isDomainSelected(domain.label)"
+						:label="domain.label"
+						@click="toggleDomain(domain.label)"
+					/>
+					<UButton
+						size="sm"
+						color="neutral"
+						variant="link"
+						:trailing-icon="
+							showMoreFilters
+								? 'i-lucide-chevron-up'
+								: 'i-lucide-chevron-down'
+						"
+						:aria-expanded="showMoreFilters"
+						aria-controls="more-filters"
+						:label="
+							t('more_filters') +
+							(moreFiltersCount ? ` (${moreFiltersCount})` : '')
+						"
+						@click="showMoreFilters = !showMoreFilters"
+					/>
+				</div>
+
+				<div
+					v-show="showMoreFilters"
+					id="more-filters"
+					class="grid grid-cols-1 md:grid-cols-3 gap-3"
+				>
+					<USelectMenu
+						v-model="selectedSort"
+						:items="sortOptions"
+						value-key="value"
+						:placeholder="t('sort_by')"
+					/>
+					<USelectMenu
+						v-model="selectedSkills"
+						:items="uniqueSkills"
+						multiple
+						searchable
+						:placeholder="t('skills_placeholder')"
+					/>
+					<USelectMenu
+						v-model="selectedTools"
+						:items="uniqueTools"
+						multiple
+						searchable
+						:placeholder="t('tools_placeholder')"
+					/>
+				</div>
 			</div>
 
 			<div
