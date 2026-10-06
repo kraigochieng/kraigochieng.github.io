@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { certifications } from "@/data/certifications";
 import { experiences } from "@/data/experience";
-import { profile } from "@/data/profile";
+import { mailtoUrl, profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 interface FilterItem {
@@ -272,7 +272,7 @@ const clearFilters = () => {
 			</div>
 		</section>
 
-		<section id="certifications" class="anchor-section py-10 pb-24 md:py-14 md:pb-32">
+		<section id="certifications" class="anchor-section py-10 md:py-14">
 			<h2 class="section-rule flex items-center gap-2">
 				{{ t("certifications_heading") }}
 			</h2>
@@ -283,6 +283,36 @@ const clearFilters = () => {
 					v-for="cert in certifications"
 					:key="cert.name"
 					:certification="cert"
+				/>
+			</div>
+		</section>
+
+		<section id="contact" class="anchor-section py-10 pb-24 md:py-14 md:pb-32">
+			<h2 class="section-rule flex items-center gap-2">
+				{{ t("contact_heading") }}
+			</h2>
+
+			<p class="max-w-prose text-neutral-700 dark:text-neutral-300">
+				{{ t("contact_text") }}
+			</p>
+
+			<div class="mt-6 flex flex-wrap gap-3">
+				<UButton
+					size="xl"
+					color="primary"
+					icon="i-lucide-mail"
+					:to="mailtoUrl"
+					:label="t('email_label')"
+				/>
+				<UButton
+					size="xl"
+					color="neutral"
+					variant="outline"
+					icon="i-lucide-linkedin"
+					:to="profile.linkedinUrl"
+					target="_blank"
+					rel="noopener noreferrer"
+					label="LinkedIn"
 				/>
 			</div>
 		</section>
