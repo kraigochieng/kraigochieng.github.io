@@ -90,32 +90,14 @@ const uniqueTools = computed(() => {
 	return toSelectItems(list);
 });
 
-const filteredProjects = computed(() => {
-	const activeDomains = selectedDomains.value.map((d) => d.label);
-	const activeSkills = selectedSkills.value.map((s) => s.label);
-	const activeTools = selectedTools.value.map((t) => t.label);
-
-	let result = projects.filter((project) => {
-		const matchDomain =
-			activeDomains.length === 0 ||
-			project.domain.some((d) => activeDomains.includes(d));
-		const matchSkills =
-			activeSkills.length === 0 ||
-			project.skills.some((s) => activeSkills.includes(s));
-		const matchTools =
-			activeTools.length === 0 ||
-			project.tools.some((t) => activeTools.includes(t));
-		return matchDomain && matchSkills && matchTools;
-	});
-
-	return result.sort((a, b) => {
-		if (selectedSort.value === "asc") {
-			return a.name.localeCompare(b.name);
-		} else {
-			return b.name.localeCompare(a.name);
-		}
-	});
-});
+const filteredProjects = computed(() =>
+	filterProjects(projects, {
+		domains: selectedDomains.value.map((d) => d.label),
+		skills: selectedSkills.value.map((s) => s.label),
+		tools: selectedTools.value.map((t) => t.label),
+		sort: selectedSort.value,
+	}),
+);
 
 // The first project is featured across the full row; if the rest would leave
 // an orphan, the last card also spans the full row to keep the grid even.
