@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { certifications } from "@/data/certifications";
 import { experiences } from "@/data/experience";
-import { mailtoUrl, profile } from "@/data/profile";
+import { mailtoUrl, profile, whatsappUrl } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 interface FilterItem {
@@ -385,6 +385,16 @@ const clearFilters = () => {
 					target="_blank"
 					rel="noopener noreferrer"
 					label="LinkedIn"
+				/>
+				<UButton
+					size="xl"
+					color="neutral"
+					variant="outline"
+					icon="i-simple-icons-whatsapp"
+					:to="whatsappUrl"
+					target="_blank"
+					rel="noopener noreferrer"
+					label="WhatsApp"
 				/>
 			</div>
 		</section>
