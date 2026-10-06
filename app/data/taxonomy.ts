@@ -41,6 +41,7 @@ export const TOOLS = [
 	"Python",
 	"MLflow",
 	"PostgreSQL",
+	"SQLite",
 	"Docker",
 	"Streamlit",
 	"OpenRouter",
