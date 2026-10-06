@@ -28,6 +28,8 @@ useSeoMeta({
 	twitterImage: `${profile.portfolioUrl}/og-image.png`,
 });
 
+const allSkills = collectSkills(projects, experiences);
+
 const toSelectItems = (list: string[]): FilterItem[] => {
 	return list.map((item) => ({ label: item, value: item }));
 };
@@ -284,6 +286,52 @@ const clearFilters = () => {
 					:key="cert.name"
 					:certification="cert"
 				/>
+			</div>
+		</section>
+
+		<section id="skills" class="anchor-section py-10 md:py-14">
+			<h2 class="section-rule flex items-center gap-2">
+				{{ t("skills_heading") }}
+			</h2>
+
+			<div class="space-y-6">
+				<div>
+					<h3
+						class="mb-2 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+					>
+						{{ t("tools_placeholder") }}
+					</h3>
+					<div class="flex flex-wrap gap-1.5">
+						<UBadge
+							v-for="tool in allSkills.tools"
+							:key="tool"
+							color="neutral"
+							variant="outline"
+							size="md"
+						>
+							{{ tool }}
+						</UBadge>
+					</div>
+				</div>
+
+				<div>
+					<h3
+						class="mb-2 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+					>
+						{{ t("skills_placeholder") }}
+					</h3>
+					<div class="flex flex-wrap gap-1.5">
+						<UBadge
+							v-for="skill in allSkills.skills"
+							:key="skill"
+							color="primary"
+							variant="subtle"
+							size="md"
+						>
+							{{ skill }}
+						</UBadge>
+					</div>
+				</div>
 			</div>
 		</section>
 

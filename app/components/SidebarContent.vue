@@ -60,7 +60,7 @@ const { t } = useI18n();
 const localePath = useLocalePath();
 const socialLinks = useSocialLinks();
 
-const sectionIds = ["experience", "projects", "certifications", "contact"];
+const sectionIds = ["experience", "projects", "certifications", "skills", "contact"];
 const activeSection = useActiveSection(sectionIds);
 
 const navItems = computed(() => {
@@ -83,6 +83,12 @@ const navItems = computed(() => {
 			label: t("nav_certifications"),
 			to: `${home}#certifications`,
 			current: activeSection.value === "certifications",
+		},
+		{
+			id: "skills",
+			label: t("skills_heading"),
+			to: `${home}#skills`,
+			current: activeSection.value === "skills",
 		},
 		{
 			id: "contact",
