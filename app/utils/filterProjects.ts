@@ -4,7 +4,7 @@ export interface ProjectFilters {
 	domains: string[];
 	skills: string[];
 	tools: string[];
-	sort: "asc" | "desc";
+	sort: "order" | "asc" | "desc";
 }
 
 // An empty filter list matches every project. Within one list, any match
@@ -22,7 +22,10 @@ export const filterProjects = (
 			(tools.length === 0 || project.tools.some((t) => tools.includes(t))),
 	);
 
-	return result.sort((a, b) =>
-		sort === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name),
-	);
+	return result.sort((a, b) => {
+		if (sort === "order") return a.order - b.order;
+		return sort === "asc"
+			? a.name.localeCompare(b.name)
+			: b.name.localeCompare(a.name);
+	});
 };

@@ -9,6 +9,11 @@ describe("projects data", () => {
 		expect(new Set(slugs).size).toBe(slugs.length);
 	});
 
+	it("has a unique order for every project", () => {
+		const orders = projects.map((p) => p.order);
+		expect(new Set(orders).size).toBe(orders.length);
+	});
+
 	it("has https links where a link is set", () => {
 		for (const p of projects) {
 			for (const url of [p.link, p.github]) {

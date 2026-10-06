@@ -35,11 +35,14 @@ const parseQueryParam = (
 };
 
 const sortOptions = computed(() => [
+	{ label: t("sort_importance"), value: "order" },
 	{ label: t("sort_ascending"), value: "asc" },
 	{ label: t("sort_descending"), value: "desc" },
 ]);
-const selectedSort = ref<"asc" | "desc">(
-	route.query.project_sort === "desc" ? "desc" : "asc",
+const selectedSort = ref<"order" | "asc" | "desc">(
+	route.query.project_sort === "asc" || route.query.project_sort === "desc"
+		? route.query.project_sort
+		: "order",
 );
 const selectedDomains = ref<FilterItem[]>(
 	toSelectItems(
@@ -110,7 +113,7 @@ const clearFilters = () => {
 	selectedDomains.value = [];
 	selectedSkills.value = [];
 	selectedTools.value = [];
-	selectedSort.value = "asc";
+	selectedSort.value = "order";
 };
 </script>
 

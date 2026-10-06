@@ -1,9 +1,11 @@
 import type { Project } from "../types";
 
+// `order` is the default sort: lower numbers show first (and the first is featured).
 export const projects = [
 	{
 		name: "MediLinda",
 		slug: "medilinda",
+		order: 1,
 		domain: ["Healthcare"],
 		description:
 			"Pharmacovigilance platform enabling Kenyan healthcare providers to detect TB drug side effects early, improve patient safety, and trigger instant SMS alerts to medical teams nationwide.",
@@ -15,6 +17,7 @@ export const projects = [
 	{
 		name: "Jumbo E-Commerce Dashboard",
 		slug: "jumbo-ecommerce",
+		order: 2,
 		domain: ["E-Commerce", "Logistics"],
 		description:
 			"Optimizing global e-commerce operations through deep-dive analysis of revenue, returns, and shipping efficiency.",
@@ -66,6 +69,7 @@ export const projects = [
 	{
 		name: "YC Elevator Pitch Doctor",
 		slug: "yc-pitch-predictor",
+		order: 3,
 		domain: ["Startups", "Venture Capital"],
 		description:
 			"Enabling startup founders to craft elevator pitches based on top 75+ YC companies via an agent.",
@@ -83,6 +87,7 @@ export const projects = [
 	{
 		name: "ElevenLabs Text-To-Speech Chunker",
 		slug: "elevenlabs-tts-chunker",
+		order: 4,
 		domain: ["Dev Tool"],
 		description:
 			"A FastAPI wrapper around the ElevenLabs Text-to-Speech API that transparently handles text longer than ElevenLabs' 10,000-character limit per request. Send it text of any length; it chunks, synthesizes each chunk, and returns one merged mp3.",
@@ -94,6 +99,7 @@ export const projects = [
 	{
 		name: "Claude Code Config",
 		slug: "claude-code-config",
+		order: 5,
 		domain: ["Dev Tool"],
 		description:
 			"My Claude Code setup, versioned in git so every machine behaves the same. It enforces conventional commits, an issue-and-branch workflow, and a writing style.",

@@ -5,6 +5,7 @@ import type { Project } from "../app/types";
 const make = (name: string, p: Partial<Project> = {}) =>
 	({
 		name,
+		order: 0,
 		slug: name.toLowerCase(),
 		domain: [],
 		description: "",
@@ -16,11 +17,12 @@ const make = (name: string, p: Partial<Project> = {}) =>
 	}) as unknown as Project;
 
 const none = { domains: [], skills: [], tools: [], sort: "asc" as const };
+const byOrder = { ...none, sort: "order" as const };
 
 const list = [
-	make("Beta", { domain: ["Healthcare"], tools: ["Python"] }),
-	make("Alpha", { domain: ["Finance"], tools: ["Nuxt", "Python"] }),
-	make("Gamma", { domain: ["Healthcare"], tools: ["Nuxt"] }),
+	make("Beta", { order: 1, domain: ["Healthcare"], tools: ["Python"] }),
+	make("Alpha", { order: 3, domain: ["Finance"], tools: ["Nuxt", "Python"] }),
+	make("Gamma", { order: 2, domain: ["Healthcare"], tools: ["Nuxt"] }),
 ];
 
 describe("filterProjects", () => {
@@ -51,6 +53,14 @@ describe("filterProjects", () => {
 		expect(
 			filterProjects(list, { ...none, sort: "desc" }).map((p) => p.name),
 		).toEqual(["Gamma", "Beta", "Alpha"]);
+	});
+
+	it("sorts by importance order", () => {
+		expect(filterProjects(list, byOrder).map((p) => p.name)).toEqual([
+			"Beta",
+			"Gamma",
+			"Alpha",
+		]);
 	});
 
 	it("does not change the input list", () => {

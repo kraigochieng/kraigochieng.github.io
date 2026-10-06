@@ -24,6 +24,7 @@
 
     "clear_filters": "Clear Filters",
     "sort_by": "Sort By",
+    "sort_importance": "Importance",
     "sort_ascending": "Ascending",
     "sort_descending": "Descending",
     "domains_placeholder": "Domains",
