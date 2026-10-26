@@ -15,6 +15,7 @@ X: https://x.com/kraigochieng
 - [YC Elevator Pitch Doctor](https://yc-elevator-pitch-doctor.onrender.com): Enabling startup founders to craft elevator pitches based on top 75+ YC companies via an agent. Live: https://yc-elevator-pitch-doctor.onrender.com · Code: https://github.com/kraigochieng/yc-elevator-pitch-doctor
 - [ElevenLabs Text-To-Speech Chunker](https://elevenlabs-tts-chunker.vercel.app/): FastAPI wrapper that gets around the ElevenLabs 10,000-character limit: it chunks long text, synthesizes each chunk, and returns one mp3. Live: https://elevenlabs-tts-chunker.vercel.app/ · Code: https://github.com/kraigochieng/elevenlabs-tts-chunker
 - [Claude Code Config](https://github.com/kraigochieng/kraigochieng.claude-code): My Claude Code setup, versioned in git. It enforces conventional commits, an issue-and-branch workflow, and a writing style. Code: https://github.com/kraigochieng/kraigochieng.claude-code
+- [Bulk Alerts Manager for Google Alerts](https://chromewebstore.google.com/detail/bulk-alerts-manager-for-g/pefmadnpngpopdobegahkffofikicakn): Chrome extension that adds, exports, and deletes many Google Alerts at once from CSV files. Published on the Chrome Web Store. Live: https://chromewebstore.google.com/detail/bulk-alerts-manager-for-g/pefmadnpngpopdobegahkffofikicakn · Code: https://github.com/kraigochieng/bulk-google-alerts-manager
 
 ## Work Experience
 

@@ -16,6 +16,7 @@ export const DOMAINS = [
 	"Data Science",
 	"Creative Coding",
 	"Design Tools",
+	"Productivity",
 ] as const;
 
 export const SKILLS = [
@@ -33,6 +34,8 @@ export const SKILLS = [
 	"Visualization",
 	"Image Processing",
 	"CLI Tools",
+	"Browser Automation",
+	"CSV Processing",
 ] as const;
 
 export const TOOLS = [
@@ -52,6 +55,8 @@ export const TOOLS = [
 	"Tailwind CSS",
 	"Pillow",
 	"NumPy",
+	"TypeScript",
+	"Chrome Extension",
 ] as const;
 
 // Every project slug the site knows about (live, planned, or commented out).
@@ -66,6 +71,7 @@ export const PROJECT_SLUGS = [
 	"yc-pitch-predictor",
 	"elevenlabs-tts-chunker",
 	"claude-code-config",
+	"bulk-google-alerts-manager",
 ] as const;
 
 export type Domain = (typeof DOMAINS)[number];
