@@ -241,7 +241,7 @@ const clearFilters = () => {
 							t('more_filters') +
 							(moreFiltersCount ? ` (${moreFiltersCount})` : '')
 						"
-						@click="showMoreFilters = !showMoreFilters"
+						@click="() => { showMoreFilters = !showMoreFilters; }"
 					/>
 				</div>
 

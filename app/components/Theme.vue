@@ -5,7 +5,7 @@
 		variant="ghost"
 		class="text-neutral-800 dark:text-neutral-200"
 		:aria-label="isDark ? t('theme_switch_to_light') : t('theme_switch_to_dark')"
-		@click="isDark = !isDark"
+		@click="() => { isDark = !isDark; }"
 	/>
 </template>
 
