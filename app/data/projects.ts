@@ -108,4 +108,16 @@ export const projects = [
 		link: null,
 		github: "https://github.com/kraigochieng/kraigochieng.claude-code",
 	},
+	{
+		name: "Bulk Alerts Manager for Google Alerts",
+		slug: "bulk-google-alerts-manager",
+		order: 6,
+		domain: ["Productivity"],
+		description:
+			"Chrome extension that adds, exports, and deletes many Google Alerts at once from CSV files. Published on the Chrome Web Store.",
+		skills: ["Browser Automation", "CSV Processing"],
+		tools: ["TypeScript", "Chrome Extension"],
+		link: "https://chromewebstore.google.com/detail/bulk-alerts-manager-for-g/pefmadnpngpopdobegahkffofikicakn",
+		github: "https://github.com/kraigochieng/bulk-google-alerts-manager",
+	},
 ] satisfies Project[];
