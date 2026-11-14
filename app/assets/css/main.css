@@ -207,14 +207,17 @@ html {
 	}
 }
 
-/* Dot grid behind the hero, like points in a vector space. Fixed, so it
-   spans the screen; it fades out when the hero leaves. */
+/* Small "KO" letters behind the hero, the owner's initials. The letters are
+   path data in a mask, so the look does not depend on a font; the color
+   comes from the background. Fixed, so it spans the screen, and it fades out
+   when the hero leaves. */
 :root {
-	--field-dot: color-mix(in srgb, var(--color-neutral-500) 40%, transparent);
+	--field-letters: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate(10 14)'%3E%3Cpath d='M1 0v10M8 0L1 5.5M3.2 4L8.5 10M11.8 5a3.8 5 0 1 0 7.6 0a3.8 5 0 1 0-7.6 0'/%3E%3C/g%3E%3Cg transform='translate(58 46)'%3E%3Cpath d='M1 0v10M8 0L1 5.5M3.2 4L8.5 10M11.8 5a3.8 5 0 1 0 7.6 0a3.8 5 0 1 0-7.6 0'/%3E%3C/g%3E%3C/svg%3E");
+	--field-dot: color-mix(in srgb, var(--color-neutral-500) 45%, transparent);
 }
 
 .dark {
-	--field-dot: color-mix(in srgb, var(--color-neutral-400) 28%, transparent);
+	--field-dot: color-mix(in srgb, var(--color-neutral-400) 32%, transparent);
 }
 
 .hero-field {
@@ -224,43 +227,44 @@ html {
 	pointer-events: none;
 	opacity: 0;
 	transition: opacity 0.6s ease-out;
-	background-image: radial-gradient(
-		circle,
-		var(--field-dot) 1px,
-		transparent 1.6px
-	);
-	background-size: 28px 28px;
 	mask-image: radial-gradient(ellipse at 70% 45%, #000 15%, transparent 75%);
+}
+
+.hero-field-letters {
+	position: absolute;
+	inset: 0;
+	background-color: var(--field-dot);
+	mask-image: var(--field-letters);
+	mask-size: 96px 64px;
 }
 
 .hero-field-visible {
 	opacity: 1;
 }
 
-/* Pointer glow: a brighter copy of the dot grid, shown only near the mouse. */
+/* Pointer glow: a brighter copy of the letters, shown only near the mouse. */
 :root {
-	--field-dot-glow: color-mix(in srgb, var(--color-neutral-900) 75%, transparent);
+	--field-dot-glow: color-mix(in srgb, var(--color-neutral-900) 80%, transparent);
 }
 
 .dark {
-	--field-dot-glow: color-mix(in srgb, var(--color-neutral-100) 75%, transparent);
+	--field-dot-glow: color-mix(in srgb, var(--color-neutral-100) 80%, transparent);
 }
 
 .hero-field-glow {
 	position: absolute;
 	inset: 0;
 	display: none;
-	background-image: radial-gradient(
-		circle,
-		var(--field-dot-glow) 1px,
-		transparent 1.6px
-	);
-	background-size: 28px 28px;
-	mask-image: radial-gradient(
-		circle 150px at var(--pointer-x, -999px) var(--pointer-y, -999px),
-		#000,
-		transparent
-	);
+	background-color: var(--field-dot-glow);
+	mask-image:
+		var(--field-letters),
+		radial-gradient(
+			circle 150px at var(--pointer-x, -999px) var(--pointer-y, -999px),
+			#000,
+			transparent
+		);
+	mask-size: 96px 64px, auto;
+	mask-composite: intersect;
 }
 
 /* Only a real mouse drives the glow; touch screens never show it. */

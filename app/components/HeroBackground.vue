@@ -5,6 +5,7 @@
 		:class="{ 'hero-field-visible': visible }"
 		aria-hidden="true"
 	>
+		<div class="hero-field-letters" />
 		<div class="hero-field-glow" />
 	</div>
 </template>
@@ -17,7 +18,7 @@ interface PointerPosition {
 }
 
 /**
- * Draws the dot grid behind the hero and brightens it near the mouse.
+ * Draws the KO letters behind the hero and brightens them near the mouse.
  * Side effects: listens for pointer moves.
  */
 const props = defineProps<{
