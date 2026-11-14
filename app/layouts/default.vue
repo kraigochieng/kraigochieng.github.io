@@ -2,7 +2,7 @@
 	<a href="#main-content" class="skip-link">{{ t("skip_to_content") }}</a>
 
 	<aside
-		class="fixed inset-y-0 left-0 z-40 hidden w-64 overflow-y-auto border-r border-neutral-200 bg-white md:block dark:border-neutral-800 dark:bg-neutral-900"
+		class="fixed inset-y-0 left-0 z-40 hidden w-64 overflow-y-auto border-r border-neutral-200 bg-neutral-100 md:block dark:border-neutral-800 dark:bg-neutral-900"
 	>
 		<SidebarContent />
 	</aside>

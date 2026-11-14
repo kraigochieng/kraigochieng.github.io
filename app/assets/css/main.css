@@ -10,11 +10,16 @@
 :root {
 	--ui-primary: var(--color-neutral-900);
 	--ui-text-dimmed: var(--color-neutral-600);
+	/* Keep cards and overlays on the bone paper, not pure white. */
+	--ui-bg: var(--color-neutral-50);
+	--ui-bg-muted: var(--color-neutral-100);
 }
 
 .dark {
 	--ui-primary: var(--color-neutral-100);
 	--ui-text-dimmed: var(--color-neutral-400);
+	--ui-bg: var(--color-neutral-950);
+	--ui-bg-muted: var(--color-neutral-900);
 }
 
 /* Thin rule under section headings to mark where each section starts. */
@@ -28,6 +33,20 @@
 
 @theme {
 	--color-dark: #111111;
+
+	/* Warm stone scale: bone paper in light mode, soil in dark mode. The 500
+	   step is darker than stone-500 so small labels keep 4.5:1 on bone. */
+	--color-neutral-50: #ece8e0;
+	--color-neutral-100: #e2ddd3;
+	--color-neutral-200: #d3cdc1;
+	--color-neutral-300: #bdb6a8;
+	--color-neutral-400: #a8a29e;
+	--color-neutral-500: #6b655d;
+	--color-neutral-600: #57534e;
+	--color-neutral-700: #44403c;
+	--color-neutral-800: #292524;
+	--color-neutral-900: #1c1917;
+	--color-neutral-950: #12100e;
 	--font-sans: 'Inter', sans-serif;
 	--font-display: 'Space Grotesk', 'Inter', sans-serif;
 }
