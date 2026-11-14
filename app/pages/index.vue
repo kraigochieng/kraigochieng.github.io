@@ -28,6 +28,13 @@ useSeoMeta({
 	twitterImage: `${profile.portfolioUrl}/og-image.png`,
 });
 
+/** The short phrases shown under the job title in the hero. */
+const heroPhrases = computed<string[]>(() => [
+	t("hero_phrase_language_agnostic"),
+	t("hero_phrase_user_gravity"),
+	t("hero_phrase_problems_over_tools"),
+]);
+
 const drawerOpen = useState("drawerOpen", () => false);
 
 // On a phone the contact icons live in the sidebar drawer, so open it. On a
@@ -157,11 +164,23 @@ const clearFilters = () => {
 <template>
 	<div>
 		<div class="pt-10 md:pt-16">
-			<h1 class="max-w-3xl text-4xl font-bold tracking-tight py-0 md:text-6xl">
-				{{ $t("hero_tagline") }}
+			<h1 class="max-w-3xl text-5xl font-bold tracking-tight py-0 md:text-7xl">
+				{{ profile.name }}
 			</h1>
 			<p
-				class="mt-4 max-w-xl text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
+				class="mt-4 font-mono text-lg font-medium uppercase tracking-widest text-neutral-700 md:text-xl dark:text-neutral-300"
+			>
+				{{ t("job_title") }}
+			</p>
+			<ul
+				class="mt-5 space-y-1 font-mono text-sm text-neutral-500 dark:text-neutral-400"
+			>
+				<li v-for="phrase in heroPhrases" :key="phrase">
+					<span aria-hidden="true">// </span>{{ phrase }}
+				</li>
+			</ul>
+			<p
+				class="mt-8 max-w-xl text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
 			>
 				{{ t("intro_text") }}
 			</p>
