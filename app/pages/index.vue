@@ -321,7 +321,7 @@ const clearFilters = () => {
 			<div class="space-y-6">
 				<div>
 					<h3
-						class="mb-2 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+						class="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
 					>
 						{{ t("tools_placeholder") }}
 					</h3>
@@ -340,7 +340,7 @@ const clearFilters = () => {
 
 				<div>
 					<h3
-						class="mb-2 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+						class="mb-2 font-mono text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
 					>
 						{{ t("skills_placeholder") }}
 					</h3>

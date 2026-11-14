@@ -16,7 +16,7 @@
 				{{ project.name }}
 			</h3>
 			<p
-				class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mt-1"
+				class="font-mono text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mt-1"
 			>
 				{{ project.domain.join(" • ") }}
 			</p>
@@ -31,7 +31,7 @@
 		<div class="space-y-3 mt-auto">
 			<div v-if="project.skills.length">
 				<span
-					class="text-xs uppercase font-medium tracking-wider text-neutral-500 dark:text-neutral-400 mb-1 block"
+					class="font-mono text-xs uppercase font-medium tracking-wider text-neutral-500 dark:text-neutral-400 mb-1 block"
 					>{{ t("skills_placeholder") }}</span
 				>
 				<div class="flex flex-wrap gap-1.5">
@@ -49,7 +49,7 @@
 
 			<div v-if="project.tools.length">
 				<span
-					class="text-xs uppercase font-medium tracking-wider text-neutral-500 dark:text-neutral-400 mb-1 block"
+					class="font-mono text-xs uppercase font-medium tracking-wider text-neutral-500 dark:text-neutral-400 mb-1 block"
 					>{{ t("tools_placeholder") }}</span
 				>
 				<div class="flex flex-wrap gap-1.5">
