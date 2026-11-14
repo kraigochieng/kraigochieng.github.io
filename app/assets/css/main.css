@@ -322,3 +322,22 @@ html {
 		animation: none;
 	}
 }
+
+/* Section marker: a dot and a short line before each section heading, in the
+   same language as the connected dots. Drawn with CSS only. */
+.anchor-section h2::before {
+	content: "";
+	flex: none;
+	width: 1.75rem;
+	height: 8px;
+	margin-right: 0.25rem;
+	color: var(--color-neutral-500);
+	background:
+		radial-gradient(circle at 3px 50%, currentColor 2.5px, transparent 3px),
+		linear-gradient(currentColor, currentColor) 3px 50% / calc(100% - 3px) 1px
+			no-repeat;
+}
+
+.dark .anchor-section h2::before {
+	color: var(--color-neutral-400);
+}
