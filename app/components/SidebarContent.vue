@@ -13,13 +13,14 @@
 					<NuxtLink
 						:to="item.to"
 						:aria-current="item.current ? 'location' : undefined"
-						class="block border-l px-3 py-1.5 text-sm transition-colors hover:text-neutral-950 dark:hover:text-white"
+						class="flex items-center gap-2.5 border-l px-3 py-1.5 text-sm transition-colors hover:text-neutral-950 dark:hover:text-white"
 						:class="
 							item.current
 								? 'border-neutral-900 font-medium text-neutral-950 dark:border-neutral-100 dark:text-white'
 								: 'border-transparent text-neutral-500 dark:text-neutral-400'
 						"
 					>
+						<GlyphIcon :name="item.id" class="size-4 shrink-0" />
 						{{ item.label }}
 					</NuxtLink>
 				</li>
@@ -51,6 +52,8 @@
 </template>
 
 <script lang="ts" setup>
+import type { GlyphName } from "@/data/glyphs";
+
 // The drawer already shows the name and role in its own header.
 defineProps<{
 	hideIdentity?: boolean;
@@ -60,10 +63,24 @@ const { t } = useI18n();
 const localePath = useLocalePath();
 const socialLinks = useSocialLinks();
 
-const sectionIds = ["experience", "projects", "certifications", "skills", "contact"];
+/** One sidebar link; its id doubles as the glyph name. */
+interface NavItem {
+	id: GlyphName;
+	label: string;
+	to: string;
+	current: boolean;
+}
+
+const sectionIds: GlyphName[] = [
+	"experience",
+	"projects",
+	"certifications",
+	"skills",
+	"contact",
+];
 const activeSection = useActiveSection(sectionIds);
 
-const navItems = computed(() => {
+const navItems = computed<NavItem[]>(() => {
 	const home = localePath("/");
 	return [
 		{
