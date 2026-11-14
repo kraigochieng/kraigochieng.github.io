@@ -236,3 +236,31 @@ html {
 .hero-field-visible {
 	opacity: 1;
 }
+
+/* Connected dots: thin lines and small dots in the grid color. Strokes keep
+   the same width at every screen size. */
+.hero-field-links {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	color: var(--field-link);
+}
+
+.hero-field-links line {
+	stroke: currentColor;
+	stroke-width: 1;
+	vector-effect: non-scaling-stroke;
+}
+
+.hero-field-links circle {
+	fill: currentColor;
+}
+
+:root {
+	--field-link: color-mix(in srgb, var(--color-neutral-500) 55%, transparent);
+}
+
+.dark {
+	--field-link: color-mix(in srgb, var(--color-neutral-400) 40%, transparent);
+}
