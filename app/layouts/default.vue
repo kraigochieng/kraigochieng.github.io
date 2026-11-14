@@ -2,13 +2,17 @@
 	<a href="#main-content" class="skip-link">{{ t("skip_to_content") }}</a>
 
 	<aside
-		class="fixed inset-y-0 left-0 z-40 hidden w-64 overflow-y-auto border-r border-neutral-200 bg-neutral-100 md:block dark:border-neutral-800 dark:bg-neutral-900"
+		class="fixed inset-y-0 left-0 z-40 hidden w-64 overflow-y-auto border-r border-neutral-200 bg-neutral-100 transition-transform duration-500 ease-out md:block dark:border-neutral-800 dark:bg-neutral-900"
+		:class="heroFocused ? '-translate-x-full' : 'translate-x-0'"
+		:inert="heroFocused"
 	>
 		<SidebarContent />
 	</aside>
 
 	<header
-		class="glass-bg sticky top-0 z-40 flex h-[var(--nav-height)] items-center gap-4 px-6 md:hidden"
+		class="glass-bg sticky top-0 z-40 flex h-[var(--nav-height)] items-center gap-4 px-6 transition-[transform,opacity] duration-500 ease-out md:hidden"
+		:class="heroFocused ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'"
+		:inert="heroFocused"
 	>
 		<USlideover
 			v-model:open="drawerOpen"
@@ -34,7 +38,8 @@
 	<main
 		id="main-content"
 		tabindex="-1"
-		class="outline-none px-6 md:ml-64 md:px-12 lg:px-16"
+		class="outline-none px-6 transition-[margin] duration-500 ease-out md:px-12 lg:px-16"
+		:class="heroFocused ? 'md:ml-0' : 'md:ml-64'"
 	>
 		<div class="mx-auto max-w-4xl">
 			<slot />
@@ -50,6 +55,9 @@ const route = useRoute();
 
 // Shared so the home page call to action can open the drawer on mobile.
 const drawerOpen = useState("drawerOpen", () => false);
+
+// True while the hero fills the screen; the navigation hides then.
+const heroFocused = useHeroFocus();
 
 // Close the drawer after navigating (including same-page hash links).
 watch(

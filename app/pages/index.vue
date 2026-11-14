@@ -163,7 +163,10 @@ const clearFilters = () => {
 
 <template>
 	<div>
-		<div class="pt-10 md:pt-16">
+		<section
+			id="hero"
+			class="relative -mt-[var(--nav-height)] flex min-h-svh flex-col justify-center py-16 md:mt-0"
+		>
 			<h1 class="max-w-3xl text-5xl font-bold tracking-tight py-0 md:text-7xl">
 				{{ profile.name }}
 			</h1>
@@ -185,7 +188,7 @@ const clearFilters = () => {
 				{{ t("intro_text") }}
 			</p>
 			<UButton
-				class="mt-6"
+				class="mt-6 self-start"
 				size="xl"
 				color="primary"
 				trailing-icon="i-lucide-arrow-right"
@@ -193,7 +196,14 @@ const clearFilters = () => {
 				:label="t('cta_contact')"
 				@click="onContactClick"
 			/>
-		</div>
+			<a
+				href="#experience"
+				class="scroll-cue absolute bottom-6 left-0 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
+			>
+				{{ t("scroll_cue") }}
+				<UIcon name="i-lucide-chevron-down" class="size-4" />
+			</a>
+		</section>
 
 		<section id="experience" class="anchor-section pt-8 pb-10 md:pt-10 md:pb-14">
 			<h2 class="section-rule flex items-center gap-2">

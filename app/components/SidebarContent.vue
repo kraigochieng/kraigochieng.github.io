@@ -7,16 +7,19 @@
 			</p>
 		</div>
 
-		<nav :aria-label="t('main_nav_aria')">
+		<nav
+			:aria-label="t('main_nav_aria')"
+			class="border-b border-neutral-300 pb-8 dark:border-neutral-700"
+		>
 			<ul class="space-y-0.5">
 				<li v-for="item in navItems" :key="item.id">
 					<NuxtLink
 						:to="item.to"
 						:aria-current="item.current ? 'location' : undefined"
-						class="flex items-center gap-2.5 border-l px-3 py-1.5 text-sm transition-colors hover:text-neutral-950 dark:hover:text-white"
+						class="flex items-center gap-2.5 border-l-2 px-3 py-1.5 font-mono text-xs uppercase tracking-widest transition-colors hover:text-neutral-950 dark:hover:text-white"
 						:class="
 							item.current
-								? 'border-neutral-900 font-medium text-neutral-950 dark:border-neutral-100 dark:text-white'
+								? 'border-neutral-900 text-neutral-950 dark:border-neutral-100 dark:text-white'
 								: 'border-transparent text-neutral-500 dark:text-neutral-400'
 						"
 					>

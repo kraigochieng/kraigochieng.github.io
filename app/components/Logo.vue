@@ -9,6 +9,7 @@
 		<NuxtLink
 			:to="localePath('/')"
 			class="font-display block text-xl font-semibold text-inherit"
+			@click="scrollToHero"
 		>
 			{{ profile.name }}
 		</NuxtLink>
@@ -19,7 +20,15 @@
 import { profile } from "@/data/profile";
 
 const localePath = useLocalePath();
+const route = useRoute();
 const { t } = useI18n();
+
+/** Scrolls smoothly to the hero when the visitor is already on the home page. Side effect: moves the page. */
+const scrollToHero = (event: MouseEvent): void => {
+	if (route.path !== localePath("/")) return;
+	event.preventDefault();
+	window.scrollTo({ top: 0, behavior: "smooth" });
+};
 </script>
 
 <style></style>
