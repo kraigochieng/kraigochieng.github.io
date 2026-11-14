@@ -237,34 +237,6 @@ html {
 	opacity: 1;
 }
 
-/* Connected dots: thin lines and small dots in the grid color. Strokes keep
-   the same width at every screen size. */
-.hero-field-links {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	color: var(--field-link);
-}
-
-.hero-field-links line {
-	stroke: currentColor;
-	stroke-width: 1;
-	vector-effect: non-scaling-stroke;
-}
-
-.hero-field-links circle {
-	fill: currentColor;
-}
-
-:root {
-	--field-link: color-mix(in srgb, var(--color-neutral-500) 55%, transparent);
-}
-
-.dark {
-	--field-link: color-mix(in srgb, var(--color-neutral-400) 40%, transparent);
-}
-
 /* Pointer glow: a brighter copy of the dot grid, shown only near the mouse. */
 :root {
 	--field-dot-glow: color-mix(in srgb, var(--color-neutral-900) 75%, transparent);
@@ -298,33 +270,8 @@ html {
 	}
 }
 
-/* Slow drift of the connected dots. The loop pauses while the hero is off
-   screen, and stops for visitors who prefer reduced motion. */
-.hero-field-links {
-	animation: field-drift 45s ease-in-out infinite alternate;
-}
-
-.hero-field:not(.hero-field-visible) .hero-field-links {
-	animation-play-state: paused;
-}
-
-@keyframes field-drift {
-	from {
-		transform: translate(0, 0);
-	}
-	to {
-		transform: translate(-10px, 12px);
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.hero-field-links {
-		animation: none;
-	}
-}
-
-/* Section marker: a dot and a short line before each section heading, in the
-   same language as the connected dots. Drawn with CSS only. */
+/* Section marker: a dot and a short line before each section heading. Drawn
+   with CSS only. */
 .anchor-section h2::before {
 	content: "";
 	flex: none;
