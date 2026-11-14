@@ -180,3 +180,29 @@ html {
 		transform: translateY(4px);
 	}
 }
+
+/* Snap between the hero and the content below it on the home page only.
+   The content wrapper is taller than the screen, so a visitor still scrolls
+   freely inside it; only its top edge and the hero top are snap points.
+   Reduced-motion visitors get no snapping. */
+@media (prefers-reduced-motion: no-preference) {
+	html:has(#hero) {
+		scroll-snap-type: y mandatory;
+	}
+
+	#hero,
+	#content {
+		scroll-snap-align: start;
+	}
+
+	/* Keep the content top below the sticky mobile header. */
+	#content {
+		scroll-margin-top: var(--nav-height);
+	}
+
+	@media (min-width: 768px) {
+		#content {
+			scroll-margin-top: 0;
+		}
+	}
+}
