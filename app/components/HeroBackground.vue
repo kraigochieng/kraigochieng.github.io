@@ -5,40 +5,12 @@
 		:class="{ 'hero-field-visible': visible }"
 		aria-hidden="true"
 	>
+		<div class="hero-field-letters" />
 		<div class="hero-field-glow" />
-		<svg
-			class="hero-field-links"
-			viewBox="0 0 100 100"
-			preserveAspectRatio="xMaxYMid slice"
-		>
-			<line
-				v-for="line in lines"
-				:key="`${line.x1}-${line.y1}-${line.x2}-${line.y2}`"
-				:x1="line.x1"
-				:y1="line.y1"
-				:x2="line.x2"
-				:y2="line.y2"
-			/>
-			<circle
-				v-for="(point, index) in fieldPoints"
-				:key="`${point.x}-${point.y}`"
-				:cx="point.x"
-				:cy="point.y"
-				:r="index === highlightedPointIndex ? 0.7 : 0.4"
-			/>
-		</svg>
 	</div>
 </template>
 
 <script lang="ts" setup>
-import {
-	buildFieldLines,
-	fieldEdges,
-	fieldPoints,
-	highlightedPointIndex,
-	type FieldLine,
-} from "@/data/vectorField";
-
 /** Where the mouse pointer is, in screen pixels. */
 interface PointerPosition {
 	x: number;
@@ -46,14 +18,12 @@ interface PointerPosition {
 }
 
 /**
- * Draws the dot grid and the connected dots behind the hero, and brightens
- * the grid near the mouse. Side effects: listens for pointer moves.
+ * Draws the KO letters behind the hero and brightens them near the mouse.
+ * Side effects: listens for pointer moves.
  */
 const props = defineProps<{
 	visible: boolean;
 }>();
-
-const lines: FieldLine[] = buildFieldLines(fieldPoints, fieldEdges);
 
 const fieldElement = ref<HTMLElement | null>(null);
 let latestPosition: PointerPosition | undefined;
