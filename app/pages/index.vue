@@ -32,6 +32,7 @@ useSeoMeta({
 const heroPhrases = computed<string[]>(() => [
 	t("hero_phrase_language_agnostic"),
 	t("hero_phrase_user_gravity"),
+	t("hero_phrase_problems_over_tools"),
 ]);
 
 const drawerOpen = useState("drawerOpen", () => false);
