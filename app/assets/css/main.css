@@ -264,3 +264,36 @@ html {
 .dark {
 	--field-link: color-mix(in srgb, var(--color-neutral-400) 40%, transparent);
 }
+
+/* Pointer glow: a brighter copy of the dot grid, shown only near the mouse. */
+:root {
+	--field-dot-glow: color-mix(in srgb, var(--color-neutral-900) 75%, transparent);
+}
+
+.dark {
+	--field-dot-glow: color-mix(in srgb, var(--color-neutral-100) 75%, transparent);
+}
+
+.hero-field-glow {
+	position: absolute;
+	inset: 0;
+	display: none;
+	background-image: radial-gradient(
+		circle,
+		var(--field-dot-glow) 1px,
+		transparent 1.6px
+	);
+	background-size: 28px 28px;
+	mask-image: radial-gradient(
+		circle 150px at var(--pointer-x, -999px) var(--pointer-y, -999px),
+		#000,
+		transparent
+	);
+}
+
+/* Only a real mouse drives the glow; touch screens never show it. */
+@media (hover: hover) and (pointer: fine) {
+	.hero-field-glow {
+		display: block;
+	}
+}
