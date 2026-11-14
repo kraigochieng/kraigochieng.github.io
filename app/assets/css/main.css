@@ -49,6 +49,12 @@ body::before {
 	@apply border-b border-neutral-300 pb-4 mb-8 dark:border-neutral-700;
 }
 
+/* Anchor jumps and the logo scroll glide. The reduced-motion rule below
+   turns this off. */
+html {
+	scroll-behavior: smooth;
+}
+
 .anchor-section {
 	scroll-margin-top: var(--nav-height);
 }
