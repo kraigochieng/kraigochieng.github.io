@@ -36,9 +36,15 @@ export default defineNuxtConfig({
 		families: [
 			{ name: "Inter", provider: "google" },
 			{
-				name: "Space Grotesk",
+				name: "Bricolage Grotesque",
 				provider: "google",
 				weights: [500, 600, 700],
+				styles: ["normal"],
+			},
+			{
+				name: "JetBrains Mono",
+				provider: "google",
+				weights: [400, 500],
 				styles: ["normal"],
 			},
 		],

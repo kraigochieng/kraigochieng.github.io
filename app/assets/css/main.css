@@ -70,7 +70,8 @@ body::before {
 	--color-neutral-900: #1c1917;
 	--color-neutral-950: #12100e;
 	--font-sans: 'Inter', sans-serif;
-	--font-display: 'Space Grotesk', 'Inter', sans-serif;
+	--font-display: 'Bricolage Grotesque', 'Inter', sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 @layer base {
