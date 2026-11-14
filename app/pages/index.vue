@@ -205,6 +205,7 @@ const clearFilters = () => {
 			</a>
 		</section>
 
+		<div id="content">
 		<section id="experience" class="anchor-section pt-8 pb-10 md:pt-10 md:pb-14">
 			<h2 class="section-rule flex items-center gap-2">
 				{{ t("work_experience") }}
@@ -427,5 +428,6 @@ const clearFilters = () => {
 				/>
 			</div>
 		</section>
+		</div>
 	</div>
 </template>
