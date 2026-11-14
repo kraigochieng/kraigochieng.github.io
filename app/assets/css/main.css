@@ -297,3 +297,28 @@ html {
 		display: block;
 	}
 }
+
+/* Slow drift of the connected dots. The loop pauses while the hero is off
+   screen, and stops for visitors who prefer reduced motion. */
+.hero-field-links {
+	animation: field-drift 45s ease-in-out infinite alternate;
+}
+
+.hero-field:not(.hero-field-visible) .hero-field-links {
+	animation-play-state: paused;
+}
+
+@keyframes field-drift {
+	from {
+		transform: translate(0, 0);
+	}
+	to {
+		transform: translate(-10px, 12px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-field-links {
+		animation: none;
+	}
+}
