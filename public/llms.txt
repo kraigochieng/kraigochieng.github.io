@@ -1,6 +1,6 @@
 # Kraig Ochieng
 
-> Agentic Builder based in Nairobi, Kenya. Builds AI agents, data pipelines, and full-stack web applications with Python, Nuxt, and FastAPI.
+> Agentic Builder & Applied AI Researcher based in Nairobi, Kenya. Builds AI agents, data pipelines, and full-stack web applications with Python, Nuxt, and FastAPI.
 
 Portfolio: https://kraigochieng.github.io
 Contact: kraigochieng@gmail.com · +254792701195
