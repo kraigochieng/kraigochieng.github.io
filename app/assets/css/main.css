@@ -206,3 +206,33 @@ html {
 		}
 	}
 }
+
+/* Dot grid behind the hero, like points in a vector space. Fixed, so it
+   spans the screen; it fades out when the hero leaves. */
+:root {
+	--field-dot: color-mix(in srgb, var(--color-neutral-500) 40%, transparent);
+}
+
+.dark {
+	--field-dot: color-mix(in srgb, var(--color-neutral-400) 28%, transparent);
+}
+
+.hero-field {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.6s ease-out;
+	background-image: radial-gradient(
+		circle,
+		var(--field-dot) 1px,
+		transparent 1.6px
+	);
+	background-size: 28px 28px;
+	mask-image: radial-gradient(ellipse at 70% 45%, #000 15%, transparent 75%);
+}
+
+.hero-field-visible {
+	opacity: 1;
+}
