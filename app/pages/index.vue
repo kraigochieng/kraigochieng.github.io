@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { certifications } from "@/data/certifications";
 import { experiences } from "@/data/experience";
-import { profile, whatsappUrl } from "@/data/profile";
+import { phoneText, profile, whatsappUrl } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 interface FilterItem {
@@ -192,6 +192,18 @@ const clearFilters = () => {
 							color="primary"
 							icon="i-lucide-mail"
 							:label="t('email_label')"
+							@click="copy"
+						/>
+					</template>
+				</CopyTooltip>
+				<CopyTooltip :text="phoneText" :name="t('phone_copy_name')">
+					<template #default="{ copy }">
+						<UButton
+							size="xl"
+							color="neutral"
+							variant="outline"
+							icon="i-lucide-phone"
+							:label="t('phone_copy_name')"
 							@click="copy"
 						/>
 					</template>
