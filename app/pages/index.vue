@@ -182,11 +182,15 @@ const clearFilters = () => {
 					<span aria-hidden="true">// </span>{{ phrase }}
 				</li>
 			</ul>
-			<p
-				class="mt-8 max-w-xl text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
+			<a
+				:href="profile.locationMapUrl"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="mt-8 flex w-fit items-center gap-2 font-mono text-sm text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
 			>
-				{{ t("intro_text") }}
-			</p>
+				<UIcon name="i-lucide-map-pin" class="size-4" />
+				{{ t("hero_location") }}
+			</a>
 			<UButton
 				class="mt-6 self-start"
 				size="xl"
