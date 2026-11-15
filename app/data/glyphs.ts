@@ -3,7 +3,6 @@ export type GlyphName =
 	| "experience"
 	| "projects"
 	| "certifications"
-	| "skills"
 	| "contact";
 
 /**
@@ -33,8 +32,6 @@ export const glyphPaths: Record<GlyphName, string[]> = {
 		"M5.6 18.4l2.1-2.1",
 		"M16.3 7.7l2.1-2.1",
 	],
-	// Three stacked chevrons: levels climbed.
-	skills: ["M5 8l7-4 7 4", "M5 14l7-4 7 4", "M5 20l7-4 7 4"],
 	// Three waves: a signal, or water.
 	contact: [
 		"M3 7c3-3 6 3 9 0s6 3 9 0",
