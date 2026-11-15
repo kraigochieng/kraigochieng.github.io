@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { certifications } from "@/data/certifications";
 import { experiences } from "@/data/experience";
-import { phoneText, profile, whatsappUrl } from "@/data/profile";
+import { profile } from "@/data/profile";
+import type { SocialLink, SocialLinkId } from "@/composables/useSocialLinks";
 import { projects } from "@/data/projects";
 
 interface FilterItem {
@@ -27,6 +28,13 @@ useSeoMeta({
 	twitterCard: "summary_large_image",
 	twitterImage: `${profile.portfolioUrl}/og-image.png`,
 });
+
+/** The contact icons shown in the hero, in this order. */
+const heroLinkIds: SocialLinkId[] = ["email", "phone", "linkedin", "whatsapp"];
+const socialLinks = useSocialLinks();
+const heroLinks = computed<SocialLink[]>(() =>
+	pickSocialLinks(socialLinks.value, heroLinkIds),
+);
 
 /** The short phrases shown under the job title in the hero. */
 const heroPhrases = computed<string[]>(() => [
@@ -184,55 +192,11 @@ const clearFilters = () => {
 			>
 				{{ t("hero_invite") }}
 			</p>
-			<div class="mt-4 flex flex-wrap gap-3">
-				<CopyTooltip :text="profile.email" :name="t('email_copy_name')">
-					<template #default="{ copy }">
-						<UButton
-							size="xl"
-							color="primary"
-							icon="i-lucide-mail"
-							:aria-label="t('click_to_copy', { name: t('email_copy_name') })"
-							@click="copy"
-						/>
-					</template>
-				</CopyTooltip>
-				<CopyTooltip :text="phoneText" :name="t('phone_copy_name')">
-					<template #default="{ copy }">
-						<UButton
-							size="xl"
-							color="neutral"
-							variant="outline"
-							icon="i-lucide-phone"
-							:aria-label="t('click_to_copy', { name: t('phone_copy_name') })"
-							@click="copy"
-						/>
-					</template>
-				</CopyTooltip>
-				<UTooltip text="LinkedIn">
-					<UButton
-						size="xl"
-						color="neutral"
-						variant="outline"
-						icon="i-lucide-linkedin"
-						:to="profile.linkedinUrl"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="LinkedIn"
-					/>
-				</UTooltip>
-				<UTooltip text="WhatsApp">
-					<UButton
-						size="xl"
-						color="neutral"
-						variant="outline"
-						icon="i-simple-icons-whatsapp"
-						:to="whatsappUrl"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="WhatsApp"
-					/>
-				</UTooltip>
-			</div>
+			<ul class="-ml-2.5 mt-3 flex flex-wrap gap-1">
+				<li v-for="link in heroLinks" :key="link.id">
+					<SocialLinkIcon :link="link" />
+				</li>
+			</ul>
 			<a
 				href="#experience"
 				class="scroll-cue absolute bottom-6 left-0 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
