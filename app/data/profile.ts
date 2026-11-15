@@ -14,5 +14,4 @@ export const profile = {
 } as const;
 
 export const whatsappUrl = `https://wa.me/${profile.phoneNumber}`;
-export const telUrl = `tel:+${profile.phoneNumber}`;
-export const mailtoUrl = `mailto:${profile.email}`;
+export const phoneText = `+${profile.phoneNumber}`;

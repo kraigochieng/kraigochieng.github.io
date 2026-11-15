@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { certifications } from "../app/data/certifications";
 import { experiences } from "../app/data/experience";
-import { profile } from "../app/data/profile";
+import { phoneText, profile } from "../app/data/profile";
 import { projects } from "../app/data/projects";
 import en from "../i18n/locales/en.json";
 
@@ -74,6 +74,14 @@ describe("certifications data", () => {
 });
 
 describe("profile data", () => {
+	it("writes the phone number to copy in international format", () => {
+		expect(phoneText).toMatch(/^\+\d{10,15}$/);
+	});
+
+	it("has an email address that is safe to copy", () => {
+		expect(profile.email).toMatch(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+	});
+
 	it("links the location to a Google Maps place page over https", () => {
 		expect(profile.locationMapUrl).toMatch(
 			/^https:\/\/www\.google\.com\/maps\/place\//,

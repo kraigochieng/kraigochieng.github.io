@@ -26,6 +26,11 @@
     "buy_me_coffee": "Buy me a Coffee",
     "email_label": "Email",
     "phone_label": "Call",
+    "phone_copy_name": "Phone number",
+    "email_copy_name": "Email address",
+    "click_to_copy": "Copy {name}",
+    "copied_to_clipboard": "{name} copied to clipboard",
+    "copy_failed": "Could not copy {name}",
 
     "clear_filters": "Clear Filters",
     "more_filters": "More filters",
