@@ -4,7 +4,8 @@ import type { Experience, Project } from "../app/types";
 
 const project = (skills: string[], tools: string[]) =>
 	({ skills, tools }) as unknown as Project;
-const job = (skills: string[]) => ({ skills }) as unknown as Experience;
+const job = (skills: string[], tools: string[] = []) =>
+	({ skills, tools }) as unknown as Experience;
 
 describe("collectSkills", () => {
 	it("orders by how often a name appears, then alphabetically", () => {
@@ -36,6 +37,14 @@ describe("collectSkills", () => {
 			[job(["Artificial Intelligence (AI)"])],
 		);
 		expect(r.skills).toEqual(["AI"]);
+	});
+
+	it("counts experience tools together with project tools", () => {
+		const r = collectSkills(
+			[project([], ["Go"])],
+			[job([], ["Go", "Git"]), job([], ["Git", "Docker"])],
+		);
+		expect(r.tools).toEqual(["Git", "Go", "Docker"]);
 	});
 
 	it("returns empty lists for empty input", () => {

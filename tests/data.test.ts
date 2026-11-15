@@ -63,6 +63,22 @@ describe("experience data", () => {
 			expect(e.achievements.length).toBeGreaterThan(0);
 		}
 	});
+
+	it("names at least one skill or tool for every role", () => {
+		for (const e of experiences) {
+			expect(e.skills.length + e.tools.length).toBeGreaterThan(0);
+		}
+	});
+
+	it("keeps a name in one list only, and never repeats a tool", () => {
+		for (const e of experiences) {
+			const toolKeys: string[] = e.tools.map((tool) => tool.toLowerCase());
+			expect(new Set(toolKeys).size).toBe(toolKeys.length);
+			for (const skill of e.skills) {
+				expect(toolKeys).not.toContain(skill.toLowerCase());
+			}
+		}
+	});
 });
 
 describe("certifications data", () => {
