@@ -32,22 +32,22 @@ export default defineNuxtConfig({
 		preference: "system",
 		fallback: "light",
 	},
+	// The fonts are self-hosted (see main.css), so every font provider is off.
+	// Nothing is downloaded at build time.
 	fonts: {
 		families: [
-			{ name: "Inter", provider: "google" },
-			{
-				name: "Bricolage Grotesque",
-				provider: "google",
-				weights: [500, 600, 700],
-				styles: ["normal"],
-			},
-			{
-				name: "JetBrains Mono",
-				provider: "google",
-				weights: [400, 500],
-				styles: ["normal"],
-			},
+			{ name: "Inter", provider: "none" },
+			{ name: "Bricolage Grotesque", provider: "none" },
+			{ name: "JetBrains Mono", provider: "none" },
 		],
+		providers: {
+			adobe: false,
+			bunny: false,
+			fontshare: false,
+			fontsource: false,
+			google: false,
+			googleicons: false,
+		},
 	},
 	i18n: {
 		defaultLocale: "en",
