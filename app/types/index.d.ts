@@ -9,6 +9,8 @@ export interface Project {
 	skills: Skill[];
 	tools: Tool[];
 	link: string | null;
+	/** Locale key for the link button text. The default is "live_demo". */
+	linkLabelKey?: "live_demo" | "install";
 	github: string | null;
 }
 

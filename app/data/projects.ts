@@ -118,6 +118,7 @@ export const projects = [
 		skills: ["Browser Automation", "CSV Processing"],
 		tools: ["TypeScript", "Chrome Extension"],
 		link: "https://chromewebstore.google.com/detail/bulk-alerts-manager-for-g/pefmadnpngpopdobegahkffofikicakn",
+		linkLabelKey: "install",
 		github: "https://github.com/kraigochieng/bulk-google-alerts-manager",
 	},
 ] satisfies Project[];
