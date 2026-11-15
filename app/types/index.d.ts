@@ -25,6 +25,7 @@ export interface Experience {
 	workType: string | null;
 	achievements: string[];
 	skills: string[];
+	tools: string[];
 	links?: { label: string; href: string }[];
 }
 

@@ -56,19 +56,40 @@
 				>
 			</div>
 
-			<div
-				v-if="experience.skills.length"
-				class="mt-4 flex flex-wrap gap-1.5"
-			>
-				<UBadge
-					v-for="skill in experience.skills"
-					:key="skill"
-					color="neutral"
-					variant="outline"
-					size="md"
+			<div v-if="experience.skills.length" class="mt-4">
+				<span
+					class="mb-1 block font-mono text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+					>{{ t("skills_placeholder") }}</span
 				>
-					{{ skill }}
-				</UBadge>
+				<div class="flex flex-wrap gap-1.5">
+					<UBadge
+						v-for="skill in experience.skills"
+						:key="skill"
+						color="primary"
+						variant="subtle"
+						size="md"
+					>
+						{{ skill }}
+					</UBadge>
+				</div>
+			</div>
+
+			<div v-if="experience.tools.length" class="mt-3">
+				<span
+					class="mb-1 block font-mono text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+					>{{ t("tools_placeholder") }}</span
+				>
+				<div class="flex flex-wrap gap-1.5">
+					<UBadge
+						v-for="tool in experience.tools"
+						:key="tool"
+						color="neutral"
+						variant="outline"
+						size="md"
+					>
+						{{ tool }}
+					</UBadge>
+				</div>
 			</div>
 		</div>
 	</article>

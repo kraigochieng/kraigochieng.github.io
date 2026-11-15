@@ -1,4 +1,4 @@
-import type { Experience, Project } from "@/types";
+import type { Experience, Project } from "../types";
 
 // Experience entries use LinkedIn names such as "Python (Programming Language)"
 // or "Artificial Intelligence (AI)". Keep an acronym in brackets ("AI"),
@@ -25,7 +25,12 @@ export const collectSkills = (
 	projects: readonly Project[],
 	experiences: readonly Experience[],
 ) => {
-	const tools = byCount(tally(projects.flatMap((p) => p.tools)));
+	const tools = byCount(
+		tally([
+			...projects.flatMap((p) => p.tools as readonly string[]),
+			...experiences.flatMap((e) => e.tools),
+		]),
+	);
 	const toolKeys = new Set(tools.map((t) => t.toLowerCase()));
 
 	const skillNames = [

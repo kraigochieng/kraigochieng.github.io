@@ -15,6 +15,7 @@ export const experiences: Experience[] = [
 			"Automated workflow run logging to Google Sheets across 5+ client workflows, giving executives a clear breakdown of how the AI scored and selected articles",
 		],
 		skills: ["Artificial Intelligence (AI)", "Workflow Automation"],
+		tools: ["n8n", "Google Sheets"],
 	},
 	{
 		role: "Data Engineer",
@@ -28,7 +29,8 @@ export const experiences: Experience[] = [
 		achievements: [
 			"Engineered a data ingestion pipeline using Polars that enabled a contraceptive intelligence platform to import client spreadsheets directly into the web application",
 		],
-		skills: ["Databases", "Python (Programming Language)"],
+		skills: ["Databases"],
+		tools: ["Python", "Polars"],
 	},
 	{
 		role: "AI Developer",
@@ -46,7 +48,8 @@ export const experiences: Experience[] = [
 			"Slashed false positives by 75% by refining rule-based logic for duplicate transactions and unusual timestamp patterns.",
 			"Reduced debugging time to <10 seconds by implementing comprehensive agent tracing via LangSmith",
 		],
-		skills: ["Python (Programming Language)", "Prompt Engineering"],
+		skills: ["Prompt Engineering"],
+		tools: ["Python", "LangGraph", "FastAPI", "LangSmith"],
 	},
 	{
 		role: "Software Developer",
@@ -61,6 +64,7 @@ export const experiences: Experience[] = [
 			"Developed core system features using Nuxt showcased in the pitch that helped the team win Top Assistive Tech Innovation at the 6th Inclusive Africa Conference.",
 		],
 		skills: ["Assistive Technology", "Web Application Development"],
+		tools: ["Nuxt"],
 	},
 	{
 		role: "Software Engineer Intern",
@@ -76,10 +80,8 @@ export const experiences: Experience[] = [
 			"Improved data interoperability for a 5-developer team by creating standardized OpenMRS data dictionaries.",
 			"Optimised developer onboarding for OpenMRS by 1 month for 1 developer, speeding up development work",
 		],
-		skills: [
-			"Web Development",
-			"Fast Healthcare Interoperability Resources (FHIR)",
-		],
+		skills: ["Web Development"],
+		tools: ["FHIR", "OpenMRS"],
 		links: [
 			{
 				label: "HIV-FHIR-IG",
@@ -109,6 +111,7 @@ export const experiences: Experience[] = [
 			"Increased my knowledge in Docker for local development",
 			"Increased my knowledge in Git for team collaboration",
 		],
-		skills: ["Fast Healthcare Interoperability Resources (FHIR)", "OpenMRS"],
+		skills: [],
+		tools: ["FHIR", "OpenMRS", "Odoo", "Python", "Docker", "Git"],
 	},
 ];

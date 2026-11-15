@@ -5,7 +5,6 @@ const sectionIds: string[] = [
 	"experience",
 	"projects",
 	"certifications",
-	"skills",
 	"contact",
 ];
 
