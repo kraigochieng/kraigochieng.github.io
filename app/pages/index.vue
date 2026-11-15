@@ -35,16 +35,6 @@ const heroPhrases = computed<string[]>(() => [
 	t("hero_phrase_problems_over_tools"),
 ]);
 
-const drawerOpen = useState("drawerOpen", () => false);
-
-// On a phone the contact icons live in the sidebar drawer, so open it. On a
-// wide screen the sidebar is always visible, so let the link scroll instead.
-const onContactClick = (event: MouseEvent) => {
-	if (window.matchMedia("(min-width: 768px)").matches) return;
-	event.preventDefault();
-	drawerOpen.value = true;
-};
-
 const toSelectItems = (list: string[]): FilterItem[] => {
 	return list.map((item) => ({ label: item, value: item }));
 };
@@ -189,15 +179,44 @@ const clearFilters = () => {
 				<UIcon name="i-lucide-map-pin" class="size-4" />
 				{{ t("hero_location") }}
 			</a>
-			<UButton
-				class="mt-6 self-start"
-				size="xl"
-				color="primary"
-				trailing-icon="i-lucide-arrow-right"
-				to="#contact"
-				:label="t('cta_contact')"
-				@click="onContactClick"
-			/>
+			<p
+				class="mt-8 text-lg font-medium text-neutral-800 dark:text-neutral-200"
+			>
+				{{ t("hero_invite") }}
+			</p>
+			<div class="mt-4 flex flex-wrap gap-3">
+				<CopyTooltip :text="profile.email" :name="t('email_copy_name')">
+					<template #default="{ copy }">
+						<UButton
+							size="xl"
+							color="primary"
+							icon="i-lucide-mail"
+							:label="t('email_label')"
+							@click="copy"
+						/>
+					</template>
+				</CopyTooltip>
+				<UButton
+					size="xl"
+					color="neutral"
+					variant="outline"
+					icon="i-lucide-linkedin"
+					:to="profile.linkedinUrl"
+					target="_blank"
+					rel="noopener noreferrer"
+					label="LinkedIn"
+				/>
+				<UButton
+					size="xl"
+					color="neutral"
+					variant="outline"
+					icon="i-simple-icons-whatsapp"
+					:to="whatsappUrl"
+					target="_blank"
+					rel="noopener noreferrer"
+					label="WhatsApp"
+				/>
+			</div>
 			<a
 				href="#experience"
 				class="scroll-cue absolute bottom-6 left-0 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
