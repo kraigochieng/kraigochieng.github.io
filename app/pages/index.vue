@@ -191,7 +191,7 @@ const clearFilters = () => {
 							size="xl"
 							color="primary"
 							icon="i-lucide-mail"
-							:label="t('email_label')"
+							:aria-label="t('click_to_copy', { name: t('email_copy_name') })"
 							@click="copy"
 						/>
 					</template>
@@ -203,31 +203,35 @@ const clearFilters = () => {
 							color="neutral"
 							variant="outline"
 							icon="i-lucide-phone"
-							:label="t('phone_copy_name')"
+							:aria-label="t('click_to_copy', { name: t('phone_copy_name') })"
 							@click="copy"
 						/>
 					</template>
 				</CopyTooltip>
-				<UButton
-					size="xl"
-					color="neutral"
-					variant="outline"
-					icon="i-lucide-linkedin"
-					:to="profile.linkedinUrl"
-					target="_blank"
-					rel="noopener noreferrer"
-					label="LinkedIn"
-				/>
-				<UButton
-					size="xl"
-					color="neutral"
-					variant="outline"
-					icon="i-simple-icons-whatsapp"
-					:to="whatsappUrl"
-					target="_blank"
-					rel="noopener noreferrer"
-					label="WhatsApp"
-				/>
+				<UTooltip text="LinkedIn">
+					<UButton
+						size="xl"
+						color="neutral"
+						variant="outline"
+						icon="i-lucide-linkedin"
+						:to="profile.linkedinUrl"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="LinkedIn"
+					/>
+				</UTooltip>
+				<UTooltip text="WhatsApp">
+					<UButton
+						size="xl"
+						color="neutral"
+						variant="outline"
+						icon="i-simple-icons-whatsapp"
+						:to="whatsappUrl"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="WhatsApp"
+					/>
+				</UTooltip>
 			</div>
 			<a
 				href="#experience"
