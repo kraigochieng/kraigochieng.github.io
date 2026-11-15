@@ -132,10 +132,10 @@ html {
 	scroll-margin-top: var(--nav-height);
 }
 
-/* The last section fills the screen. A short last section puts its anchor
-   target past the end of the page, and scroll snapping then pulls the jump
-   back to the top of the content. */
-#contact {
+/* The last section fills the screen, whichever section it is. A short last
+   section puts its anchor target past the end of the page, and scroll
+   snapping then pulls the jump back to the top of the content. */
+#content > section:last-child {
 	min-height: 100svh;
 }
 
