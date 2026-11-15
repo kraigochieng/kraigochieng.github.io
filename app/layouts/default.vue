@@ -1,7 +1,7 @@
 <template>
 	<a href="#main-content" class="skip-link">{{ t("skip_to_content") }}</a>
 
-	<HeroBackground :visible="heroFocused" />
+	<HeroBackground v-if="features.heroBackground" :visible="heroFocused" />
 
 	<aside
 		class="fixed inset-y-0 left-0 z-40 hidden w-64 overflow-y-auto border-r border-neutral-200 bg-neutral-100 transition-transform duration-500 ease-out md:block dark:border-neutral-800 dark:bg-neutral-900"
@@ -50,6 +50,7 @@
 </template>
 
 <script setup lang="ts">
+import { features } from "@/data/features";
 import { profile } from "@/data/profile";
 
 const { t } = useI18n();
