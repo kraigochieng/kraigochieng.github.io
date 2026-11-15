@@ -7,7 +7,7 @@
     "hero_phrase_user_gravity": "user is my gravity",
     "hero_phrase_problems_over_tools": "problems over tools",
     "hero_location": "Based in Nairobi, Kenya",
-    "cta_contact": "Bring me a problem",
+    "hero_invite": "Bring me your problems (your tech problems)",
     "scroll_cue": "scroll",
     "web_developer": "Web Developer",
 
@@ -49,7 +49,5 @@
 
     "certifications_heading": "Certifications",
     "cert_issued": "Issued",
-    "contact_heading": "Contact",
-    "contact_text": "The quickest way to reach me is by email or LinkedIn.",
     "view_credential": "View Credential"
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { certifications } from "@/data/certifications";
 import { experiences } from "@/data/experience";
-import { profile, whatsappUrl } from "@/data/profile";
+import { phoneText, profile, whatsappUrl } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 interface FilterItem {
@@ -34,16 +34,6 @@ const heroPhrases = computed<string[]>(() => [
 	t("hero_phrase_user_gravity"),
 	t("hero_phrase_problems_over_tools"),
 ]);
-
-const drawerOpen = useState("drawerOpen", () => false);
-
-// On a phone the contact icons live in the sidebar drawer, so open it. On a
-// wide screen the sidebar is always visible, so let the link scroll instead.
-const onContactClick = (event: MouseEvent) => {
-	if (window.matchMedia("(min-width: 768px)").matches) return;
-	event.preventDefault();
-	drawerOpen.value = true;
-};
 
 const toSelectItems = (list: string[]): FilterItem[] => {
 	return list.map((item) => ({ label: item, value: item }));
@@ -189,15 +179,60 @@ const clearFilters = () => {
 				<UIcon name="i-lucide-map-pin" class="size-4" />
 				{{ t("hero_location") }}
 			</a>
-			<UButton
-				class="mt-6 self-start"
-				size="xl"
-				color="primary"
-				trailing-icon="i-lucide-arrow-right"
-				to="#contact"
-				:label="t('cta_contact')"
-				@click="onContactClick"
-			/>
+			<p
+				class="mt-8 text-lg font-medium text-neutral-800 dark:text-neutral-200"
+			>
+				{{ t("hero_invite") }}
+			</p>
+			<div class="mt-4 flex flex-wrap gap-3">
+				<CopyTooltip :text="profile.email" :name="t('email_copy_name')">
+					<template #default="{ copy }">
+						<UButton
+							size="xl"
+							color="primary"
+							icon="i-lucide-mail"
+							:aria-label="t('click_to_copy', { name: t('email_copy_name') })"
+							@click="copy"
+						/>
+					</template>
+				</CopyTooltip>
+				<CopyTooltip :text="phoneText" :name="t('phone_copy_name')">
+					<template #default="{ copy }">
+						<UButton
+							size="xl"
+							color="neutral"
+							variant="outline"
+							icon="i-lucide-phone"
+							:aria-label="t('click_to_copy', { name: t('phone_copy_name') })"
+							@click="copy"
+						/>
+					</template>
+				</CopyTooltip>
+				<UTooltip text="LinkedIn">
+					<UButton
+						size="xl"
+						color="neutral"
+						variant="outline"
+						icon="i-lucide-linkedin"
+						:to="profile.linkedinUrl"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="LinkedIn"
+					/>
+				</UTooltip>
+				<UTooltip text="WhatsApp">
+					<UButton
+						size="xl"
+						color="neutral"
+						variant="outline"
+						icon="i-simple-icons-whatsapp"
+						:to="whatsappUrl"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="WhatsApp"
+					/>
+				</UTooltip>
+			</div>
 			<a
 				href="#experience"
 				class="scroll-cue absolute bottom-6 left-0 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400"
@@ -341,50 +376,6 @@ const clearFilters = () => {
 					v-for="cert in certifications"
 					:key="cert.name"
 					:certification="cert"
-				/>
-			</div>
-		</section>
-
-		<section id="contact" class="anchor-section py-10 pb-24 md:py-14 md:pb-32">
-			<h2 class="section-rule flex items-center gap-2">
-				{{ t("contact_heading") }}
-			</h2>
-
-			<p class="max-w-prose text-neutral-700 dark:text-neutral-300">
-				{{ t("contact_text") }}
-			</p>
-
-			<div class="mt-6 flex flex-wrap gap-3">
-				<CopyTooltip :text="profile.email" :name="t('email_copy_name')">
-					<template #default="{ copy }">
-						<UButton
-							size="xl"
-							color="primary"
-							icon="i-lucide-mail"
-							:label="t('email_label')"
-							@click="copy"
-						/>
-					</template>
-				</CopyTooltip>
-				<UButton
-					size="xl"
-					color="neutral"
-					variant="outline"
-					icon="i-lucide-linkedin"
-					:to="profile.linkedinUrl"
-					target="_blank"
-					rel="noopener noreferrer"
-					label="LinkedIn"
-				/>
-				<UButton
-					size="xl"
-					color="neutral"
-					variant="outline"
-					icon="i-simple-icons-whatsapp"
-					:to="whatsappUrl"
-					target="_blank"
-					rel="noopener noreferrer"
-					label="WhatsApp"
 				/>
 			</div>
 		</section>
