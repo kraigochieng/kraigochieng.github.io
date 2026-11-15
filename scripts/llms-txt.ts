@@ -2,6 +2,7 @@ import { projects } from "../app/data/projects";
 import { experiences } from "../app/data/experience";
 import { certifications } from "../app/data/certifications";
 import { profile } from "../app/data/profile";
+import { collectSkills } from "../app/utils/collectSkills";
 
 export function buildLlmsTxt(): string {
 	const lines: string[] = [];
@@ -40,6 +41,12 @@ export function buildLlmsTxt(): string {
 			`- ${exp.role} at ${exp.company}, ${exp.location} (${exp.start}–${end}, ${exp.employmentType}): ${summary}`
 		);
 	}
+	lines.push("");
+
+	const { skills, tools } = collectSkills(projects, experiences);
+	lines.push("## Skills and Tools", "");
+	lines.push(`Skills: ${skills.join(", ")}`);
+	lines.push(`Tools: ${tools.join(", ")}`);
 	lines.push("");
 
 	lines.push("## Certifications", "");

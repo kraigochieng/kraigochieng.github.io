@@ -26,6 +26,11 @@ X: https://x.com/kraigochieng
 - Software Engineer Intern at IntelliSOFT Consulting Ltd, Nairobi County, Kenya (Jul 2024–Sep 2024, Internship): Accelerated 3 project timelines by 20% by developing FHIR Implementation Guides and HL7 artifacts (FSH)
 - Software Engineer Intern at IntelliSOFT Consulting Ltd, Nairobi County, Kenya (Jul 2023–Oct 2023, Internship): Customised an Odoo module using Python delivering custom services for one of the company clients
 
+## Skills and Tools
+
+Skills: Prompt Engineering, AI, AI Agents, Web Development, Workflow Automation, Assistive Technology, Browser Automation, CSV Processing, Databases, Explainable AI, Machine Learning, Vector Databases, Visualization, Web Application Development
+Tools: Python, Docker, FastAPI, FHIR, Nuxt, OpenMRS, Chrome Extension, FFmpeg, Git, Google Sheets, LangGraph, LangSmith, MLflow, n8n, Odoo, OpenRouter, Polars, PostgreSQL, SQLite, TypeScript
+
 ## Certifications
 
 - HCIA-AI (Huawei Certified ICT Associate – Artificial Intelligence), issued Nov 2024, expires Nov 2027.

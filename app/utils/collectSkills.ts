@@ -1,4 +1,4 @@
-import type { Experience, Project } from "@/types";
+import type { Experience, Project } from "../types";
 
 // Experience entries use LinkedIn names such as "Python (Programming Language)"
 // or "Artificial Intelligence (AI)". Keep an acronym in brackets ("AI"),
