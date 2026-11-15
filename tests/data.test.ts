@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { certifications } from "../app/data/certifications";
 import { experiences } from "../app/data/experience";
 import { projects } from "../app/data/projects";
+import en from "../i18n/locales/en.json";
 
 describe("projects data", () => {
 	it("has unique slugs", () => {
@@ -17,6 +18,19 @@ describe("projects data", () => {
 	it("keeps descriptions short enough for a card", () => {
 		for (const p of projects) {
 			expect(p.description.length).toBeLessThanOrEqual(160);
+		}
+	});
+
+	it("sets a link label only where a link is set", () => {
+		for (const p of projects) {
+			if ("linkLabelKey" in p) expect(p.link).not.toBeNull();
+		}
+	});
+
+	it("names a real locale string in every link label key", () => {
+		const strings: Record<string, string> = en;
+		for (const p of projects) {
+			if ("linkLabelKey" in p) expect(strings[p.linkLabelKey]).toBeTruthy();
 		}
 	});
 

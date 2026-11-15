@@ -77,7 +77,7 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					{{ t("live_demo") }}
+					{{ t(project.linkLabelKey ?? "live_demo") }}
 				</UButton>
 				<UButton
 					v-if="project.github"
