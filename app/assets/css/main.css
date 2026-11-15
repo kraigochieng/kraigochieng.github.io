@@ -44,9 +44,24 @@ body::before {
 	opacity: var(--grain-opacity);
 }
 
-/* Thin rule under section headings to mark where each section starts. */
+/* Thin rule under section headings to mark where each section starts. The
+   heading sticks while its section is in view: below the mobile header on a
+   phone, at the top on desktop. The translucent background keeps the content
+   under it readable. */
 .section-rule {
 	@apply border-b border-neutral-300 pb-4 mb-8 dark:border-neutral-700;
+	position: sticky;
+	top: var(--nav-height);
+	z-index: 10;
+	padding-top: 0.75rem;
+	background: color-mix(in srgb, var(--ui-bg) 88%, transparent);
+	backdrop-filter: blur(6px);
+}
+
+@media (min-width: 768px) {
+	.section-rule {
+		top: 0;
+	}
 }
 
 /* Anchor jumps and the logo scroll glide. The reduced-motion rule below
