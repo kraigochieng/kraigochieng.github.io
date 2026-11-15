@@ -363,50 +363,6 @@ const clearFilters = () => {
 				/>
 			</div>
 		</section>
-
-		<section id="contact" class="anchor-section py-10 pb-24 md:py-14 md:pb-32">
-			<h2 class="section-rule flex items-center gap-2">
-				{{ t("contact_heading") }}
-			</h2>
-
-			<p class="max-w-prose text-neutral-700 dark:text-neutral-300">
-				{{ t("contact_text") }}
-			</p>
-
-			<div class="mt-6 flex flex-wrap gap-3">
-				<CopyTooltip :text="profile.email" :name="t('email_copy_name')">
-					<template #default="{ copy }">
-						<UButton
-							size="xl"
-							color="primary"
-							icon="i-lucide-mail"
-							:label="t('email_label')"
-							@click="copy"
-						/>
-					</template>
-				</CopyTooltip>
-				<UButton
-					size="xl"
-					color="neutral"
-					variant="outline"
-					icon="i-lucide-linkedin"
-					:to="profile.linkedinUrl"
-					target="_blank"
-					rel="noopener noreferrer"
-					label="LinkedIn"
-				/>
-				<UButton
-					size="xl"
-					color="neutral"
-					variant="outline"
-					icon="i-simple-icons-whatsapp"
-					:to="whatsappUrl"
-					target="_blank"
-					rel="noopener noreferrer"
-					label="WhatsApp"
-				/>
-			</div>
-		</section>
 		</div>
 	</div>
 </template>

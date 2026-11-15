@@ -5,7 +5,6 @@ const sectionIds: string[] = [
 	"experience",
 	"projects",
 	"certifications",
-	"contact",
 ];
 
 describe("glyph data", () => {

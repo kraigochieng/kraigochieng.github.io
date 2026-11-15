@@ -96,7 +96,6 @@ const sectionIds: GlyphName[] = [
 	"experience",
 	"projects",
 	"certifications",
-	"contact",
 ];
 const activeSection = useActiveSection(sectionIds);
 
@@ -120,12 +119,6 @@ const navItems = computed<NavItem[]>(() => {
 			label: t("nav_certifications"),
 			to: `${home}#certifications`,
 			current: activeSection.value === "certifications",
-		},
-		{
-			id: "contact",
-			label: t("contact_heading"),
-			to: `${home}#contact`,
-			current: activeSection.value === "contact",
 		},
 	];
 });

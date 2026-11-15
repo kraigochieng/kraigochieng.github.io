@@ -2,8 +2,7 @@
 export type GlyphName =
 	| "experience"
 	| "projects"
-	| "certifications"
-	| "contact";
+	| "certifications";
 
 /**
  * SVG path data for each glyph, drawn on a 24 by 24 grid. Render each path
@@ -31,11 +30,5 @@ export const glyphPaths: Record<GlyphName, string[]> = {
 		"M16.3 16.3l2.1 2.1",
 		"M5.6 18.4l2.1-2.1",
 		"M16.3 7.7l2.1-2.1",
-	],
-	// Three waves: a signal, or water.
-	contact: [
-		"M3 7c3-3 6 3 9 0s6 3 9 0",
-		"M3 13c3-3 6 3 9 0s6 3 9 0",
-		"M3 19c3-3 6 3 9 0s6 3 9 0",
 	],
 };
