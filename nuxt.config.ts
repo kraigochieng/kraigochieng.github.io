@@ -57,7 +57,15 @@ export default defineNuxtConfig({
 	},
 	icon: {
 		clientBundle: {
-			scan: true,
+			// The scan skips plain TypeScript files by default. Icon names also
+			// live in composables, so include them. Otherwise the page asks
+			// api.iconify.design for those icons at run time.
+			scan: {
+				globInclude: ["app/**/*.{vue,ts}"],
+			},
+			// Icons that Nuxt UI draws inside its own components. The scan skips
+			// node_modules, so name them here: the check mark in the filter menus.
+			icons: ["lucide:check"],
 		},
 	},
 	vite: {
