@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { certifications } from "@/data/certifications";
 import { experiences } from "@/data/experience";
-import { mailtoUrl, profile, whatsappUrl } from "@/data/profile";
+import { profile, whatsappUrl } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 interface FilterItem {
@@ -403,13 +403,17 @@ const clearFilters = () => {
 			</p>
 
 			<div class="mt-6 flex flex-wrap gap-3">
-				<UButton
-					size="xl"
-					color="primary"
-					icon="i-lucide-mail"
-					:to="mailtoUrl"
-					:label="t('email_label')"
-				/>
+				<CopyTooltip :text="profile.email" :name="t('email_copy_name')">
+					<template #default="{ copy }">
+						<UButton
+							size="xl"
+							color="primary"
+							icon="i-lucide-mail"
+							:label="t('email_label')"
+							@click="copy"
+						/>
+					</template>
+				</CopyTooltip>
 				<UButton
 					size="xl"
 					color="neutral"

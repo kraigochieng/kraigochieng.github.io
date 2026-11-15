@@ -1,10 +1,20 @@
-import { mailtoUrl, profile, telUrl, whatsappUrl } from "@/data/profile";
+import { phoneText, profile, whatsappUrl } from "@/data/profile";
+
+/** One icon in the sidebar. A copy link copies text; any other link opens a page. */
+export interface SocialLink {
+	label: string;
+	icon: string;
+	hover: string;
+	href?: string;
+	copyText?: string;
+	copyName?: string;
+}
 
 // `hover` is the icon's brand colour on hover; links without one use neutral.
-export const useSocialLinks = () => {
+export const useSocialLinks = (): ComputedRef<SocialLink[]> => {
 	const { t } = useI18n();
 
-	return computed(() => [
+	return computed<SocialLink[]>(() => [
 		{
 			label: "GitHub",
 			href: profile.githubUrl,
@@ -31,13 +41,15 @@ export const useSocialLinks = () => {
 		},
 		{
 			label: t("phone_label"),
-			href: telUrl,
+			copyText: phoneText,
+			copyName: t("phone_copy_name"),
 			icon: "i-lucide-phone",
 			hover: "hover:text-neutral-950 dark:hover:text-white",
 		},
 		{
 			label: t("email_label"),
-			href: mailtoUrl,
+			copyText: profile.email,
+			copyName: t("email_copy_name"),
 			icon: "i-lucide-mail",
 			hover: "hover:text-neutral-950 dark:hover:text-white",
 		},
