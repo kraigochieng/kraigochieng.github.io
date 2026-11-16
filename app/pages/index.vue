@@ -38,9 +38,9 @@ const heroLinks = computed<SocialLink[]>(() =>
 
 /** The short phrases shown under the job title in the hero. */
 const heroPhrases = computed<string[]>(() => [
-	t("hero_phrase_language_agnostic"),
+	t("hero_phrase_problem_first"),
 	t("hero_phrase_user_gravity"),
-	t("hero_phrase_problems_over_tools"),
+	t("hero_phrase_tool_agnostic"),
 ]);
 
 const toSelectItems = (list: string[]): FilterItem[] => {
