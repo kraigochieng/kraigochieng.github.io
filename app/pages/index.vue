@@ -4,6 +4,7 @@ import { experiences } from "@/data/experience";
 import { profile } from "@/data/profile";
 import type { SocialLink, SocialLinkId } from "@/composables/useSocialLinks";
 import { projects } from "@/data/projects";
+import { experienceKey, layoutGantt } from "@/utils/layoutGantt";
 
 interface FilterItem {
 	label: string;
@@ -12,6 +13,32 @@ interface FilterItem {
 const { t } = useI18n();
 const route = useRoute();
 const router = useRouter();
+
+/** Builds a valid element id for the card of one experience. */
+const experienceCardId = (key: string): string =>
+	`experience-${key.replace(/[^A-Za-z0-9]+/g, "-")}`;
+
+/** Reads the clock once: the current month as a month number. Has a side effect. */
+const readNowMonth = (): number => {
+	const now: Date = new Date();
+	return now.getFullYear() * 12 + now.getMonth();
+};
+
+const ganttLayout = layoutGantt({
+	experiences,
+	nowMonth: readNowMonth(),
+});
+
+const overlapsWithByKey: Record<string, string[]> = Object.fromEntries(
+	ganttLayout.bars.map((bar) => [bar.key, bar.overlapsWith]),
+);
+
+/** Scrolls to the card of the experience that the user chose. Has a side effect. */
+const scrollToExperience = (key: string): void => {
+	document
+		.getElementById(experienceCardId(key))
+		?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 
 useHead({
 	title: computed(() => `${profile.name} | ${t("job_title")}`),
@@ -212,12 +239,17 @@ const clearFilters = () => {
 				{{ t("work_experience") }}
 			</h2>
 
+			<ExperienceGantt :layout="ganttLayout" @select="scrollToExperience" />
+
 			<div>
 				<ExperienceCard
 					v-reveal
 					v-for="exp in experiences"
-					:key="`${exp.company}-${exp.role}-${exp.start}`"
+					:id="experienceCardId(experienceKey({ experience: exp }))"
+					:key="experienceKey({ experience: exp })"
+					class="scroll-mt-24"
 					:experience="exp"
+					:overlaps-with="overlapsWithByKey[experienceKey({ experience: exp })] ?? []"
 				/>
 			</div>
 		</section>
