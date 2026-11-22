@@ -17,6 +17,9 @@
 				{{ experience.end ?? t("present") }}
 			</p>
 			<p>{{ experience.duration }}</p>
+			<p v-if="overlapsWith.length" class="mt-1 md:hidden">
+				{{ t("overlaps_with") }} {{ overlapsWith.join(", ") }}
+			</p>
 			<p class="mt-1">
 				{{ experience.location
 				}}<template v-if="experience.workType">
@@ -100,6 +103,7 @@ import type { Experience } from "@/types";
 
 defineProps<{
 	experience: Experience;
+	overlapsWith: string[];
 }>();
 
 const { t } = useI18n();

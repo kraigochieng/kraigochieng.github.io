@@ -29,6 +29,10 @@ const ganttLayout = layoutGantt({
 	nowMonth: readNowMonth(),
 });
 
+const overlapsWithByKey: Record<string, string[]> = Object.fromEntries(
+	ganttLayout.bars.map((bar) => [bar.key, bar.overlapsWith]),
+);
+
 /** Scrolls to the card of the experience that the user chose. Has a side effect. */
 const scrollToExperience = (key: string): void => {
 	document
@@ -245,6 +249,7 @@ const clearFilters = () => {
 					:key="experienceKey({ experience: exp })"
 					class="scroll-mt-24"
 					:experience="exp"
+					:overlaps-with="overlapsWithByKey[experienceKey({ experience: exp })] ?? []"
 				/>
 			</div>
 		</section>
